@@ -38,6 +38,3 @@ makeVideoActive(0);
 function cycleVideos() {
     makeVideoActive(activeIndex + 1);
 }
-
-// Set interval to change videos every 10 seconds
-// setInterval(cycleVideos, 10000);
