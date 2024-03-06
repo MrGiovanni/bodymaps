@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html class="no-js"  lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="globalsign-domain-verification" content="1lsowFdlUrrtcRyvAiFS11btFe-ChVU8h2FmxHw7sD" />
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+
+    <title>ImageNetCT-9K Large Scale Medical Segmentation Challenge (​​ISBI IMSeg 2024)</title>
+
+    
+        <!-- Included CSS Files (Compressed) -->
+        <link rel="stylesheet" href="./static/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="./static/css/jquery-editable.css">
+        <link rel="stylesheet" href="./static/js/vendor/select2/select2.css" />
+        
+            <link rel="stylesheet" type="text/css" href="./static/css/imports.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"
+                integrity="sha512-0qNBDZgOKlY8fVi38IMT+vFkFbRdh4jJehDR31fn3a61Vp8DoC1XSERCIW/AgVs+0xjRIuarbBBmt78v1btb3A=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="./static/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="./static/js/vendor/custom.modernizr.js"></script>
+        <!-- IE Fix for HTML5 Tags -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    
+
+    
+    <link href="./static/s3direct/css/bootstrap-progress.min.css" type="text/css" media="all" rel="stylesheet" />
+<link href="./static/s3direct/css/styles.css" type="text/css" media="all" rel="stylesheet" />
+<script type="text/javascript" src="./static/s3direct/js/scripts.js"></script>
+
+
+    
+    
+
+    
+    <script src="./static/js/vendor/readmore.min.js"></script>
+
+    <script src="./static/js/vendor/jquery.tablesorter.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2/dist/purify.min.js"></script>
+
+    <style>#public_submission_table th b {
+        cursor: pointer;
+    }
+    </style>
+
+
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body >
+        <div class="container" style="padding-bottom: 40px;">
+            
+
+
+
+<div class="competition-view">
+    <div class="row">
+        <!--
+        <div class="col-sm-2">
+            <div class="img-container">
+                
+                <img class="img-responsive" src="https://miniodis-rproxy.lisn.upsaclay.fr/py3-public/logos/a96429a2-49f7-4b81-996e-b2860c7df8b8/logo_online-video-cutter.com.gif">
+                
+                
+            </div>
+        </div>
+    -->
+        <div class="col-sm-10">
+            <h2>ImageNetCT-9K Large Scale Medical Segmentation Challenge (​​ISBI IMSeg 2024)</h2>
+            
+            <!--
+            <div class="organizer">
+                Organized by junma - Current server time: Jan. 4, 2024, 4:49 p.m. UTC<br>
+                
+            </div>
+            <input type="hidden" id="competitionId" value="12239" />
+            <input type="hidden" id="cstoken" value="KnIaCTzZdw1So5KFwuR7q1FpNsBCSEOkfNqNiIKKLOLRIj5WpKNbxH3LNQqlB3N6" />
+            <div class="phase-container">
+                <div class="row">
+                    
+                        <div class="col-sm-4">
+                            <div class="phase">
+                                <h4>Previous</h4>
+                                <span class="phase-label label phase-label-green">Development</span>
+                                <div class="date">April 1, 2023, midnight UTC</div>
+                            </div>
+                        </div>
+                    
+
+                    
+                        <div class="col-sm-4">
+                            <div class="phase current">
+                                <h4><span class="glyphicon glyphicon-play"></span> Current</h4>
+                                <span class="phase-label label phase-label-purple">Final</span>
+                                <div class="date">Aug. 1, 2023, midnight UTC</div>
+                            </div>
+                        </div>
+                    
+
+                    
+                    
+
+                    
+
+                    
+                        <div class="col-sm-4">
+                            <div class="phase">
+                                <h4>End</h4>
+                                <span class="phase-label label competition-end">Competition Ends</span>
+                                <div class="date">Never</div>
+                            </div>
+                        </div>
+                    
+                </div>
+            </div>
+        -->
+        </div>
+    </div>
+    <section class="competition-tabs">
+        <ul class="nav nav-tabs" id="competition_tab_nav">
+            
+                
+                <li><a href="#learn_the_details" role="tab" data-toggle="tab">Learn the Details</a></li>
+                
+            
+                
+                    <!--
+                    <li><a href="#phases" role="tab" data-toggle="tab">Phases</a></li>
+                
+                <li><a href="#participate" role="tab" data-toggle="tab">Participate</a></li>
+                
+            
+                
+                <li><a href="#results" role="tab" data-toggle="tab">Results</a></li>
+                -->
+                    
+                    
+                    
+                    
+                
+            
+        </ul>
+        <div class="tab-content">
+            
+                
+                
+                <div class="tab-pane" id="learn_the_details">
+                    <div class="tab-inner">
+                        
+                            <div class="row">
+    <div class="col-sm-3">
+        <ul class="nav nav-sidenav innertabs">
+            
+                <li class="active"><a href="#learn_the_details-overview" data-toggle="tab">Overview</a></li>
+            
+                <li class=""><a href="#learn_the_details-timeline" data-toggle="tab">Timeline</a></li>
+
+                <li class=""><a href="#learn_the_details-participate" data-toggle="tab">How to Participate</a></li>
+
+                <li class=""><a href="#learn_the_details-award" data-toggle="tab">Award</a></li>
+
+                <li class=""><a href="#learn_the_details-evaluation" data-toggle="tab">Evaluation</a></li>
+
+                <li class=""><a href="#learn_the_details-terms" data-toggle="tab">Terms and Condition</a></li>
+
+                <li class=""><a href="#learn_the_details-organizers" data-toggle="tab">Organizers</a></li>
+
+                <li class=""><a href="#learn_the_details-datasets" data-toggle="tab">Datasets</a></li>
+
+                <li class=""><a href="#learn_the_details-qa" data-toggle="tab">Q&A</a></li>
+
+            
+        </ul>
+    </div>
+    <div class="col-sm-9">
+        <div class="tab-content sidenav">
+            
+                <div class="tab-pane active" id="learn_the_details-overview">
+                    
+                        
+                  <p>Variations in organ sizes and shapes can indicate a range of medical conditions, from benign anomalies to life-threatening diseases. Precise organ volume measurement is fundamental for effective patient care, but manual organ contouring is extremely time-consuming and exhibits considerable variability among expert radiologists. Artificial Intelligence (AI) holds the premise to improve volume measurement accuracy and reduce manual contouring efforts. We formulate our challenge as a semantic segmentation task, which automatically identifies and delineates the boundary of various anatomical structures, essential for numerous downstream applications such as disease diagnosis and treatment planning. Our primary goal is to promote the development of advanced AI algorithms and to benchmark the state of the art in this field.</p>
+
+                  <br>
+
+                  <p>Our IMSeg challenge particularly focuses on assessing and improving the generalizability and efficiency of AI algorithms in medical segmentation across diverse clinical settings and patient demographics. In light of this, the innovation of our IMSeg challenge includes the use of (1) large-scale, diverse datasets for training and evaluating AI algorithms, (2) novel evaluation metrics that emphasize accuracy of hard-to-segment anatomical structures, and (3) penalties for algorithms with extended inference times. Specifically, this challenge involves two unique datasets. First, ImageNetCT-9K, the largest, annotated dataset [Qu et al., 2023, Li et al., 2023], provides 9,262 three-dimensional computed tomography (CT) volumes. In each CT volume, 25 anatomical structures are annotated by voxel, including organs, muscles, vertebrae, and cardiac structures. ImageNetCT-9K is a multi-domain dataset of pre, portal, arterial, and delayed phase CT volumes collected from 68 global hospitals in 9 countries, diversified in age, pathological conditions, body parts, and race background. The entire ImageNetCT-9K dataset will be released to the public for AI development. Second, JHH-1K [Park et al., 2020] is a proprietary collection of 1,150 dual-phase CT volumes from Johns Hopkins Hospital (JHH), where 22 anatomical structures are annotated by voxel. CT volumes and annotations of JHH-1K will not be disclosed to the public and are exclusively reserved for external validation of AI algorithms. The final scoring will not only be limited to the average segmentation performance but also prioritize the performance of hard-to-segment structures and consider the inference speed of the algorithm. We hope our IMSeg challenge can set the stage for larger-scale clinical trials and offer exceptional opportunities to practitioners in the medical imaging community.</p>
+                        
+                    
+                </div>
+            
+                <div class="tab-pane" id="learn_the_details-timeline">
+                    
+                     <ul>   
+                   <li>Challenge website running and registration open: 01/10/2024</li>
+                   
+                    <li>Release of the dataset and starter code: 01/16/2024</li>
+
+                    <li>Submission deadline: 04/15/2024</li>
+                <li>Release of final results (decisions): 04/20/2024</li>
+            <li>Challenge days (ISBI main conference): 05/27/2024 – 05/30/2024</li>
+                </ul>
+                    
+                        
+                    
+                </div>
+            
+                <div class="tab-pane" id="learn_the_details-participate">
+                    
+                <h4><b>Join the Challenge:</b></h4>
+
+                <p>The challenge submission is based on Docker container. So, participants should demonstrate basic segmentation skills and the ability to encapsulate their methods in Docker. We provide a playground for participants to practice. Participants should</p>
+
+                <ul>
+                    <li>
+                        Develop any segmentation method (e.g., U-Net) based on the playground training dast and encapsulate the method by Docker.
+                        </li>
+                    <li>Use Docker to predict the testing set and record 5-10 minutes of the predicting process as a video (mp4 format). </li>
+                    <li>Submit the segmentation results <a href="https://abdomenct-1k-fully-supervised-learning.grand-challenge.org/evaluation/playground/submissions/create/">here</a> and upload your Docker to <a herf="https://hub.docker.com/">DockerHub</a>. <!--Send the following items to 
+                        <a href="mailto:xxx@xxx.com">xxx@xxx.com</a>--><br>(1) docker hub link;<br>
+                        (2) download link to the recorded inference mp4 video;<br>
+                        (3) the screenshot of your playground leaderboard results (Mean DSC>0.8).
+                        </li>
+                </ul>
+
+                <b></b>After reviewing your submission, we will get back to you with an Entry Number, then you can join the Challenge. We also provide a step-by-step <a herf="https://github.com/qic999/challenge_test">tutorial</a> if you are not familiar with 3D image segmentation.
+
+                <br>
+                <br>
+                <h4><b>Download the data:</b></h4>
+
+                <p>There are three datasets used in our challenge. First, the training dataset, ImageNetCT-9K, is provided on Google Drive where you can download the ground-truth masks and follow the corresponding instructions to download the CT scans. Note that you can use external datasets to train your model for better performance. Second, the validation dataset, TotalSegmentor, is a public dataset that is used in an instant and continuously opened submission-and-validation leaderboard to evaluate your model repetitively. Last, the private testing dataset, JHH-1K, reflects a real-world, diverse patient population that encompasses a broad spectrum of pathological conditions, age groups, and demographic backgrounds.
+                    </p><p>
+                    After you finish the registration in the first step, the download link to ImageNetCT-9K will be sent to you along with the Entry Number. As for the validation dataset, please follow the instructions to download <a herf="https://github.com/wasserth/TotalSegmentator">TotalSegmentor</a>.</p>
+                        
+                    <br>
+                    <br>
+                    <h4><b>Create your model:</b></h4>
+                    <p>
+                    The task is to develop a model that can predict high-quality segmentations for abdominal organs. The training data consists of several thousands of examples on which models can be trained and validated.
+                </p>
+<p>
+Teams are allowed to use other data in addition to the official training set in order to construct their models, however, that data must be publicly available as of 1/16/2024. The same applies to pre-trained weights -- they must have been publicly available before the ImageNetCT-9K dataset was released on 1/16. This is to prevent unfair advantages for teams that may have amassed large private datasets. All external data use must be described in detail in each team's accompanying paper (described in the following section).
+</p>
+
+<p>
+Based on the performance we achieved by directly training the model on ImageNetCT-9K and evaluated on TotalSegmentor (without post-processing), your model’s performance should be higher than the results in the following table:
+</p>
+
+<p>The table will be available soon.</p>
+
+<p>Wondering where to start? Some useful tutorials and previous methods are given below:</p>
+
+Strategies to improve the segmentation performance:
+<ul>
+<li>Preprocessing: intensity normalization, resampling...</li>
+<li>Extensive data augmentations;</li>
+<li>Coarse-to-fine (two-stage or cascaded) framework;</li>
+<li>Postprocessing: connected component analysis;</li>
+</ul>
+
+Strategies to improve the computational efficiency:
+<ul>
+    <li>Whole-volume based input;</li>
+<li>Lightweight network modules: residual block with bottleneck, separated convolutions, and pyramid pooling;</li>
+<li>Accelerate inference by ONNX Runtime, TensorRT...</li>
+</ul>
+
+
+Training Details and Techniques
+<ul>
+    <li>Using a Larger Patch Size</li>
+
+<li>Utilizing a Pre-trained Model based on the Totalsegmentor Dataset</li>
+
+<li>Incorporating Other Publicly Available Data for Training the Same Task</li>
+</ul>
+<br>
+<h4><b>Describe your approach with a short paper:</b></h4>
+<p>​​The primary goal of challenges like KiTS is to objectively assess the performance of competing methods. This is only possible if teams provide a complete description of the methods they use. Teams should follow the provided template [Overleaf, Google Docs] and provide satisfactory answers to every field. Papers should otherwise follow the ISBI main conference guidelines for paper formatting. Drafts of these papers must be submitted by 04/15/2024.</p>
+<br>
+<h4><b>Submit your predictions (validation leaderboard):</b></h4>
+<p>Due to a short period of development time, we accept docker testing submissions on JHH-1k and segmentation results validation submissions on TotalSegmentator at the beginning. The results of the TotalSegmentator will be presented on the Results page and the ones of JHH-1K will be evaluated locally by the docker container and presented on the Testing Results page.</p>
+
+    <p>All teams can directly submit the segmentation results on the challenge page to get the segmentation accuracy metrics.  
+    Please compress your results by running "zip XXX.zip ./*.nii.gz" and upload the zip file.
+    </p>
+
+    <br>
+    <h4><b>Submit your algorithm container (testing leaderboard):</b></h4>
+<p>
+    The submission should include:  (Email subject: YourTeamName-TeamLeaderName-Testing Submission)</p>
+<p>(1) a download link to your Docker container (teamname.tar.gz); If the Docker container does not work, we will return back the error information to the participants. Participants with technical failure are allowed to resubmit their algorithms with one extra time. When the evaluation is finished, we will return back the evaluation metrics via email. All valid submission results will be reported on the leaderboard.</p>
+
+<p>(2) a sanity test video record (download example: Google drive, Baidu Netdisk) Please test your docker on validation case: XXX.nii.gz, XXX.nii.gz, XXX.nii.gz and record the prediction process. For each case, the running time should be within 60s.
+    </p> 
+<p>(3) a methodology paper (template) Please carefully read the template and the common issue before writing the manuscript. The evaluation process mainly focuses on the paper's completeness. Don't worry about the low wDSC/wNSD. Since this segmentation task is very challenging, all attempts are worth sharing with readers. We will not reject papers because of low wDSC/wNSD.
+</p>
+
+<p>
+The submitted Docker container will be evaluated with the following commands. If the Docker container does not work or the paper does not include all the necessary information to reproduce the method, we will return back the error information and review comments to participants.
+</p>
+<code>docker load -i teamname.tar.gz<br>
+    docker container run --gpus "device=1" -m 28G --name teamname --rm -v $PWD/IMseg2024_Test/:/workspace/inputs/ -v $PWD/teamname_outputs/:/workspace/outputs/ teamname:latest /bin/bash -c "sh predict.sh"
+    </code>
+                </div>
+
+                <div class="tab-pane" id="learn_the_details-award">
+                    We will provide cash prizes for the top-5 teams (Amazon gift cards with 500/300/200/100/100 CAD, respectively).
+A certificate will be awarded to the top 10 teams.
+The top 10 performing methods (teams) will be announced publicly and invited to give oral presentations during the ISBI 2024 conference.
+All participating teams have the opportunity to publish their results on the ISBI 2024 and other vision conference proceedings.
+
+                </div>
+
+                <div class="tab-pane" id="learn_the_details-evaluation">
+                    <h4><b>Evaluation Metrics</b></h4>
+
+                    <p>The segmentation accuracy metric:</p>
+
+                    <p>Weighted Dice Similarity Coefficient (wDSC). This metric evaluates the overlap between algorithm output and ground truth, with a weighting factor that reflects the segmentation difficulty for each structure. The weight for each structure’s DSC is estimated based on the per-class segmentation performance reported in existing literature (e.g., [Liu et al., ICCV 2023]). Some structures are inherently more difficult to segment than others due to blurry boundaries, small in size, and tubular structures. Our weighted metric is novel compared to the common practice in segmentation challenges, where only the average DSC is calculated uniformly across all classes.</p>
+                    
+                <p>Weighted Normalized Surface Distance (wNSD): The wNSD emphasizes the accuracy of the boundary delineation between the predicted segmentation and the ground truth. This is particularly important for precise organ volume measurement and subsequent surgical planning.</p>
+                    
+            <p>The segmentation efficiency metric:</p>
+                    
+        <p>Running Time: A maximum inference time of 60 seconds is allowed for each case. Note that we ignore the docker starting time for an accurate measurement. Cases exceeding this limit will be deemed failures, with their DSC and NSD scores set to zero.</p>
+
+        <img src="images/eval.png" style="width:300px">
+                    
+    <p>Area Under GPU Memory-Time Curve (MB) [Ma et al. FLARE 2023]: The algorithm's memory efficiency is measured over time, considering the computational resources it uses, as reflected in the GPU memory-time curve. We offer a tolerance of 16GB for GPU memory consumption, which aligns with the affordability and availability of such GPUs in most medical centers.</p>
+              
+    <br>
+    <h4><b>Evaluation Platform</b></h4>
+    <p>The submitted docker containers will be evaluated on a Ubuntu 18.04 server. Detailed information is listed as follows:</p>
+
+<p>CPU: Intel(R) Xeon(R) CPU E5-2683 v4 @ 2.10GHz x 16<br>
+GPU: NVIDIA TITAN RTX (24G)<br>
+RAM: 252G<br>
+Driver Version: 525.116.04<br>
+CUDA Version: 12.0<br>
+Docker version 20.10.21</p>
+
+
+                </div>
+        
+                <div class="tab-pane" id="learn_the_details-terms">
+                    <ul>
+                        <li>All participants should register for this challenge with their real names, affiliations (including department, full name of university/institute/company, country), and affiliation E-mails.</li>
+                        <li>Incomplete and redundant registrations will be removed without notice. Each team can have at most ten people.</li>
+                        <li>Participants are not allowed to register multiple teams and accounts. Participants from the same research group are also not allowed to register multiple teams. IMSeg Organizers keep the right to disqualify such participants.</li>
+                        <li>All participants must submit a complete solution to this challenge for testing. A complete solution includes a Docker container (tar file) and a qualified methodology paper (at least 2 pages, LNCS format).</li>
+                        <li>All participants should agree that the submitted short papers can be publicly available to the community on the challenge website, and organizers can use the information provided by the participants, including scores, predicted labels, and papers.</li>
+                    </ul>
+                </div>
+
+
+
+                <div class="tab-pane" id="learn_the_details-organizers">
+                    
+                    <h4><b>Lead Organizers:</b></h4>
+                    Zongwei Zhou (Johns Hopkins University)<br>
+                    Wenxuan Li (Johns Hopkins University)<br>
+                    Yu-Cheng Chou (Johns Hopkins University)<br>
+                    Jieneng Chen (Johns Hopkins University)<br>
+                    Alan Yuille (Johns Hopkins University)<br>
+                    
+                    <h4><b>Coordinators:</b></h4>
+                    Yixiong Chen (Johns Hopkins University)<br>
+                    Angtian Wang (Johns Hopkins University)<br>
+                    Yaoyao Liu (Johns Hopkins University)<br>
+                    Qi Chen (University of Science and Technology of China)<br>
+                    Xiaoxi Chen (Shanghai Jiao Tong University)<br>
+                    Yuxiang Lai (Southeast University)<br>
+                    
+                        
+                    
+                </div>
+            
+                <div class="tab-pane" id="learn_the_details-datasets">
+                    <h4><b>Dataset Instruction</b></h4>   
+                   <p>The data download link to ImageNetCT-9K will be sent to approved teams via email. Please make sure that you can download large files (XXG CT Scans) from Google Drive or Baidu Netdisk and have enough space and computing resources to process them.</p>
+
+<p>Additional data and pre-trained models are allowed!</p>
+<br>
+<h4><b>Dataset Description </b></h4>
+<p>The challenge data is acquired from patients represented in the ImageNetCT-9K [Qu et al., 2023, Li et al., 2023] and JHH-1K [Park et al., 2020] datasets, encompassing a broad spectrum of pathological conditions, age groups, and demographic backgrounds. This ensures that the challenge reflects a real-world, diverse patient population. Detailed statistics can be found in the corresponding publications.</p>
+<p>For ImageNetCT-9K, we will provide 296K masks and 3.7M annotated images that are taken from 68 hospitals worldwide, spanning four distinct phases: pre, portal, arterial, and delayed.</p>
+<p>For JHH-1K, a total of 1,150 dual-phase contrast-enhanced CT volumes from 575 subjects were acquired from 2005 to 2009. There were 229 men and 346 women (mean age: 45 ± 12 years; range: 18—79 years).</p>
+
+
+                        
+                    
+                </div>
+            
+                <div class="tab-pane" id="learn_the_details-qa">
+                    
+                    <h4><b>Registration Related issues:</b></h4>   
+                <p>Q:  How long can the participation request be approved after sending the signed challenge rule?</p>
+
+            <p>A:  The request will be approved within 2-4 working days if the signed challenge rule document is filled out correctly.</p>
+                    
+        <p>Q: I'm only interested in the challenge dataset but I do not want to join the challenge. Can I download the dataset without joining the challenge?</p>
+                    
+    <p> A: Thanks for your interest. To ensure enough submissions, the dataset is only available to participants during the challenge. </p>
+                    
+<p> Q: How many people can form a team?</p>
+                    
+<p>A: Each team can have at most 10 people. The authors in your paper should be the same as the team member list.</p>
+                    
+<p> Q: I have joined the challenge and downloaded the dataset. Can I quit the challenge?</p>
+                    
+<p>A: No! Please respect the signed agreement. If registered participants do not make successful submissions, all the team members will be listed in the dishonest list.</p>
+               
+<br>
+<h4><b>Algorithm-related issues:</b></h4>   
+<p>Q: Can we use other datasets or pre-trained models to develop the segmentation algorithms?</p>
+
+<p>A: Yes.</p>
+
+<p>Q: Does the validation submission affect the final ranking?</p>
+
+<p>A: No.</p>
+<p>Q: During the testing phase, can I modify the methods and the paper? </p>
+
+<p>A: Yes, you can make modifications before the testing submission. After making the testing submission, you cannot make modifications.</p>
+      
+                </div>
+            
+                <div class="tab-pane" id="learn_the_details-miccai_program">
+                    
+            
+                    
+                </div>
+            
+    
+            
+        </div>
+    </div>
+</div>
+
+                        
+                    </div>
+                </div>
+
+            
+                
+                
+                    <div class="tab-pane" id="phases">
+                        <div class="tab-inner">
+                            <div class="phase-list">
+                                
+                                    <div class="phase-list-item panel phase-list-item-green">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Development</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p><strong>Start:</strong> April 1, 2023, midnight</p>
+                                            
+                                                <p><strong>Description:</strong> Development phase: create models and submit them or directly submit results on validation and/or test data; feed-back are provided on the validation set only. Please compress your results by running &quot;zip XXX.zip ./*.nii.gz&quot; and upload the zip file.</p>
+                                            
+                                        </div>
+                                    </div>
+                                
+                                    <div class="phase-list-item panel phase-list-item-purple">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">Final</h3>
+                                        </div>
+                                        <div class="panel-body">
+                                            <p><strong>Start:</strong> Aug. 1, 2023, midnight</p>
+                                            
+                                                <p><strong>Description:</strong> Final phase: submissions from the previous phase are automatically cloned. This leaderboard doesn&#39;t affect the final ranking results.</p>
+                                            
+                                        </div>
+                                    </div>
+                                
+                                <div class="phase-list-item panel phase-list-item-default phase-list-item-deadline">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>Competition Ends</strong></h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p>  <strong>Never</strong>
+                                    
+                                    </p>
+                                </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                
+                <div class="tab-pane" id="participate">
+                    <div class="tab-inner">
+                        
+                            
+                                <p>You must be logged in to participate in competitions.</p>
+                                <a href="../accounts/login/index_next=_competitions_12239_participate-get-data.html" class="btn btn-primary">Sign In</a>
+                            
+                        
+                    </div>
+                </div>
+
+            
+                
+                
+                <div class="tab-pane" id="results">
+                    <div class="tab-inner">
+                        
+                            <div id="results_phase_buttons">
+  
+    
+      <button class="btn active phase-btn-green" id="results_phase_19574">Development</button>
+    
+  
+    
+      <button class="btn active phase-btn-purple" id="results_phase_19575">Final</button>
+    
+  
+</div>
+
+<div class="competition_results"></div>
+
+                        
+                    </div>
+                </div>
+
+            
+        </div>
+    </section>
+        <div class="row">
+        <div class="col-sm-8">
+            
+                
+                    
+
+<canvas id="chart" width="400" height="200"></canvas>
+<script>
+    var ctx = document.getElementById("chart");
+    var local_highscore = 0
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["08 April 2023","08 May 2023","09 May 2023","10 May 2023","11 May 2023","12 May 2023","13 May 2023","14 May 2023","15 May 2023","16 May 2023","17 May 2023","18 May 2023","19 May 2023","20 May 2023","21 May 2023","22 May 2023","23 May 2023","25 May 2023","27 May 2023","28 May 2023","29 May 2023","30 May 2023","01 June 2023","02 June 2023","03 June 2023","05 June 2023","06 June 2023","08 June 2023","12 June 2023","13 June 2023","14 June 2023","15 June 2023","16 June 2023","19 June 2023","20 June 2023","21 June 2023","22 June 2023","25 June 2023","26 June 2023","27 June 2023","29 June 2023","30 June 2023","01 July 2023","02 July 2023","03 July 2023","04 July 2023","05 July 2023","07 July 2023","08 July 2023","09 July 2023","10 July 2023","11 July 2023","12 July 2023","13 July 2023","14 July 2023","15 July 2023","16 July 2023","17 July 2023","18 July 2023","19 July 2023","20 July 2023","21 July 2023","22 July 2023","23 July 2023","24 July 2023","25 July 2023","26 July 2023","27 July 2023","28 July 2023","29 July 2023","30 July 2023","31 July 2023","01 August 2023","02 August 2023","03 August 2023","04 August 2023","05 August 2023","06 August 2023","07 August 2023","08 August 2023","09 August 2023","10 August 2023","11 August 2023","12 August 2023","13 August 2023","14 August 2023","15 August 2023","16 August 2023","17 August 2023","18 August 2023","19 August 2023","20 August 2023","21 August 2023","22 August 2023","23 August 2023","24 August 2023","25 August 2023","27 August 2023","28 August 2023","29 August 2023","30 August 2023","31 August 2023","01 September 2023","03 September 2023","04 September 2023","06 September 2023","07 September 2023","08 September 2023","09 September 2023","10 September 2023","11 September 2023","12 September 2023","13 September 2023","15 September 2023","16 September 2023","18 September 2023","23 October 2023","14 November 2023","20 November 2023","21 November 2023","27 November 2023","30 November 2023","03 December 2023","07 December 2023","10 December 2023","11 December 2023","13 December 2023","14 December 2023","19 December 2023","21 December 2023","25 December 2023","26 December 2023","02 January 2024",],
+            datasets: [
+                {
+                    type: 'line',
+                    label: 'High Score',
+                    yAxisID: 'score',
+                    data: [1.0, 0.4, 0.9, 0.4, 0.9, 0.9, 0.9, 0.9, 0.6, 0.7, 0.9, 0.9, 0.9, 0.9, 0.8, 0.9, 0.9, 0.9, 0.9, 0.8, 0.7, 0.9, 0.8, 0.8, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.8, 0.9, 0.9, 0.0, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.3, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, Decimal(&#39;NaN&#39;), Decimal(&#39;NaN&#39;), Decimal(&#39;NaN&#39;), 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 1.0, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.0, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, ],
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.0)'
+                },
+                {
+                    type: 'bar',
+                    label: 'Total Daily Submissions',
+                    yAxisID: 'count',
+                    data: [1, 1, 3, 1, 2, 3, 2, 2, 4, 2, 3, 3, 4, 2, 1, 1, 1, 4, 1, 1, 2, 1, 2, 1, 3, 1, 1, 1, 1, 1, 4, 1, 4, 1, 1, 3, 1, 2, 2, 2, 2, 2, 2, 2, 6, 5, 2, 3, 1, 5, 4, 4, 4, 6, 4, 4, 3, 1, 4, 2, 10, 3, 5, 1, 6, 7, 6, 7, 6, 4, 10, 12, 12, 8, 4, 7, 1, 8, 4, 6, 6, 1, 2, 13, 9, 34, 27, 20, 18, 19, 3, 10, 13, 9, 12, 26, 15, 2, 6, 7, 10, 7, 4, 2, 7, 2, 3, 2, 3, 2, 2, 1, 2, 5, 2, 1, 2, 2, 1, 1, 5, 1, 1, 2, 1, 2, 3, 1, 2, 3, 1, 1, 1, ]
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    id: "count",
+                    position: "left",
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Submission count'
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        min: 0,
+                        suggestedMax: 25
+                    }
+                }, {
+                    id: "score",
+                    position: "right",
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Submission score',
+                        fontColor: 'rgba(255,99,132,1)',
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        suggestedMin: -0.1,
+                        suggestedMax: 1.2,
+                        // Reverse the score axis if we're doing descending (1 is better than 0)
+                        reverse: "desc" === "asc"
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+                
+            
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    
+
+    <footer class="navbar-fixed-bottom">
+        <div class="container-fluid">
+
+        </div>
+    </footer>
+
+    <script src="./static/js/vendor/jquery.validate.min.1.19.3.js"></script>
+
+    <script src="./static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./static/js/vendor/select2/select2-forked.js"></script>
+    <script src="./static/lib/jq/jquery.cookie.js"></script>
+
+    <script type="text/javascript" src="./static/js/app.js"></script>
+    <script type="text/javascript" src="./static/js/Competition.js"></script>
+    <script type="text/javascript" src="./static/js/main.js"></script>
+
+    <div id="maintenance_modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Maintenance warning</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- maintenance warning message.. -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="hide_maintenance_warning" type="button" class="btn btn-primary" data-dismiss="modal" onclick="hide_maintenance_warning">OK don't tell me again!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    
+        Competition.initialize();
+    
+        /*
+         * If we want to do huge maintenance again, can use this warning!
+         *
+        $(document).ready(function() {
+            var maintenance_warning = localStorage.getItem('maintenance_warning')
+            if(maintenance_warning === null) {
+                $("#maintenance_modal").modal('show')
+            }
+
+            $("#hide_maintenance_warning").click(function() {
+                localStorage.setItem('maintenance_warning', true)
+            })
+        })*/
+    </script>
+
+    
+    <script>
+        $('#view_all_phases').on('click', function(e){
+            $('#competition_tab_nav a[href="#phases"]').tab('show');
+        });
+        $(function(){
+            var show_location = function(hash) {
+                var main_tab = hash.split('-')[0];
+                var sub_tab = hash.split('-')[1];
+
+                $('#competition_tab_nav a[href="' + main_tab + '"]').tab('show');
+                $(main_tab + ' .innertabs a[href="' + main_tab + '-' + sub_tab + '"]').tab('show');
+            };
+
+            if(location.hash !== ''){
+                show_location(location.hash);
+            }else {
+                $('#competition_tab_nav a:first').tab('show')
+            }
+            $('#competition_tab_nav a, .innertabs a').on('show.bs.tab', function(e){
+                return location.hash = $(e.target).attr('href').substr(1);
+            });
+            if($('#participate-submit_results').hasClass('active')){
+                $('#submissions_phase_buttons .active').click();
+            } else if($('#results').hasClass('active')){
+                $('#results_phase_buttons .active').click();
+            };
+            $('a[href="#participate-submit_results"]').on('shown.bs.tab', function(e){
+                $($(e.target).attr('href') + ' .active').click();
+            });
+            $('a[href="#results"]').on('shown.bs.tab', function(e){
+                $($(e.target).attr('href') + ' .active').click();
+            });
+
+            $('#learn_the_details .col-sm-9 a').on('click', function() {
+                show_location('#' + $(this).attr('href').split('#')[1]);
+            });
+        });
+
+    </script>
+
+
+    
+    
+
+    
+</body>
+</html>

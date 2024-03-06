@@ -1,0 +1,949 @@
+<html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>KiTS21 Results</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function() {
+const score_data = [
+  {
+    "team_name": "zhazhongchen",
+    "team_id": "11",
+    "openreview_fid": "6Py5BNBKoJt",
+    "published_link": "",
+    "names": "Zhongchen Zhao et al.",
+    "affiliations": "Shanghai Jiao Tong University",
+    "average_rank": 1.0,
+    "mean_average_dice": 0.9077419999999997,
+    "mean_average_sd": 0.8261906666666669,
+    "tiebreaker": 0.0086021,
+    "dice_rank": 1,
+    "sd_rank": 1
+  },
+  {
+    "team_name": "rollthedice",
+    "team_id": "17",
+    "openreview_fid": "ZrLaUKSn0gP",
+    "published_link": "",
+    "names": "Alex Golts et al.",
+    "affiliations": "IBM Research",
+    "average_rank": 2.0,
+    "mean_average_dice": 0.8960830000000006,
+    "mean_average_sd": 0.8157353333333334,
+    "tiebreaker": 0.00831544,
+    "dice_rank": 2,
+    "sd_rank": 2
+  },
+  {
+    "team_name": "Yasmeen",
+    "team_id": "24",
+    "openreview_fid": "dvZiPuZk-Bc",
+    "published_link": "",
+    "names": "Yasmeen George",
+    "affiliations": "Monash University",
+    "average_rank": 3.0,
+    "mean_average_dice": 0.8943453333333335,
+    "mean_average_sd": 0.8139996666666663,
+    "tiebreaker": 0.00830782,
+    "dice_rank": 3,
+    "sd_rank": 3
+  },
+  {
+    "team_name": "XiYang",
+    "team_id": "28",
+    "openreview_fid": "XXtHQy0d8Y",
+    "published_link": "",
+    "names": "Xi Yang et al.",
+    "affiliations": "Northwestern Polytechnical University",
+    "average_rank": 4.0,
+    "mean_average_dice": 0.8896496666666663,
+    "mean_average_sd": 0.8051196666666665,
+    "tiebreaker": 0.008220729999999996,
+    "dice_rank": 4,
+    "sd_rank": 4
+  },
+  {
+    "team_name": "chuyi00123",
+    "team_id": "10",
+    "openreview_fid": "immB02xhM15",
+    "published_link": "",
+    "names": "Mengran Wu and Zhiyang Liu",
+    "affiliations": "Nankai University",
+    "average_rank": 5.0,
+    "mean_average_dice": 0.8814823333333336,
+    "mean_average_sd": 0.8007133333333333,
+    "tiebreaker": 0.008108520000000001,
+    "dice_rank": 5,
+    "sd_rank": 5
+  },
+  {
+    "team_name": "mg873uh",
+    "team_id": "15",
+    "openreview_fid": "GvUsPesMtmC",
+    "published_link": "",
+    "names": "Matej Gazda et al.",
+    "affiliations": "Technical University of Kosice",
+    "average_rank": 6.5,
+    "mean_average_dice": 0.8768669999999997,
+    "mean_average_sd": 0.7933560000000005,
+    "tiebreaker": 0.007947860000000003,
+    "dice_rank": 7,
+    "sd_rank": 6
+  },
+  {
+    "team_name": "mingyang",
+    "team_id": "26",
+    "openreview_fid": "NdXvT2dTDSF",
+    "published_link": "",
+    "names": "Mingyang Zang et al.",
+    "affiliations": "Columbia University",
+    "average_rank": 6.5,
+    "mean_average_dice": 0.8801300000000003,
+    "mean_average_sd": 0.7855623333333336,
+    "tiebreaker": 0.008192099999999999,
+    "dice_rank": 6,
+    "sd_rank": 7
+  },
+  {
+    "team_name": "RZ.Shi",
+    "team_id": "03",
+    "openreview_fid": "_1Cs5nYtrsF",
+    "published_link": "",
+    "names": "Shi Ruize and Han Bing",
+    "affiliations": "Canon Medical Systems (China) Co., LTD",
+    "average_rank": 8.0,
+    "mean_average_dice": 0.8745993333333331,
+    "mean_average_sd": 0.7780069999999994,
+    "tiebreaker": 0.008008090000000002,
+    "dice_rank": 8,
+    "sd_rank": 8
+  },
+  {
+    "team_name": "newvoid7",
+    "team_id": "04",
+    "openreview_fid": "kzjO_oczTnO",
+    "published_link": "",
+    "names": "Xu Lizhan et al.",
+    "affiliations": "Southeast University",
+    "average_rank": 9.0,
+    "mean_average_dice": 0.8606449999999995,
+    "mean_average_sd": 0.7736949999999997,
+    "tiebreaker": 0.00819638,
+    "dice_rank": 9,
+    "sd_rank": 9
+  },
+  {
+    "team_name": "czw506126283",
+    "team_id": "05",
+    "openreview_fid": "d5WM4_asJCl",
+    "published_link": "",
+    "names": "Zhiwei Chen and Hanqiang Liu",
+    "affiliations": "Shaanxi Normal University",
+    "average_rank": 10.0,
+    "mean_average_dice": 0.8462106666666664,
+    "mean_average_sd": 0.7454199999999995,
+    "tiebreaker": 0.0074910199999999975,
+    "dice_rank": 10,
+    "sd_rank": 10
+  },
+  {
+    "team_name": "aladdinwu",
+    "team_id": "07",
+    "openreview_fid": "K1L6rVKTUuh",
+    "published_link": "",
+    "names": "Aladdin Wu et al.",
+    "affiliations": "Independent Researchers",
+    "average_rank": 11.0,
+    "mean_average_dice": 0.8436896666666664,
+    "mean_average_sd": 0.7351640000000007,
+    "tiebreaker": 0.007696000000000002,
+    "dice_rank": 11,
+    "sd_rank": 11
+  },
+  {
+    "team_name": "timo_guennemann",
+    "team_id": "02",
+    "openreview_fid": "j9nm648D-5A",
+    "published_link": "",
+    "names": "Jannes Adam et al.",
+    "affiliations": "University of Bremen, Fraunhofer MEVIS",
+    "average_rank": 12.5,
+    "mean_average_dice": 0.8123073333333342,
+    "mean_average_sd": 0.6940890000000004,
+    "tiebreaker": 0.00699995,
+    "dice_rank": 12,
+    "sd_rank": 13
+  },
+  {
+    "team_name": "vivek_pawar",
+    "team_id": "06",
+    "openreview_fid": "-VTh5m42K2F",
+    "published_link": "",
+    "names": "Vivek Pawar and Bharadwarj Kss",
+    "affiliations": "Endimension Technology Private Limited",
+    "average_rank": 13.0,
+    "mean_average_dice": 0.784253333333332,
+    "mean_average_sd": 0.6963076666666669,
+    "tiebreaker": 0.006802220000000001,
+    "dice_rank": 14,
+    "sd_rank": 12
+  },
+  {
+    "team_name": "gjwlals111",
+    "team_id": "16",
+    "openreview_fid": "n6DR2TdGLa",
+    "published_link": "",
+    "names": "Jimin Heo",
+    "affiliations": "Independent Researcher",
+    "average_rank": 13.5,
+    "mean_average_dice": 0.8012936666666666,
+    "mean_average_sd": 0.6861709999999999,
+    "tiebreaker": 0.006659189999999998,
+    "dice_rank": 13,
+    "sd_rank": 14
+  },
+  {
+    "team_name": "ly547361952",
+    "team_id": "08",
+    "openreview_fid": "UzoGQ8fO_8f",
+    "published_link": "",
+    "names": "Yi Lv and Junchen Wang",
+    "affiliations": "North China Research Institute of Electro-optics",
+    "average_rank": 15.0,
+    "mean_average_dice": 0.7809076666666669,
+    "mean_average_sd": 0.6179943333333334,
+    "tiebreaker": 0.006599210000000001,
+    "dice_rank": 15,
+    "sd_rank": 15
+  },
+  {
+    "team_name": "TiannaiT",
+    "team_id": "14",
+    "openreview_fid": "c7kCK-E-B1",
+    "published_link": "",
+    "names": "Tian He et al.",
+    "affiliations": "Fuzhou University",
+    "average_rank": 16.5,
+    "mean_average_dice": 0.6941569999999998,
+    "mean_average_sd": 0.5694353333333334,
+    "tiebreaker": 0.005193379999999999,
+    "dice_rank": 17,
+    "sd_rank": 16
+  },
+  {
+    "team_name": "WenJ.H",
+    "team_id": "13",
+    "openreview_fid": "uC-Gl3IG8wn",
+    "published_link": "",
+    "names": "Jianhui Wen et al.",
+    "affiliations": "Fuzhou University",
+    "average_rank": 17.5,
+    "mean_average_dice": 0.6715506666666664,
+    "mean_average_sd": 0.5441433333333331,
+    "tiebreaker": 0.00544615,
+    "dice_rank": 18,
+    "sd_rank": 17
+  },
+  {
+    "team_name": "SajanGohil",
+    "team_id": "27",
+    "openreview_fid": "WwfDaKomUFg",
+    "published_link": "",
+    "names": "Sajan Gohil and Abhi Lad",
+    "affiliations": "Pandit Deendayal Energy University",
+    "average_rank": 18.0,
+    "mean_average_dice": 0.7038086666666663,
+    "mean_average_sd": 0.505946,
+    "tiebreaker": 0.005659849999999998,
+    "dice_rank": 16,
+    "sd_rank": 20
+  },
+  {
+    "team_name": "klinetl",
+    "team_id": "22",
+    "openreview_fid": "NSWvUVR4HWZ",
+    "published_link": "",
+    "names": "Panagiotic Korfiatis et al.",
+    "affiliations": "Mayo Clinic",
+    "average_rank": 18.5,
+    "mean_average_dice": 0.6555213333333325,
+    "mean_average_sd": 0.5278700000000004,
+    "tiebreaker": 0.00473492,
+    "dice_rank": 19,
+    "sd_rank": 18
+  },
+  {
+    "team_name": "Supersupersuperman",
+    "team_id": "12",
+    "openreview_fid": "TDOSVEQ8mdO",
+    "published_link": "",
+    "names": "Chaonan Lin et al.",
+    "affiliations": "Fuzhou University",
+    "average_rank": 19.5,
+    "mean_average_dice": 0.6501086666666663,
+    "mean_average_sd": 0.5181276666666668,
+    "tiebreaker": 0.00478267,
+    "dice_rank": 20,
+    "sd_rank": 19
+  },
+  {
+    "team_name": "math.hjha",
+    "team_id": "09",
+    "openreview_fid": "IWPSk2fs1UU",
+    "published_link": "",
+    "names": "Heonjin Ha",
+    "affiliations": "Independent Researcher",
+    "average_rank": 22.0,
+    "mean_average_dice": 0.6384246666666666,
+    "mean_average_sd": 0.48669866666666634,
+    "tiebreaker": 0.0044122399999999996,
+    "dice_rank": 22,
+    "sd_rank": 22
+  },
+  {
+    "team_name": "Tensora",
+    "team_id": "01",
+    "openreview_fid": "voteINyy36u",
+    "published_link": "",
+    "names": "Zhiqiang Shen et al.",
+    "affiliations": "Fuzhou University, Fujian Normal University",
+    "average_rank": 22.0,
+    "mean_average_dice": 0.6159876666666667,
+    "mean_average_sd": 0.49130233333333345,
+    "tiebreaker": 0.00444764,
+    "dice_rank": 23,
+    "sd_rank": 21
+  },
+  {
+    "team_name": "DanLi",
+    "team_id": "19",
+    "openreview_fid": "dKvuhx2UPO3",
+    "published_link": "",
+    "names": "Dan Li et al.",
+    "affiliations": "Shenzhen Technology University",
+    "average_rank": 22.0,
+    "mean_average_dice": 0.6446799999999997,
+    "mean_average_sd": 0.4656480000000005,
+    "tiebreaker": 0.005016229999999999,
+    "dice_rank": 21,
+    "sd_rank": 23
+  },
+  {
+    "team_name": "Chuda",
+    "team_id": "18",
+    "openreview_fid": "-QutS3TdRu-",
+    "published_link": "",
+    "names": "ChuDa Xiao et al.",
+    "affiliations": "Shenzhen Technology University",
+    "average_rank": 24.0,
+    "mean_average_dice": 0.590471,
+    "mean_average_sd": 0.42343266666666696,
+    "tiebreaker": 0.004158200000000001,
+    "dice_rank": 24,
+    "sd_rank": 24
+  },
+  {
+    "team_name": "cblund",
+    "team_id": "21",
+    "openreview_fid": "IkM17uVaA7c",
+    "published_link": "",
+    "names": "Christina B. Lund and Bas H.M. van der Velden",
+    "affiliations": "Utrecht University",
+    "average_rank": 25.0,
+    "mean_average_dice": 0.49215133333333333,
+    "mean_average_sd": 0.3673946666666667,
+    "tiebreaker": 0.002525359999999999,
+    "dice_rank": 25,
+    "sd_rank": 25
+  }
+];
+
+const score_data_v2 = [
+{
+  "team_name": "zhazhongchen",
+  "team_id": "11",
+  "openreview_fid": "6Py5BNBKoJt",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_8",
+  "names": "Zhongchen Zhao et al.",
+  "affiliations": "Shanghai Jiao Tong University",
+  "average_rank": 1.0,
+  "mean_average_dice": 0.9077419999999997,
+  "mean_average_sd": 0.8261906666666669,
+  "kidney_and_masses_hec_dice": 0.9773479999999998,
+  "tumor_and_cyst_hec_dice": 0.8856679999999996,
+  "tumor_hec_dice": 0.86021,
+  "kidney_and_masses_hec_sd": 0.9572940000000004,
+  "tumor_and_cyst_hec_sd": 0.7722780000000001,
+  "tumor_hec_sd": 0.7489999999999998,
+  "dice_rank": 1,
+  "sd_rank": 1
+},
+{
+  "team_name": "rollthedice",
+  "team_id": "17",
+  "openreview_fid": "ZrLaUKSn0gP",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_14",
+  "names": "Alex Golts et al.",
+  "affiliations": "IBM Research",
+  "average_rank": 2.0,
+  "mean_average_dice": 0.8960830000000006,
+  "mean_average_sd": 0.8157353333333334,
+  "kidney_and_masses_hec_dice": 0.9761060000000001,
+  "tumor_and_cyst_hec_dice": 0.8805990000000002,
+  "tumor_hec_dice": 0.831544,
+  "kidney_and_masses_hec_sd": 0.9563949999999999,
+  "tumor_and_cyst_hec_sd": 0.768734,
+  "tumor_hec_sd": 0.7220769999999999,
+  "dice_rank": 2,
+  "sd_rank": 2
+},
+{
+  "team_name": "Yasmeen",
+  "team_id": "24",
+  "openreview_fid": "dvZiPuZk-Bc",
+  "names": "Yasmeen George",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_18",
+  "affiliations": "Monash University",
+  "average_rank": 3.0,
+  "mean_average_dice": 0.8943453333333335,
+  "mean_average_sd": 0.8139996666666663,
+  "kidney_and_masses_hec_dice": 0.9761789999999998,
+  "tumor_and_cyst_hec_dice": 0.8760750000000005,
+  "tumor_hec_dice": 0.8307820000000001,
+  "kidney_and_masses_hec_sd": 0.9547619999999998,
+  "tumor_and_cyst_hec_sd": 0.765064,
+  "tumor_hec_sd": 0.7221730000000002,
+  "dice_rank": 3,
+  "sd_rank": 3
+},
+{
+  "team_name": "XiYang",
+  "team_id": "28",
+  "openreview_fid": "XXtHQy0d8Y",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_21",
+  "names": "Xi Yang et al.",
+  "affiliations": "Northwestern Polytechnical University",
+  "average_rank": 4.0,
+  "mean_average_dice": 0.8896496666666663,
+  "mean_average_sd": 0.8051196666666665,
+  "kidney_and_masses_hec_dice": 0.9729179999999998,
+  "tumor_and_cyst_hec_dice": 0.8739579999999999,
+  "tumor_hec_dice": 0.8220729999999996,
+  "kidney_and_masses_hec_sd": 0.9496890000000003,
+  "tumor_and_cyst_hec_sd": 0.7582800000000001,
+  "tumor_hec_sd": 0.7073900000000003,
+  "dice_rank": 4,
+  "sd_rank": 4
+},
+{
+  "team_name": "chuyi00123",
+  "team_id": "10",
+  "openreview_fid": "immB02xhM15",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_7",
+  "names": "Mengran Wu and Zhiyang Liu",
+  "affiliations": "Nankai University",
+  "average_rank": 5.0,
+  "mean_average_dice": 0.8814823333333336,
+  "mean_average_sd": 0.8007133333333333,
+  "kidney_and_masses_hec_dice": 0.970373,
+  "tumor_and_cyst_hec_dice": 0.8632220000000003,
+  "tumor_hec_dice": 0.8108520000000001,
+  "kidney_and_masses_hec_sd": 0.9438390000000004,
+  "tumor_and_cyst_hec_sd": 0.7469090000000003,
+  "tumor_hec_sd": 0.7113920000000001,
+  "dice_rank": 5,
+  "sd_rank": 5
+},
+{
+  "team_name": "mg873uh",
+  "team_id": "15",
+  "openreview_fid": "GvUsPesMtmC",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_12",
+  "names": "Matej Gazda et al.",
+  "affiliations": "Technical University of Kosice",
+  "average_rank": 6.5,
+  "mean_average_dice": 0.8768669999999997,
+  "mean_average_sd": 0.7933560000000005,
+  "kidney_and_masses_hec_dice": 0.9733749999999998,
+  "tumor_and_cyst_hec_dice": 0.8624400000000001,
+  "tumor_hec_dice": 0.7947860000000003,
+  "kidney_and_masses_hec_sd": 0.9458049999999999,
+  "tumor_and_cyst_hec_sd": 0.7481900000000001,
+  "tumor_hec_sd": 0.686073,
+  "dice_rank": 7,
+  "sd_rank": 6
+},
+{
+  "team_name": "mingyang",
+  "team_id": "26",
+  "openreview_fid": "NdXvT2dTDSF",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_19",
+  "names": "Mingyang Zang et al.",
+  "affiliations": "Columbia University",
+  "average_rank": 6.5,
+  "mean_average_dice": 0.8801300000000003,
+  "mean_average_sd": 0.7855623333333336,
+  "kidney_and_masses_hec_dice": 0.9696909999999999,
+  "tumor_and_cyst_hec_dice": 0.8514890000000002,
+  "tumor_hec_dice": 0.8192099999999999,
+  "kidney_and_masses_hec_sd": 0.9365189999999999,
+  "tumor_and_cyst_hec_sd": 0.7197750000000004,
+  "tumor_hec_sd": 0.7003929999999999,
+  "dice_rank": 6,
+  "sd_rank": 7
+},
+{
+  "team_name": "RZ.Shi",
+  "team_id": "03",
+  "openreview_fid": "_1Cs5nYtrsF",
+  "published_link": "",
+  "names": "Shi Ruize and Han Bing",
+  "affiliations": "Independent Researchers",
+  "average_rank": 8.0,
+  "mean_average_dice": 0.8745993333333331,
+  "mean_average_sd": 0.7780069999999994,
+  "kidney_and_masses_hec_dice": 0.972731,
+  "tumor_and_cyst_hec_dice": 0.8502579999999997,
+  "tumor_hec_dice": 0.8008090000000003,
+  "kidney_and_masses_hec_sd": 0.943978,
+  "tumor_and_cyst_hec_sd": 0.7162780000000001,
+  "tumor_hec_sd": 0.6737650000000001,
+  "dice_rank": 8,
+  "sd_rank": 8
+},
+{
+  "team_name": "newvoid7",
+  "team_id": "04",
+  "openreview_fid": "kzjO_oczTnO",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_3",
+  "names": "Xu Lizhan et al.",
+  "affiliations": "Southeast University",
+  "average_rank": 9.0,
+  "mean_average_dice": 0.8606449999999995,
+  "mean_average_sd": 0.7736949999999997,
+  "kidney_and_masses_hec_dice": 0.9696870000000001,
+  "tumor_and_cyst_hec_dice": 0.7926100000000003,
+  "tumor_hec_dice": 0.8196379999999999,
+  "kidney_and_masses_hec_sd": 0.9465559999999997,
+  "tumor_and_cyst_hec_sd": 0.666456,
+  "tumor_hec_sd": 0.7080730000000002,
+  "dice_rank": 9,
+  "sd_rank": 9
+},
+{
+  "team_name": "czw506126283",
+  "team_id": "05",
+  "openreview_fid": "d5WM4_asJCl",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_4",
+  "names": "Zhiwei Chen and Hanqiang Liu",
+  "affiliations": "Shaanxi Normal University",
+  "average_rank": 10.0,
+  "mean_average_dice": 0.8462106666666664,
+  "mean_average_sd": 0.7454199999999995,
+  "kidney_and_masses_hec_dice": 0.9716819999999999,
+  "tumor_and_cyst_hec_dice": 0.8178479999999996,
+  "tumor_hec_dice": 0.7491019999999997,
+  "kidney_and_masses_hec_sd": 0.9420489999999998,
+  "tumor_and_cyst_hec_sd": 0.6704230000000001,
+  "tumor_hec_sd": 0.6237880000000002,
+  "dice_rank": 10,
+  "sd_rank": 10
+},
+{
+  "team_name": "aladdinwu",
+  "team_id": "07",
+  "openreview_fid": "K1L6rVKTUuh",
+  "published_link": "",
+  "names": "Aladdin Wu et al.",
+  "affiliations": "Independent Researchers",
+  "average_rank": 11.0,
+  "mean_average_dice": 0.8436896666666664,
+  "mean_average_sd": 0.7351640000000007,
+  "kidney_and_masses_hec_dice": 0.9709759999999997,
+  "tumor_and_cyst_hec_dice": 0.7904930000000001,
+  "tumor_hec_dice": 0.7696000000000002,
+  "kidney_and_masses_hec_sd": 0.9268569999999999,
+  "tumor_and_cyst_hec_sd": 0.6495399999999999,
+  "tumor_hec_sd": 0.6290950000000001,
+  "dice_rank": 11,
+  "sd_rank": 11
+},
+{
+  "team_name": "timo_guennemann",
+  "team_id": "02",
+  "openreview_fid": "j9nm648D-5A",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_2",
+  "names": "Jannes Adam et al.",
+  "affiliations": "University of Bremen, Fraunhofer MEVIS",
+  "average_rank": 12.5,
+  "mean_average_dice": 0.8123073333333342,
+  "mean_average_sd": 0.6940890000000004,
+  "kidney_and_masses_hec_dice": 0.9573070000000006,
+  "tumor_and_cyst_hec_dice": 0.7796199999999999,
+  "tumor_hec_dice": 0.6999949999999999,
+  "kidney_and_masses_hec_sd": 0.9089470000000002,
+  "tumor_and_cyst_hec_sd": 0.62033,
+  "tumor_hec_sd": 0.5529900000000002,
+  "dice_rank": 12,
+  "sd_rank": 13
+},
+{
+  "team_name": "vivek_pawar",
+  "team_id": "06",
+  "openreview_fid": "-VTh5m42K2F",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_5",
+  "names": "Vivek Pawar and Bharadwarj Kss",
+  "affiliations": "Endimension Technology Private Limited",
+  "average_rank": 13.0,
+  "mean_average_dice": 0.784253333333332,
+  "mean_average_sd": 0.6963076666666669,
+  "kidney_and_masses_hec_dice": 0.9502599999999998,
+  "tumor_and_cyst_hec_dice": 0.7222780000000003,
+  "tumor_hec_dice": 0.6802220000000001,
+  "kidney_and_masses_hec_sd": 0.919744,
+  "tumor_and_cyst_hec_sd": 0.6136640000000001,
+  "tumor_hec_sd": 0.5555150000000001,
+  "dice_rank": 14,
+  "sd_rank": 12
+},
+{
+  "team_name": "gjwlals111",
+  "team_id": "16",
+  "openreview_fid": "n6DR2TdGLa",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_13",
+  "names": "Jimin Heo",
+  "affiliations": "Independent Researcher",
+  "average_rank": 13.5,
+  "mean_average_dice": 0.8012936666666666,
+  "mean_average_sd": 0.6861709999999999,
+  "kidney_and_masses_hec_dice": 0.962649,
+  "tumor_and_cyst_hec_dice": 0.7753130000000001,
+  "tumor_hec_dice": 0.6659189999999998,
+  "kidney_and_masses_hec_sd": 0.9115499999999996,
+  "tumor_and_cyst_hec_sd": 0.6221160000000002,
+  "tumor_hec_sd": 0.5248470000000003,
+  "dice_rank": 13,
+  "sd_rank": 14
+},
+{
+  "team_name": "ly547361952",
+  "team_id": "08",
+  "openreview_fid": "UzoGQ8fO_8f",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_6",
+  "names": "Yi Lv and Junchen Wang",
+  "affiliations": "North China Research Institute of Electro-optics",
+  "average_rank": 15.0,
+  "mean_average_dice": 0.7809076666666669,
+  "mean_average_sd": 0.6179943333333334,
+  "kidney_and_masses_hec_dice": 0.960437,
+  "tumor_and_cyst_hec_dice": 0.7223649999999999,
+  "tumor_hec_dice": 0.6599210000000001,
+  "kidney_and_masses_hec_sd": 0.8851219999999997,
+  "tumor_and_cyst_hec_sd": 0.489861,
+  "tumor_hec_sd": 0.47899999999999987,
+  "dice_rank": 15,
+  "sd_rank": 15
+},
+{
+  "team_name": "TiannaiT",
+  "team_id": "14",
+  "openreview_fid": "c7kCK-E-B1",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_11",
+  "names": "Tian He et al.",
+  "affiliations": "Fuzhou University",
+  "average_rank": 16.5,
+  "mean_average_dice": 0.6941569999999998,
+  "mean_average_sd": 0.5694353333333334,
+  "kidney_and_masses_hec_dice": 0.9589389999999994,
+  "tumor_and_cyst_hec_dice": 0.604194,
+  "tumor_hec_dice": 0.5193379999999999,
+  "kidney_and_masses_hec_sd": 0.9098160000000002,
+  "tumor_and_cyst_hec_sd": 0.43293800000000027,
+  "tumor_hec_sd": 0.365552,
+  "dice_rank": 17,
+  "sd_rank": 16
+},
+{
+  "team_name": "WenJ.H",
+  "team_id": "13",
+  "openreview_fid": "uC-Gl3IG8wn",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_10",
+  "names": "Jianhui Wen et al.",
+  "affiliations": "Fuzhou University",
+  "average_rank": 17.5,
+  "mean_average_dice": 0.6715506666666664,
+  "mean_average_sd": 0.5441433333333331,
+  "kidney_and_masses_hec_dice": 0.9165649999999999,
+  "tumor_and_cyst_hec_dice": 0.553472,
+  "tumor_hec_dice": 0.544615,
+  "kidney_and_masses_hec_sd": 0.867362,
+  "tumor_and_cyst_hec_sd": 0.371845,
+  "tumor_hec_sd": 0.3932230000000001,
+  "dice_rank": 18,
+  "sd_rank": 17
+},
+{
+  "team_name": "SajanGohil",
+  "team_id": "27",
+  "openreview_fid": "WwfDaKomUFg",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_20",
+  "names": "Sajan Gohil and Abhi Lad",
+  "affiliations": "Pandit Deendayal Energy University",
+  "average_rank": 18.0,
+  "mean_average_dice": 0.7038086666666663,
+  "mean_average_sd": 0.505946,
+  "kidney_and_masses_hec_dice": 0.9481600000000001,
+  "tumor_and_cyst_hec_dice": 0.5972809999999997,
+  "tumor_hec_dice": 0.5659849999999998,
+  "kidney_and_masses_hec_sd": 0.8742409999999998,
+  "tumor_and_cyst_hec_sd": 0.3256649999999998,
+  "tumor_hec_sd": 0.317932,
+  "dice_rank": 16,
+  "sd_rank": 20
+},
+{
+  "team_name": "klinetl",
+  "team_id": "22",
+  "openreview_fid": "NSWvUVR4HWZ",
+  "published_link": "",
+  "names": "Panagiotic Korfiatis et al.",
+  "affiliations": "Mayo Clinic",
+  "average_rank": 18.5,
+  "mean_average_dice": 0.6555213333333325,
+  "mean_average_sd": 0.5278700000000004,
+  "kidney_and_masses_hec_dice": 0.9496369999999997,
+  "tumor_and_cyst_hec_dice": 0.5434350000000001,
+  "tumor_hec_dice": 0.473492,
+  "kidney_and_masses_hec_sd": 0.872764,
+  "tumor_and_cyst_hec_sd": 0.3785,
+  "tumor_hec_sd": 0.3323460000000001,
+  "dice_rank": 19,
+  "sd_rank": 18
+},
+{
+  "team_name": "Supersupersuperman",
+  "team_id": "12",
+  "openreview_fid": "TDOSVEQ8mdO",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_9",
+  "names": "Chaonan Lin et al.",
+  "affiliations": "Fuzhou University",
+  "average_rank": 19.5,
+  "mean_average_dice": 0.6501086666666663,
+  "mean_average_sd": 0.5181276666666668,
+  "kidney_and_masses_hec_dice": 0.945737,
+  "tumor_and_cyst_hec_dice": 0.526322,
+  "tumor_hec_dice": 0.478267,
+  "kidney_and_masses_hec_sd": 0.8851880000000001,
+  "tumor_and_cyst_hec_sd": 0.34797799999999995,
+  "tumor_hec_sd": 0.32121700000000003,
+  "dice_rank": 20,
+  "sd_rank": 19
+},
+{
+  "team_name": "math.hjha",
+  "team_id": "09",
+  "openreview_fid": "IWPSk2fs1UU",
+  "published_link": "",
+  "names": "Heonjin Ha",
+  "affiliations": "Independent Researcher",
+  "average_rank": 22.0,
+  "mean_average_dice": 0.6384246666666666,
+  "mean_average_sd": 0.48669866666666634,
+  "kidney_and_masses_hec_dice": 0.9585739999999998,
+  "tumor_and_cyst_hec_dice": 0.5154759999999997,
+  "tumor_hec_dice": 0.4412239999999999,
+  "kidney_and_masses_hec_sd": 0.8787079999999995,
+  "tumor_and_cyst_hec_sd": 0.3108619999999999,
+  "tumor_hec_sd": 0.270526,
+  "dice_rank": 22,
+  "sd_rank": 22
+},
+{
+  "team_name": "Tensora",
+  "team_id": "01",
+  "openreview_fid": "voteINyy36u",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_1",
+  "names": "Zhiqiang Shen et al.",
+  "affiliations": "Fuzhou University, Fujian Normal University",
+  "average_rank": 22.0,
+  "mean_average_dice": 0.6159876666666667,
+  "mean_average_sd": 0.49130233333333345,
+  "kidney_and_masses_hec_dice": 0.931842,
+  "tumor_and_cyst_hec_dice": 0.4713570000000001,
+  "tumor_hec_dice": 0.444764,
+  "kidney_and_masses_hec_sd": 0.873026,
+  "tumor_and_cyst_hec_sd": 0.30618399999999996,
+  "tumor_hec_sd": 0.2946970000000001,
+  "dice_rank": 23,
+  "sd_rank": 21
+},
+{
+  "team_name": "DanLi",
+  "team_id": "19",
+  "openreview_fid": "dKvuhx2UPO3",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_16",
+  "names": "Dan Li et al.",
+  "affiliations": "Shenzhen Technology University",
+  "average_rank": 22.0,
+  "mean_average_dice": 0.6446799999999997,
+  "mean_average_sd": 0.4656480000000005,
+  "kidney_and_masses_hec_dice": 0.8937720000000003,
+  "tumor_and_cyst_hec_dice": 0.5386450000000003,
+  "tumor_hec_dice": 0.5016229999999999,
+  "kidney_and_masses_hec_sd": 0.7350690000000003,
+  "tumor_and_cyst_hec_sd": 0.341685,
+  "tumor_hec_sd": 0.32019,
+  "dice_rank": 21,
+  "sd_rank": 23
+},
+{
+  "team_name": "Chuda",
+  "team_id": "18",
+  "openreview_fid": "-QutS3TdRu-",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_15",
+  "names": "Chuda Xiao et al.",
+  "affiliations": "Shenzhen Technology University",
+  "average_rank": 24.0,
+  "mean_average_dice": 0.590471,
+  "mean_average_sd": 0.42343266666666696,
+  "kidney_and_masses_hec_dice": 0.8916280000000002,
+  "tumor_and_cyst_hec_dice": 0.4639649999999999,
+  "tumor_hec_dice": 0.4158200000000001,
+  "kidney_and_masses_hec_sd": 0.7392479999999999,
+  "tumor_and_cyst_hec_sd": 0.2807340000000001,
+  "tumor_hec_sd": 0.2503159999999999,
+  "dice_rank": 24,
+  "sd_rank": 24
+},
+{
+  "team_name": "cblund",
+  "team_id": "21",
+  "openreview_fid": "IkM17uVaA7c",
+  "published_link": "https://link.springer.com/chapter/10.1007/978-3-030-98385-7_17",
+  "names": "Christina B. Lund and Bas H.M. van der Velden",
+  "affiliations": "Utrecht University",
+  "average_rank": 25.0,
+  "mean_average_dice": 0.49215133333333333,
+  "mean_average_sd": 0.3673946666666667,
+  "kidney_and_masses_hec_dice": 0.8327330000000001,
+  "tumor_and_cyst_hec_dice": 0.39118499999999995,
+  "tumor_hec_dice": 0.2525359999999999,
+  "kidney_and_masses_hec_sd": 0.7126170000000005,
+  "tumor_and_cyst_hec_sd": 0.2232350000000001,
+  "tumor_hec_sd": 0.16633200000000004,
+  "dice_rank": 25,
+  "sd_rank": 25
+}
+];
+
+for (let i = 0; i < score_data_v2.length; i++) {
+  let paper_url = "https://openreview.net/forum?id=" + score_data_v2[i]["openreview_fid"];
+  if (score_data_v2[i]["published_link"] != "") {
+    paper_url = score_data_v2[i]["published_link"];
+  }
+  $("tbody#score-table").append(`
+    <tr class="${i%2 == 0 ? "even" : "odd"}">
+      <td class="place-cell"><span class="major">${i+1}</span></td>
+      <td class="team-cell"><span class="major">${score_data_v2[i]["names"]}</span><span class="sub">${score_data_v2[i]["affiliations"]}</span></td>
+      <td class="rank-cell"><span class="major">${score_data_v2[i]["average_rank"].toFixed(1)}</span></td>
+      <td class="vdice-cell"><span class="major">${score_data_v2[i]["mean_average_dice"].toFixed(3)}</span> <span class="minor">(${score_data_v2[i]["dice_rank"]})</span></td>
+      <td class="sdice-cell"><span class="major">${score_data_v2[i]["mean_average_sd"].toFixed(3)}</span> <span class="minor">(${score_data_v2[i]["sd_rank"]})</span></td>
+      <td class="tdice-cell"><span class="major">${(score_data_v2[i]["tumor_hec_dice"]).toFixed(3)}</span></td>
+
+      <td class="expanded-cell"><span class="major expanded">${(score_data_v2[i]["kidney_and_masses_hec_dice"]).toFixed(3)}</span></td>
+      <td class="expanded-cell"><span class="major expanded">${(score_data_v2[i]["tumor_and_cyst_hec_dice"]).toFixed(3)}</span></td>
+      <td class="expanded-cell"><span class="major expanded">${(score_data_v2[i]["kidney_and_masses_hec_sd"]).toFixed(3)}</span></td>
+      <td class="expanded-cell"><span class="major expanded">${(score_data_v2[i]["tumor_and_cyst_hec_sd"]).toFixed(3)}</span></td>
+      <td class="expanded-cell"><span class="major expanded">${(score_data_v2[i]["tumor_hec_sd"]).toFixed(3)}</span></td>
+
+      <td class="paper-cell"><span class="major"><a href="${paper_url}" target="_blank"><i class="fas fa-file"></i></a></span></td>
+    </tr>
+  `);
+}
+
+$("td.expanded-cell").css("display", "none");
+$("a#sam-button").click(function(e) {
+  e.preventDefault();
+  if ($("span#sam-show-hide").html() == "show") {
+    $("td.expanded-cell").css("display", "table-cell");
+    $("span#sam-show-hide").html("hide");
+  }
+  else if ($("span#sam-show-hide").html() == "hide") {
+    $("td.expanded-cell").css("display", "none");
+    $("span#sam-show-hide").html("show");
+  }
+});
+
+});
+    </script>
+    <style type="text/css">body {
+  font-family: sans-serif;
+}
+h1 {
+  text-align: center;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+tr.even {
+  background-color: rgb(235, 235, 235);
+}
+table tr.head td span.major {
+  font-weight: bold;
+}
+td {
+  border: 1px solid rgb(172, 172, 172);
+  margin: 0;
+  padding: 10px;
+  font-size: 16px;
+}
+table tr td span.minor, table tr td span.sub {
+  color: rgb(121, 121, 121);
+}
+table tr td span.sub {
+  display: block;
+  font-size: 11px;
+}
+td.place-cell, td.paper-cell {
+  text-align: center;
+}
+
+td span.major.expanded {
+  font-size: 12px;
+  color: rgb(58, 58, 58);
+}
+p.showall-cont {
+  text-align: center;
+}
+p.showall-cont a {
+  text-decoration: none;
+}
+    </style>
+  </head>
+  <body>
+    <h1>KiTS21 Results</h1>
+    <p class="showall-cont"><a id="sam-button" href="#"><span id="sam-show-hide">show</span> additional metrics</a></p>
+    <table>
+      <tbody id="score-table">
+        <tr class="head">
+          <td><span class="major">Place</span></td>
+          <td><span class="major">Team</span><span class="sub">Affiliation</span></td>
+          <td><span class="major">Average Rank</span></td>
+          <td><span class="major">Dice</span> <span class="minor">(rank)</span></td>
+          <td><span class="major">Surface Dice</span> <span class="minor">(rank)</span></td>
+          <td><span class="major">Tumor Dice</span><span class="sub">Tiebreaker</span></td>
+          <td class="expanded-cell"><span class="major expanded">Kidney + Masses Dice</span></td>
+          <td class="expanded-cell"><span class="major expanded">Masses Dice</span></td>
+          <td class="expanded-cell"><span class="major expanded">Kidney + Masses SD</span></td>
+          <td class="expanded-cell"><span class="major expanded">Masses SD</span></td>
+          <td class="expanded-cell"><span class="major expanded">Tumor SD</span></td>
+          <td><span class="major">Paper</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

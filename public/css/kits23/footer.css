@@ -1,0 +1,79 @@
+div#page-footer {
+    width: 100%;
+    min-height: 20px;
+    background-color: rgb(231, 231, 231);
+}
+
+div#footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+div.footer-column {
+    display: inline-block;
+    width: 300px;
+    padding: 50px 20px;
+    vertical-align: top;
+    text-align: left;
+}
+
+p.footer-header {
+    color: rgb(27, 133, 103);
+    text-align: left;
+    padding: 5px;
+    padding-left: 0;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+p.footer-text {
+    color: black;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+p.footer-text a.lstlnk {
+    color: black;
+}
+p.footer-text a {
+    color: rgb(27, 133, 103);
+    text-decoration: None;
+}
+p.footer-text a[href]:hover, p.footer-text a.lstlnk[href]:hover {
+    color: rgb(27, 133, 103);
+    text-decoration: underline;
+}
+p.footer-text a[href]:active, p.footer-text a.lstlnk[href]:active {
+    color: white;
+}
+span.fh-upper {
+    text-transform: uppercase;
+}
+a.miccai-anchor {
+    display: inline-block;
+    margin-top: 7px;
+    margin-bottom: 10px;
+}
+img#miccai-logo {
+    padding: 10px;
+    width: 100%;
+}
+img#miccai-logo:hover {
+    background-color: rgba(37, 188, 145, 0.348);
+}
+
+@media only screen and (max-width: 600px) {
+    div.footer-column {
+        display: block;
+        width: 100%;
+        padding: 25px 25px;
+        padding-bottom: 0;
+    }
+    div#page-footer {
+        padding-top: 15px;
+        padding-bottom: 50px;
+    }
+    img#miccai-logo {
+        width: 100%;
+        margin-top: 7px;
+    }
+}

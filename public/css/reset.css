@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+div#ulabel-container img {
+  max-width: none;
+  display: inline;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+div#page-header *, div#page-footer *, div#content-container * {
+  box-sizing: border-box;
+}
+div#ulabel-container * {
+  box-sizing: content-box;
+}

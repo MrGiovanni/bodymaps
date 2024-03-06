@@ -1,0 +1,27 @@
+html {
+    font-family: Sans-serif;
+    min-width: 900px;
+}
+
+div#content-container {
+    min-height: calc(100vh - 370px);
+    position: relative;
+}
+
+div#content-container h1 {
+    font-weight: 10;
+    font-size: 2em;
+}
+
+div#indicator {
+    width: 1px;
+}
+
+@media only screen and (max-width: 600px) {
+    div#indicator {
+        width: 0;
+    }
+    html {
+        min-width: 0px;
+    }
+}

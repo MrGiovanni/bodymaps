@@ -1,0 +1,286 @@
+div#page-header {
+    width: 100%;
+    height: 70px;
+    background-color: rgb(231, 231, 231);
+}
+
+div#header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+div#header-left {
+    display: block;
+    float: left;
+    height: 0;
+}
+div#header-right {
+    display: block;
+    float: right;
+}
+
+a.header-button, span.header-button  {
+    display: inline-block;
+    line-height: 70px;
+    height: 70px;
+    vertical-align: middle;
+    text-decoration: None;
+    color: rgb(0, 0, 0);
+    font-size: 0.85em;
+    padding: 0 20px;
+}
+a.header-button {
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+a#logout-button {
+    text-transform: none;
+}
+a.header-right-button {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-decoration: None;
+    color: black;
+    font-size: 12px;
+    padding: 10px;
+    line-height: 70px;
+    vertical-align: top;
+    background-color: rgba(255, 255, 255, 0);
+    text-transform: uppercase;
+}
+a.header-button.sel, a.header-right-button.sel {
+    color: rgb(27, 133, 103);
+    font-weight: bold;
+}
+a#sign-in-button {
+    text-transform: none;
+}
+
+a#header-logo-button {
+    display: inline-block;
+    vertical-align: middle;
+    height: 70px;
+    text-decoration: None;
+    padding: 0 10px;
+}
+
+img#header-logo {
+    display: inline-block;
+    height: 70px;
+    padding: 10px;
+}
+
+
+div#user-dropdown {
+    display: none;
+    background-color: rgb(231, 231, 231);
+    width: 300px;
+    position: absolute;
+    top: 70px;
+    right: 0;
+}
+a#close-user-dropdown-button {
+    font-size: 2em;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    text-decoration: none;
+    color: black;
+    height: 30px;
+    width: 50px;
+    line-height: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+a#close-user-dropdown-button:hover {
+    color: rgb(27, 133, 103);
+}
+a#close-user-dropdown-button:active {
+    color: rgb(27, 133, 103);
+}
+div#login-form {
+    margin: 0 auto;
+    margin-top: 30px;
+    width: 80%;
+}
+p.user-dropdown-header {
+    color: black;
+    font-size: 0.8em;
+}
+div#login-form input {
+    margin-bottom: 10px;
+    width: 100%;
+}
+div#new-password-block {
+    display: none;
+}
+a#login-submit-button {
+    display: block;
+    margin: 0 auto;
+    text-decoration: None;
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+a#login-submit-button[href="#"] {
+    background-color: rgb(20, 105, 81);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+a#login-submit-button[href="#"]:hover {
+    background-color: rgb(27, 133, 103);
+}
+a#login-submit-button[href="#"]:active {
+    background-color: rgb(20, 105, 81);
+}
+p.submit-graph {
+    text-align: center;
+}
+p#login-error-msg {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: black;
+    font-size: 0.75em;
+    width: 85%;
+    display: none;
+}
+p.login-note-em {
+    color: black;
+    font-weight: bold;
+    font-size: 0.75em;
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 35px;
+}
+p.login-note {
+    color: black;
+    font-size: 0.75em;
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+p.login-note a {
+    color: rgb(27, 133, 103);
+    text-decoration: None;
+}
+p.login-note a:active {
+    color: white;
+}
+span#hamburger-container {
+    display: none;
+    height: 70px;
+    padding: 15px 25px;
+    width: calc(100% - 231px);
+    text-align: right;
+    vertical-align: middle;
+    position: relative;
+}
+a#hamburger {
+    display: block;
+    height: 38px;
+    width: 38px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    margin-right: 25px;
+    position: absolute;
+    right: 0;
+}
+div.hamburger-patty {
+    width: calc(100% - 8px);
+    margin: 7px 4px;
+    height: 2px;
+    background-color: lightgray;
+    display: block;
+    line-height: 5px;
+}
+@media only screen and (min-width: 599.9999px) {
+    a.header-button:not(.sel):hover, a.header-right-button[href="#"]:hover {
+        background-color: rgba(255, 255, 255, 255);
+        transition: color 0.2s, background-color 0.5s;
+    }
+    a#header-logo-button:not(.sel):hover {
+        background-color: rgba(255, 255, 255, 255);
+        transition: background-color 0.5s;
+    }
+    a.header-button:not(.sel):active, a.header-right-button[href="#"]:active {
+        color: rgb(20, 105, 81);
+    }
+}
+@media only screen and (max-width: 600px) {
+    html {
+        min-width: 300px;
+    }
+
+    span#hamburger-container {
+        display: inline-block;
+    }
+    
+    div#header-left, div#header-right {
+        float: none;
+        width: 100%;
+        display: inline-block;
+    }
+
+    div#header-content {
+        width: 100%;
+        z-index: 1;
+    }
+
+    div#header-content a.header-button, div#header-content span.header-button {
+        display: none;
+        /* display: inline-block; */
+        text-align: left;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        background-color: rgb(231, 231, 231);
+        border-top: 1px solid gray;
+    }
+    div#header-right {
+        margin-top: 12px;
+        background-color: rgb(231, 231, 231);
+        padding-bottom: 5px;
+    }
+    a#header-logo-button {
+        text-align: left;
+    }
+    div#header-content a#logout-button.header-button {
+        border-top: none;
+        /* padding: 0; */
+    }
+    img#header-logo {
+        height: auto;
+        width: 211px;
+    }
+    span.header-button {
+        padding: 0;
+    }
+    a.header-right-button {
+        display: block;
+        border: none;
+        border-radius: 0px;
+        text-decoration: None;
+        color: black;
+        font-size: 14px;
+        line-height: 50px;
+        vertical-align: top;
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0 20px;
+        height: 50px;
+    }
+
+    div#header-content a.header-button:active, a.header-right-button:active {
+        color: black;
+        background-color: white;
+    }
+}
+/* .test {
+    color: #90ff58;
+} */
