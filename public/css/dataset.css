@@ -47,36 +47,45 @@ h1 {
     padding: 20px;
     /* Additional styling for your main content area */
 }
+
 .video-gallery {
     display: flex;
-    justify-content: space-around;
-    overflow: hidden;
-    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* Set the background of the entire gallery to black */
 }
 
 .video-container {
-    flex: 1; /* Non-active videos take up 30% width */
-    opacity: 0.5; /* Non-active videos are dimmed */
-    transition: all 0.5s ease; /* Smooth transition for changes */
-    position: relative; /* For positioning the caption */
-}
-
-.video-container.active {
-    opacity: 1; /* Active video is fully opaque */
+    flex: 1;
+    /* Equal width for all videos */
+    margin: 5px;
+    /* Optional spacing between videos */
+    position: relative;
+    /* Needed for the absolute positioning of captions */
+    background-color: black;
+    /* Ensure each video container has a black background */
 }
 
 .video-container video {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    max-height: 200px;
+    /* Adjust to desired max height */
+    max-width: 100%;
+    /* This makes sure the video does not exceed the container's width */
+    object-fit: contain;
+    /* This prevents the video from stretching and adds black bars if necessary */
+    background-color: black;
+    /* Sets the video's background to black */
 }
 
 .video-caption {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background for captions */
     padding: 5px;
 }
 
@@ -90,12 +99,14 @@ h1 {
 
 @media screen and (max-width: 1024px) {
     .video-gallery {
-        grid-template-columns: repeat(2, 1fr); /* 2 videos in a row for smaller screens */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 videos in a row for smaller screens */
     }
 }
 
 @media screen and (max-width: 768px) {
     .video-gallery {
-        grid-template-columns: 1fr; /* 1 video in a row for even smaller screens */
+        grid-template-columns: 1fr;
+        /* 1 video in a row for even smaller screens */
     }
 }
