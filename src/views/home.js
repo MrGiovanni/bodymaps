@@ -28,8 +28,9 @@ const Home = (props) => {
   return (
     <div className="home-container">
       <Helmet>
-        <title>Togthr template</title>
-        <meta property="og:title" content="Togthr template" />
+        <title>ISBI BodyMaps24</title>
+        <meta property="og:description" content="3D Atlas of Human Body" />
+        <meta property="og:image" content="/icon.png" />
       </Helmet>
       <section className="home-hero">
         <header data-thq="thq-navbar" className="home-navbar">
