@@ -5,12 +5,24 @@ import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/open-animation.css';
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
+import Swiper from 'swiper';
+import 'swiper/css';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
+import TimelineOppositeContent, {
+  timelineOppositeContentClasses,
+} from '@mui/lab/TimelineOppositeContent';
 
 import './home.css'
+import { Typography } from '@mui/material';
 
 const Home = (props) => {
   const [needSticky, setNeedSticky] = React.useState(false)
-  const stickyObj = needSticky ? { position: 'fixed', top: '-600px' } : {}
+  const stickyObj = needSticky ? { position: 'fixed', top: '-600px',background:'rgba(111, 108, 108, 0.58)' } : {background: 'rgba(53, 52, 52, 0.58)'}
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 580) {
@@ -130,7 +142,101 @@ const Home = (props) => {
           </button>
         </div>
       </section>
-      <h1>Heading</h1>
+      <br/>
+      <br/>
+      <section className="home-caption-x">
+        <h1 id='introduction' className="home-text23">
+          Introduction
+        </h1>
+        <br/>
+        <span>
+        Variations in organ sizes and shapes can indicate a range of medical conditions, from benign anomalies to life-threatening diseases. Precise organ volume measurement is fundamental for effective patient care, but manual organ contouring is extremely time-consuming and exhibits considerable variability among expert radiologists. Artificial Intelligence (AI) holds the promise of improving volume measurement accuracy and reducing manual contouring efforts. We formulate our challenge as a semantic segmentation task, which automatically identifies and delineates the boundary of various anatomical structures essential for numerous downstream applications such as disease diagnosis and treatment planning. Our primary goal is to promote the development of advanced AI algorithms and to benchmark the state of the art in this field. 
+        <br/>
+        <br/>
+        The BodyMaps challenge particularly focuses on assessing and improving the generalizability and efficiency of AI algorithms in medical segmentation across diverse clinical settings and patient demographics. In light of this, the innovation of our BodyMaps challenge includes the use of (1) large-scale, diverse datasets for training and evaluating AI algorithms, (2) novel evaluation metrics that emphasize the accuracy of hard-to-segment anatomical structures, and (3) penalties for algorithms with extended inference times. Specifically, this challenge involves two unique datasets. First, AbdomenAtlas, the largest annotated dataset [Qu et al., 2023, Li et al., 2023], contains a total of 10,142 three-dimensional computed tomography (CT) volumes. In each CT volume, 25 anatomical structures are annotated by voxel. AbdomenAtlas is a multi-domain dataset of pre, portal, arterial, and delayed phase CT volumes collected from 88 global hospitals in 9 countries, diversified in age, pathological conditions, body parts, and race background. The AbdomenAtlas dataset will be released by stages to the public for AI development, where in each stage we will release 1,000 annotated CT volumes. Second, JHH-1K [Park et al., 2020] is a proprietary collection of 1,150 dual-phase CT volumes from Johns Hopkins Hospital (JHH), where 22 anatomical structures are annotated by voxel. CT volumes and annotations of JHH-1K will not be disclosed to the public and are exclusively reserved for external validation of AI algorithms. The final scoring will not only be limited to the average segmentation performance but also prioritize the performance of hard-to-segment structures and consider the inference speed of the algorithm. We hope our BodyMaps challenge can set the stage for larger-scale clinical trials and offer exceptional opportunities to practitioners in the medical imaging community.
+        </span>
+      </section>
+      <br/>
+      <br/>
+      <section className="home-caption-x2">
+        <h1 className="home-text23" id='timeline'>
+          Timeline
+        </h1>
+        &nbsp;
+        <div style={{fontSize:'1.0rem'}}>
+          All dates 2024.
+        </div>
+      </section>
+      <br/>
+      <section className="home-caption-x2">
+      <Timeline
+      sx={{
+        [`& .${timelineOppositeContentClasses.root}`]: {
+          flex: 0.4,
+        },
+      }}
+    >
+      <TimelineItem>
+          <TimelineOppositeContent className='left-time'>
+          <Typography variant='h5'>Jan 10</Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            Challenge website running and registration open
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent className='left-time'>
+          <Typography variant='h5'>Jan 16</Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            Release of the dataset and starter code
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent className='left-time'>
+          <Typography variant='h5'>April 15</Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+            Submission deadline
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent className='left-time'>
+          <Typography variant='h5'>April 20</Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent>
+          Release of final results (decisions)
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent className='left-time'>
+            <Typography variant='h5'>May 27 - May 30</Typography>
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineDot />
+          </TimelineSeparator>
+          <TimelineContent>
+            Challenge days (ISBI main conference)
+          </TimelineContent>
+        </TimelineItem>
+      </Timeline>
+      </section>
       <section className="home-note">
         <h1 id="capability" className="home-text23">
           Capability
@@ -182,7 +288,9 @@ const Home = (props) => {
           <p className="home-caption3">some research</p>
           <AwesomeSlider
             play={true}
-            animation="openAnimation">
+            animation="openAnimation"
+            className='home-slider1'
+          >
             <div>
               <video src="/italian-pup.mp4" loop muted preload="auto" controls autoPlay playsInline className="home-video1"></video>
             </div>
