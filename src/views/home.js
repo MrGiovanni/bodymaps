@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import 'react-awesome-slider/dist/custom-animations/open-animation.css';
 import Script from 'dangerous-html/react'
 import { Helmet } from 'react-helmet'
-import Swiper from 'swiper';
-import 'swiper/css';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
@@ -16,11 +14,113 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
+import Carousel, { clickToChangePlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
+
+import HomeIcon from '@mui/icons-material/Delete';
+
 
 import './home.css'
-import { Typography } from '@mui/material';
+import { IconButton, Typography, Stack } from '@mui/material';
+import { set } from 'mongoose';
 
 const Home = (props) => {
+  const videoRef1 = useRef(null)
+  const videoRef2 = useRef(null)
+  const videoRef3 = useRef(null)
+  
+  const [disabled1, setDisabled1] = useState(true)
+  const [disabled2, setDisabled2] = useState(false)
+  const [value, setValue] = useState(0);
+  const [key, setKey] = useState(1)
+  const [background1, setBackground1] = useState('transparent')
+  const [background2, setBackground2] = useState('transparent')
+  const [background3, setBackground3] = useState('transparent')
+  const [zindex1, setZindex1] = useState(0)
+  const [zindex2, setZindex2] = useState(10)
+  const [zindex3, setZindex3] = useState(10)
+
+  const handlePlay1 = () => {
+    if (videoRef1.current) {
+      videoRef1.current.play()
+    }
+  }
+  const handlePause1 = () => {
+    if (videoRef1.current) {
+      videoRef1.current.pause()
+    }
+  }
+  const handlePlay2 = () => {
+    if (videoRef2.current) {
+      videoRef2.current.play()
+    }
+  }
+  const handlePause2 = () => {
+    if (videoRef2.current) {
+      videoRef2.current.pause()
+    }
+  }
+  const handlePlay3 = () => {
+    if (videoRef3.current) {
+      videoRef3.current.play()
+    }
+  }
+  const handlePause3 = () => {
+    if (videoRef3.current) {
+      videoRef3.current.pause()
+    }
+  }
+
+  
+  useEffect(() => {
+    setValue(key-1)
+    switch (key) {
+      case 1:
+        handlePlay1()
+        handlePause2()
+        setDisabled1(true)
+        setDisabled2(false)
+        setZindex1(0)
+        setZindex2(10)
+        setZindex3(10)
+        setBackground1('transparent')
+        setBackground2('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        break
+      case 2:
+        handlePause1()
+        handlePlay2()
+        handlePause3()
+        setZindex1(10)
+        setZindex2(0)
+        setZindex3(10)
+        setDisabled1(false)
+        setDisabled2(false)
+        setBackground1('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground2('transparent')
+        setBackground3('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        break
+      case 3:
+        handlePause2()
+        handlePlay3()
+        setZindex1(10)
+        setZindex2(10)
+        setZindex3(0)
+        setDisabled2(true)
+        setDisabled1(false)
+        setBackground2('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.216))')
+        setBackground3('transparent')
+        break
+      default:
+        setBackground1('transparent')
+        break
+    }
+  }, [key])
+
+
+  useEffect(() => {
+    console.log(key); // 这里会在key变化后打印最新的值
+  }, [key]);
+  
   const [needSticky, setNeedSticky] = React.useState(false)
   const stickyObj = needSticky ? { position: 'fixed', top: '-600px',background:'rgba(111, 108, 108, 0.58)' } : {background: 'rgba(53, 52, 52, 0.58)'}
   useEffect(() => {
@@ -302,6 +402,54 @@ const Home = (props) => {
             </div>
           </AwesomeSlider>
         </div>
+
+
+        <br/>
+        <br/>
+
+        <div style={{alignContent: 'center', textAlign: 'center', color:'white',fontSize: '20px', fontWeight: '100',marginBottom: '-60px' }}>
+        <IconButton aria-label="left" size="large" onClick={e=>{key==2?(setValue(key-2),setKey(key-1)):(setValue(key-2),setKey(key-1))}} disabled={disabled1}>
+          <img alt="image" src={disabled1==true?"/left-arrow-disabled.svg":"/left-arrow.svg"} style={{ width: '40px' }}/>
+        </IconButton>
+          {key}/3
+        <IconButton aria-label="right" size="large" onClick={e=>{key==2?(setValue(key),setKey(key+1)):(setValue(key),setKey(key+1))}} disabled={disabled2}>
+          <img alt="image" src={disabled2==true?"/right-arrow-disabled.svg":"/right-arrow.svg"} style={{ width: '40px' }}/>
+        </IconButton>
+        </div>
+
+        <Carousel
+          value={value}
+          onChange={()=>{setValue(key-1),console.log("key:",key),console.log("value:",value)}}
+          className='home-carousel'
+          offset={20}
+          plugins={[
+            'clickToChange',
+            'centered',
+            {
+              resolve: slidesToShowPlugin,
+              options: {
+              numberOfSlides: 2
+              }
+            },
+           ]}
+        >
+        <div onClick={e=>{setKey(1)}}>
+          <div className='home-video_back' style={{background: background1, zIndex:zindex1  }}/> 
+          <video ref={videoRef1} id="video1" src="/italian-pup.mp4" loop muted preload="auto" controls autoPlay playsInline className="home-video1x" />
+          <span className="home-text23x">Italian Pup</span>
+        </div>
+        <div onClick={e=>{setKey(2)}}>
+          <div className='home-video_back' style={{background: background2, zIndex:zindex2 }}/>
+          <video ref={videoRef2} id="video2" src="/otter-on-surfboard.mp4" loop muted preload="auto" controls playsInline className="home-video1x"/>
+          <span className="home-text23x">Otter on Surfboard</span>
+        </div>
+        <div onClick={e=>{setKey(3)}}>
+          <div className='home-video_back' style={{background: background3, zIndex:zindex3 }}/>
+          <video ref={videoRef3} id="video3" src="/suv-in-the-dust.mp4" loop muted preload="auto" controls playsInline className="home-video1x"/>
+          <span className="home-text23x">SUV in the Dust</span>
+        </div>
+        </Carousel>
+        
         <div className="home-content">
           <div className="home-image1"></div>
           <div className="home-accordion">

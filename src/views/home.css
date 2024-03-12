@@ -288,6 +288,10 @@
   font-size: 2rem;
   color: rgb(230, 223, 223);
 }
+.home-text23x {
+  font-size: 1rem;
+  color: rgb(230, 223, 223);
+}
 .home-slider1 {
   gap: var(--dl-space-space-fiveunits);
   display: flex;
@@ -308,6 +312,28 @@
   width: 100%;
   object-fit: cover;
 }
+.home-video1x {
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.home-video_back{
+  width: 100%;
+  height: 100%;
+  top:auto;
+  position: absolute;
+}
+.home-carousel-txt{
+  position: flex;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  z-index: 100;
+}
+
+
 .home-caption1 {
   color: #f5f3f3;
   font-size: 40px;
@@ -395,6 +421,7 @@
   padding-right: var(--dl-space-space-fiveunits);
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fiveunits);
+  align-items:center;
 }
 .home-header-container1 {
   gap: var(--dl-space-space-oneandhalfunits);
