@@ -118,7 +118,7 @@ const Home = (props) => {
 
 
   useEffect(() => {
-    console.log(key); // 这里会在key变化后打印最新的值
+    console.log(key); 
   }, [key]);
   
   const [needSticky, setNeedSticky] = React.useState(false)
