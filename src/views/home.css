@@ -1,3 +1,18 @@
+.BrainhubCarousel__container {
+  width: 150%;
+}
+.BrainhubCarouselItem{
+  align-items: flex-start !important;
+}
+.css-1pe4mpk-MuiButtonBase-root-MuiIconButton-root {
+  padding: 0px !important;
+  margin-top: -3px !important;
+}
+.dataset-desktop-menu {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
 .home-container {
   width: 100%;
   display: flex;
@@ -9,9 +24,9 @@
 }
 .home-hero {
   width: 100%;
-  height: 713px;
+  height: 100px;
   display: flex;
-  position: relative;
+  position: static;
   align-items: center;
   /* padding-left: var(--dl-space-space-fiveunits); */
   flex-direction: column;
@@ -144,8 +159,7 @@
   top: 48px;
   left: 0px;
   right: 0px;
-  width: 1200px;
-  height: 647px;
+  width: 100%;
   margin: auto;
   display: flex;
   z-index: 100;
@@ -156,11 +170,11 @@
   justify-content: center;
 }
 .home-heading {
-  top: 97px;
+  top: 180px;
   left: 0px;
   color: rgb(255, 255, 255);
   right: 0px;
-  width: 977px;
+  width: 100%;
   height: 73px;
   margin: auto;
   position: absolute;
@@ -171,12 +185,15 @@
   text-transform: capitalize;
 }
 .home-text08 {
-  font-weight: 500;
+  font-weight: 700;
+  font-size: 8vw;
+  color:rgba(11, 11, 11, 1);
+  width: 100%;
 }
 .home-caption {
-  top: 178px;
+  top: 250px;
   left: 0px;
-  color: rgb(255, 255, 255);
+  color: rgba(11, 11, 11, 1);
   right: 0px;
   margin: auto;
   position: absolute;
@@ -320,7 +337,7 @@
 }
 .home-video_back{
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   top:auto;
   position: absolute;
 }
@@ -411,14 +428,10 @@
   justify-content: space-between;
 }
 .home-data {
-  gap: var(--dl-space-space-fiveunits);
   width: 100%;
   display: flex;
   max-width: var(--dl-size-size-maxwidth);
   align-items: flex-start;
-  padding-top: var(--dl-space-space-fiveunits);
-  padding-left: var(--dl-space-space-fiveunits);
-  padding-right: var(--dl-space-space-fiveunits);
   flex-direction: column;
   padding-bottom: var(--dl-space-space-fiveunits);
   align-items:center;
@@ -769,47 +782,8 @@
 .home-container8 {
   display: contents;
 }
-@media(max-width: 1600px) {
-  .home-mobile-menu {
-    left: 70%;
-    width: 30%;
-  }
-  .home-button1 {
-    left: 0px;
-    right: 0px;
-    bottom: 56px;
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-  }
-}
-@media(max-width: 1200px) {
-  .home-container {
-    background-color: #000000;
-  }
-  .home-mobile-menu {
-    left: 70%;
-    width: 30%;
-  }
-  .home-button1 {
-    left: 0px;
-    right: 0px;
-    bottom: 55px;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-  }
-  .home-text21 {
-    padding: 10px;
-    text-align: center;
-  }
-  .home-caption3 {
-    color: rgb(124, 124, 128);
-    font-size: 24px;
-    line-height: 36px;
-  }
-}
-@media(max-width: 991px) {
+
+@media(max-width: 2000px) {
   /* .home-hero {
     padding-left: var(--dl-space-space-oneandhalfunits);
   } */
@@ -818,13 +792,11 @@
     width: 30%;
   }
   .home-hero-content {
-    width: 786px;
     position: static;
     align-self: center;
     /* padding-right: var(--dl-space-space-oneandhalfunits); */
   }
   .home-heading {
-    width: 734px;
     font-size: 60px;
   }
   .home-button1 {
@@ -946,7 +918,6 @@
   .home-hero-content {
     gap: var(--dl-space-space-threeunits);
     width: 479px;
-    height: 719px;
     z-index: 100;
     align-self: center;
   }

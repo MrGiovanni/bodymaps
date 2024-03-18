@@ -17,28 +17,138 @@ import TimelineOppositeContent, {
 import Carousel, { clickToChangePlugin, slidesToShowPlugin } from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 
-import HomeIcon from '@mui/icons-material/Delete';
+import DownloadIcon from '@mui/icons-material/Download';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Fade from '@mui/material/Fade';
 
 import './home.css'
 import { IconButton, Typography, Stack } from '@mui/material';
 import { set } from 'mongoose';
+import { func } from 'prop-types';
 
 const Home = (props) => {
   const videoRef1 = useRef(null)
   const videoRef2 = useRef(null)
   const videoRef3 = useRef(null)
+
+  const videoRef11 = useRef(null)
+  const videoRef12 = useRef(null)
+  const videoRef13 = useRef(null)
+
+  const [contrls1, setContrls1] = useState(true)
+  const [contrls2, setContrls2] = useState(true)
+  const [contrls3, setContrls3] = useState(true)
+
+  const [controls11, setControls11] = useState(true)
+  const [controls12, setControls12] = useState(true)
+  const [controls13, setControls13] = useState(true)
+
+  const [time1, setTime1] = useState(0)
+  const [time2, setTime2] = useState(0)
+  const [time3, setTime3] = useState(0)
+  const [duration1, setDuration1] = useState(0)
+  const [duration2, setDuration2] = useState(0)
+  const [duration3, setDuration3] = useState(0)
+
+  const [time11, setTime11] = useState(0)
+  const [time12, setTime12] = useState(0)
+  const [time13, setTime13] = useState(0)
+  const [duration11, setDuration11] = useState(0)
+  const [duration12, setDuration12] = useState(0)
+  const [duration13, setDuration13] = useState(0)
   
   const [disabled1, setDisabled1] = useState(true)
   const [disabled2, setDisabled2] = useState(false)
+
+  const [disabled11, setDisabled11] = useState(true)
+  const [disabled12, setDisabled12] = useState(false)
+
   const [value, setValue] = useState(0);
   const [key, setKey] = useState(1)
+
+  const [value1, setValue1] = useState(0);
+  const [key1, setKey1] = useState(1)
+
   const [background1, setBackground1] = useState('transparent')
   const [background2, setBackground2] = useState('transparent')
   const [background3, setBackground3] = useState('transparent')
+
+  const [background11, setBackground11] = useState('transparent')
+  const [background12, setBackground12] = useState('transparent')
+  const [background13, setBackground13] = useState('transparent')
+
   const [zindex1, setZindex1] = useState(0)
   const [zindex2, setZindex2] = useState(10)
   const [zindex3, setZindex3] = useState(10)
+
+  const [zindex11, setZindex11] = useState(0)
+  const [zindex12, setZindex12] = useState(10)
+  const [zindex13, setZindex13] = useState(10)
+
+  const [isCollapsed1, setIsCollapsed1] = useState(true);
+  const [isCollapsed2, setIsCollapsed2] = useState(true);
+  const [isCollapsed3, setIsCollapsed3] = useState(true);
+
+  const [isCollapsed11, setIsCollapsed11] = useState(true);
+  const [isCollapsed12, setIsCollapsed12] = useState(true);
+  const [isCollapsed13, setIsCollapsed13] = useState(true);
+
+  const [windowSize, setWindowSize] = useState(window.innerWidth)
+  const [videoHeight1, setVideoHeight1] = useState('0px')
+  const [videoHeight2, setVideoHeight2] = useState('0px')
+  const [videoHeight3, setVideoHeight3] = useState('0px')
+
+  const [videoHeight11, setVideoHeight11] = useState('0px')
+  const [videoHeight12, setVideoHeight12] = useState('0px')
+  const [videoHeight13, setVideoHeight13] = useState('0px')
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      console.log('window.innerWidth:',window.innerWidth);
+      setWindowSize(window.innerWidth)
+      if (videoRef1.current) {
+        setVideoHeight1(videoRef1.current.clientHeight)
+        console.log('videoRef1.current.videoHeight:',videoRef1.current.clientHeight)
+      }
+      if (videoRef2.current) {
+        setVideoHeight2(videoRef2.current.clientHeight)
+        console.log('videoRef2.current.videoHeight:',videoRef2.current.clientHeight)
+      }
+      if (videoRef3.current) {
+        setVideoHeight3(videoRef3.current.clientHeight)
+        console.log('videoRef3.current.videoHeight:',videoRef3.current.clientHeight)
+      }
+      if (videoRef11.current) {
+        setVideoHeight11(videoRef11.current.clientHeight)
+        console.log('videoRef11.current.videoHeight:',videoRef11.current.clientHeight)
+      }
+      if (videoRef12.current) {
+        setVideoHeight12(videoRef12.current.clientHeight)
+        console.log('videoRef12.current.videoHeight:',videoRef12.current.clientHeight)
+      }
+      if (videoRef13.current) {
+        setVideoHeight13(videoRef13.current.clientHeight)
+        console.log('videoRef13.current.videoHeight:',videoRef13.current.clientHeight)
+      }
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }
+  )
 
   const handlePlay1 = () => {
     if (videoRef1.current) {
@@ -71,7 +181,38 @@ const Home = (props) => {
     }
   }
 
+  const handlePlay11 = () => {
+    if (videoRef11.current) {
+      videoRef11.current.play()
+    }
+  }
+  const handlePause11 = () => {
+    if (videoRef11.current) {
+      videoRef11.current.pause()
+    }
+  }
+  const handlePlay12 = () => {
+    if (videoRef12.current) {
+      videoRef12.current.play()
+    }
+  }
+  const handlePause12 = () => {
+    if (videoRef12.current) {
+      videoRef12.current.pause()
+    }
+  }
+  const handlePlay13 = () => {
+    if (videoRef13.current) {
+      videoRef13.current.play()
+    }
+  }
+  const handlePause13 = () => {
+    if (videoRef13.current) {
+      videoRef13.current.pause()
+    }
+  }
   
+
   useEffect(() => {
     setValue(key-1)
     switch (key) {
@@ -84,7 +225,11 @@ const Home = (props) => {
         setZindex2(10)
         setZindex3(10)
         setBackground1('transparent')
-        setBackground2('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        // setBackground2('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground2('rgba(2, 2, 2, 0.8)')
+        setContrls1(true)
+        setContrls2(false)
+        setContrls3(false)
         break
       case 2:
         handlePause1()
@@ -95,9 +240,14 @@ const Home = (props) => {
         setZindex3(10)
         setDisabled1(false)
         setDisabled2(false)
-        setBackground1('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        // setBackground1('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground1('rgba(2, 2, 2, 0.8)')
         setBackground2('transparent')
-        setBackground3('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        // setBackground3('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground3('rgba(2, 2, 2, 0.8)')
+        setContrls1(false)
+        setContrls2(true)
+        setContrls3(false)
         break
       case 3:
         handlePause2()
@@ -107,8 +257,12 @@ const Home = (props) => {
         setZindex3(0)
         setDisabled2(true)
         setDisabled1(false)
-        setBackground2('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.216))')
+        // setBackground2('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.216))')
+        setBackground2('rgba(2, 2, 2, 0.8)')
         setBackground3('transparent')
+        setContrls1(false)
+        setContrls2(false)
+        setContrls3(true)
         break
       default:
         setBackground1('transparent')
@@ -116,304 +270,422 @@ const Home = (props) => {
     }
   }, [key])
 
+  useEffect(() => {
+    setValue1(key1-1)
+    switch (key1) {
+      case 1:
+        handlePlay11()
+        handlePause12()
+        setDisabled11(true)
+        setDisabled12(false)
+        setZindex11(0)
+        setZindex12(10)
+        setZindex13(10)
+        setBackground11('transparent')
+        // setBackground2('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground12('rgba(2, 2, 2, 0.8)')
+        setControls11(true)
+        setControls12(false)
+        setControls13(false)
+        break
+      case 2:
+        handlePause11()
+        handlePlay12()
+        handlePause13()
+        setZindex11(10)
+        setZindex12(0)
+        setZindex13(10)
+        setDisabled11(false)
+        setDisabled12(false)
+        // setBackground1('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground11('rgba(2, 2, 2, 0.8)')
+        setBackground12('transparent')
+        // setBackground3('linear-gradient(0.25turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.116))')
+        setBackground13('rgba(2, 2, 2, 0.8)')
+        setControls11(false)
+        setControls12(true)
+        setControls13(false)
+        break
+      case 3:
+        handlePause12()
+        handlePlay13()
+        setZindex11(10)
+        setZindex12(10)
+        setZindex13(0)
+        setDisabled12(true)
+        setDisabled11(false)
+        // setBackground2('linear-gradient(0.75turn,rgb(0, 0, 0), rgba(0, 0, 0, 0.216))')
+        setBackground12('rgba(2, 2, 2, 0.8)')
+        setBackground13('transparent')
+        setControls11(false)
+        setControls12(false)
+        setControls13(true)
+        break
+      default:
+        setBackground11('transparent')
+        break
+    }
+  }, [key1])
 
   useEffect(() => {
-    console.log(key); 
-  }, [key]);
-  
-  const [needSticky, setNeedSticky] = React.useState(false)
-  const stickyObj = needSticky ? { position: 'fixed', top: '-600px',background:'rgba(111, 108, 108, 0.58)' } : {background: 'rgba(53, 52, 52, 0.58)'}
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 580) {
-        setNeedSticky(true)
-      } else {
-        setNeedSticky(false)
-      }
+    switch(key){
+      case 1:
+        if (videoRef1.current) {
+          console.log('videoRef1.current:',videoRef1.current);
+          videoRef1.current.addEventListener('timeupdate', () => {
+            if (videoRef1.current) {
+              setTime1(videoRef1.current.currentTime)
+              setDuration1(videoRef1.current.duration)
+            }
+          })
+        }
+        break
+      case 2:
+        if (videoRef2.current) {
+          videoRef2.current.addEventListener('timeupdate', () => {
+            if (videoRef2.current) {
+              setTime2(videoRef2.current.currentTime)
+              setDuration2(videoRef2.current.duration)
+            }
+          })
+        }
+        break
+      case 3:
+        if (videoRef3.current) {
+          videoRef3.current.addEventListener('timeupdate', () => {
+            if (videoRef3.current) {
+              setTime3(videoRef3.current.currentTime)
+              setDuration3(videoRef3.current.duration)
+            }
+          })
+        }
+        break
+      default:
+        break
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
+  }, [key])
+
+  useEffect(() => {
+    switch(key1){
+      case 1:
+        if (videoRef11.current) {
+          console.log('videoRef11.current:',videoRef11.current);
+          videoRef11.current.addEventListener('timeupdate', () => {
+            if (videoRef11.current) {
+              setTime11(videoRef11.current.currentTime)
+              setDuration11(videoRef11.current.duration)
+            }
+          })
+        }
+        break
+      case 2:
+        if (videoRef12.current) {
+          videoRef12.current.addEventListener('timeupdate', () => {
+            if (videoRef12.current) {
+              setTime12(videoRef12.current.currentTime)
+              setDuration12(videoRef12.current.duration)
+            }
+          })
+        }
+        break
+      case 3:
+        if (videoRef13.current) {
+          videoRef13.current.addEventListener('timeupdate', () => {
+            if (videoRef13.current) {
+              setTime13(videoRef13.current.currentTime)
+              setDuration13(videoRef13.current.duration)
+            }
+          })
+        }
+        break
+      default:
+        break
     }
   }
-  )
+  , [key1])
+
+  const download1 = () => {
+    const link = document.createElement('a')
+    link.href = '/BDMAP_00000004.mp4'
+    link.download = 'BDMAP_00000004.mp4'
+    link.click()
+  }
+  const download2 = () => {
+    const link = document.createElement('a')
+    link.href = '/BDMAP_00000008.mp4'
+    link.download = 'BDMAP_00000008.mp4'
+    link.click()
+  }
+  const download3 = () => {
+    const link = document.createElement('a')
+    link.href = '/BDMAP_00000009.mp4'
+    link.download = 'BDMAP_00000009.mp4'
+    link.click()
+  }
+
+  const download11 = () => {
+    const link = document.createElement('a')
+    link.href = '/BDMAP_00000004.mp4'
+    link.download = 'BDMAP_00000004.mp4'
+    link.click()
+  }
+  const download12 = () => {
+    const link = document.createElement('a')
+    link.href = '/BDMAP_00000008.mp4'
+    link.download = 'BDMAP_00000008.mp4'
+    link.click()
+  }
+  const download13 = () => {
+    const link = document.createElement('a')
+    link.href = '/BDMAP_00000009.mp4'
+    link.download = 'BDMAP_00000009.mp4'
+    link.click()
+  }
+
+  const formatTime = (time,remaining) => {
+    const minutes = Math.floor(time / 60)
+    const seconds = Math.floor(time % 60)
+    const remainingMinutes = Math.floor(remaining / 60)
+    const remainingSeconds = Math.floor(remaining % 60)
+    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds} / ${remainingMinutes}:${remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds}`
+  }
+  
   return (
     <div className="home-container">
       <Helmet>
-        <title>ISBI BodyMaps24</title>
+        <title>Body Maps</title>
         <meta property="og:description" content="3D Atlas of Human Body" />
         <meta property="og:image" content="/icon.png" />
       </Helmet>
-      <section className="home-hero">
+      <section className="home-hero" style={{backgroundColor:'white'}}>
         <header data-thq="thq-navbar" className="home-navbar">
-          <img alt="image" src="/icon.png" className="home-branding" style={{ width: '70px' }} />
-          <div data-thq="thq-burger-menu" className="home-burger-menu">
-            <div className="home-hamburger">
-              <span className="home-text">
-                <span>Menu</span>
-                <br></br>
-              </span>
-            </div>
+          <div style={{display:'flex', alignItems:'center',alignContent:'center'}}>
+            <img alt="image" src="/icon.png" className="home-branding" style={{ width: '70px' }} />
+            &nbsp;&nbsp;
+            {windowSize>780? (
+            <div style={{color:"rgba(51, 96, 231, 1)",fontWeight:'800',fontSize:'2.5vw'}}>Body Maps</div>):(
+            <div style={{color:"rgba(51, 96, 231, 1)",fontWeight:'600',fontSize:'15px',width:'30%',marginTop:'10px'}}>Body Maps</div>
+            )}
           </div>
-          <div data-thq="thq-mobile-menu" className="home-mobile-menu">
-            <div
-              data-thq="thq-mobile-menu-nav"
-              data-role="Nav"
-              className="home-nav"
+          <div className="dataset-desktop-menu">
+            {windowSize>780?
+            (<nav className="dataset-links"
+              style={{
+                color:'rgb(230, 223, 223)',
+                display: 'flex',
+                justifyContent:'flex-end',
+                marginRight: '30px',
+                alignContent: 'center',
+                }}
             >
-              <div className="home-container1">
-                <img alt="image" src="/icon.png" className="home-image"/>
-                <div data-thq="thq-close-menu" className="home-menu-close">
-                  <svg viewBox="0 0 1024 1024" className="home-icon">
-                    <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
-                  </svg>
-                </div>
-              </div>
-              <nav
-                data-thq="thq-mobile-menu-nav-links"
-                data-role="Nav"
-                className="home-nav1"
+              <Link to="/" className="dataset-navlink" style={{color:'rgba(11, 11, 11, 1)', fontWeight:'500'}}>
+                Home
+              </Link>
+              <Link to='/dataset' className="dataset-text" style={{color:'rgba(11, 11, 11, 1)', fontWeight:'500'}}>Dataset</Link>
+              <Link to='/model' className="dataset-text1" style={{color:'rgba(11, 11, 11, 1)', fontWeight:'500'}}>Model</Link>
+              <Link to='/leaderboard' className="dataset-text2" style={{color:'rgba(11, 11, 11, 1)', fontWeight:'500'}}>Leaderboard</Link>
+              <Link to='/team' className="dataset-text3" style={{color:'rgba(11, 11, 11, 1)', fontWeight:'500'}}>Team</Link>
+            </nav>
+            )
+            :(
+              <div style={{
+                color:'white',
+                display:'flex',
+                flexDirection:'column',
+                justifyContent:'center',
+                alignItems:'center',
+                width:'100%',
+                marginLeft:'75%'
+              }}>
+              <Button
+                id="fade-button"
+                aria-controls={open ? 'fade-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
               >
-                <Link to='/dataset' className="home-text03">Dataset</Link>
-                <Link to='/model' className="home-text04">Model</Link>
-                <Link to='/leaderboard' className="home-text05">Leaderboard</Link>
-                <Link to='/team' className="home-text06">Team</Link>
-              </nav>
+                Menu
+              </Button>
+              <Menu
+                id="fade-menu"
+                MenuListProps={{
+                  'aria-labelledby': 'fade-button',
+                  'color':'grey'
+                }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Fade}
+                sx={{
+                  "& .MuiPaper-root": {
+                    backgroundColor: "rgba(51, 96, 231,, 0.68)"
+                  }
+                }}
+              >
+                <MenuItem 
+                  style={{
+                    color:'rgba(11, 11, 11, 1)'
+                  }}
+                  onClick={
+                    () => {
+                      handleClose()
+                      window.location.href = '/dataset'
+                    }
+                }>Dataset</MenuItem>
+                <MenuItem 
+                  style={{
+                    color:'rgba(11, 11, 11, 1)'
+                  }}
+                  onClick={
+                    () => {
+                      handleClose()
+                      window.location.href = '/model'
+                    }
+                }>Model</MenuItem>
+                <MenuItem 
+                  style={{
+                    color:'rgba(11, 11, 11, 1)'
+                  }}
+                  onClick={
+                    () => {
+                      handleClose()
+                      window.location.href = '/leaderboard'
+                    }
+                }>Leaderboard</MenuItem>
+                <MenuItem 
+                  style={{
+                    color:'rgba(11, 11, 11, 1)'
+                  }}
+                  onClick={
+                    () => {
+                      handleClose()
+                      window.location.href = '/team'
+                    }
+                }>Team</MenuItem>
+              </Menu>
             </div>
+            )}
           </div>
         </header>
-        <video
-          src="/BDMAP_00000007.mp4"
-          loop
-          muted
-          // poster="/hero-bg.png"
-          preload="auto"
-          autoPlay
-          playsInline
-          className="home-video"
-        ></video>
-        <div className="home-hero-content">
-          <h1 className="home-heading">
-            <span className="home-text08">ISBI BodyMaps24</span>
+      </section>
+      <section  className="home-data" style={{backgroundColor:'white'}}>
+      <div style={{marginTop:'55px',marginBottom:'25px', display:'flex',flexDirection:'column',alignItems:'center'}}>
+          <h1>
+            <span style={{fontSize:'7vw'}}>AbdonmenAtlas 1.0</span>
           </h1>
           <br></br>
-          <p className="home-caption">
-          3D Atlas of Human Body
+          <p style={{fontWeight:'500',fontSize:'2vw',marginTop:'-15px'}}>
+            Status: Released
           </p>
-          <span className="home-text10">
-            <span>
-              All videos on this page were generated directly
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </span>
-            <br></br>
-            <span>by Sora without modification.</span>
-          </span>
-          <button className="home-button button">
-            <span className="home-text14">
-              <span>Read Technology Report</span>
-              <br></br>
-            </span>
-          </button>
-          <div className="home-container2">
-            <div className="home-header-container">
-              <div className="home-header"></div>
-            </div>
-          </div>
-          <button disabled="true" className="home-button1" style={stickyObj}>
-            <a href="#capability" className="home-text17 button">
-              Capability
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: ' ',
-                }}
-              />
-            </a>
-            <a href="#safety" className="home-text18 button">
-              <span>Safety</span>
-              <br></br>
-            </a>
-            <a href="#research" className="home-text21 button">
-              Research
-            </a>
-          </button>
         </div>
-      </section>
+      <div style={{ 
+        marginTop: '20px',
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: 44, 
+        }}
+        >
+        <Button variant="outlined" 
+          onClick={()=>{window.open('https://github.com/', '_blank');}}
+          sx={{ 
+            width: '100px',
+            borderColor: 'black', 
+            color: 'black', 
+            '&:hover': {
+              borderColor: 'black', 
+              backgroundColor: 'rgba(168, 168, 168, 0.51)' 
+            }
+          }}
+        >Paper</Button>
+        <Button variant="outlined" 
+          onClick={()=>{window.open('https://github.com/', '_blank');}}
+          sx={{ 
+            width: '100px',
+            borderColor: 'black', 
+            color: 'black', 
+            '&:hover': {
+              borderColor: 'black', 
+              backgroundColor: 'rgba(168, 168, 168, 0.51)' 
+            }
+          }}
+        >Github</Button>
+        <Button variant="outlined" 
+          onClick={()=>{window.open('https://github.com/', '_blank');}}
+          sx={{ 
+            width: '100px',
+            borderColor: 'black', 
+            color: 'black', 
+            '&:hover': {
+              borderColor: 'black', 
+              backgroundColor: 'rgba(168, 168, 168, 0.51)' 
+            }
+          }}
+        >Dataset</Button>
+      </div>
       <br/>
       <br/>
-      <section className="home-caption-x">
-        <h1 id='introduction' className="home-text23">
-          Introduction
-        </h1>
-        <br/>
-        <span>
-        Variations in organ sizes and shapes can indicate a range of medical conditions, from benign anomalies to life-threatening diseases. Precise organ volume measurement is fundamental for effective patient care, but manual organ contouring is extremely time-consuming and exhibits considerable variability among expert radiologists. Artificial Intelligence (AI) holds the promise of improving volume measurement accuracy and reducing manual contouring efforts. We formulate our challenge as a semantic segmentation task, which automatically identifies and delineates the boundary of various anatomical structures essential for numerous downstream applications such as disease diagnosis and treatment planning. Our primary goal is to promote the development of advanced AI algorithms and to benchmark the state of the art in this field. 
-        <br/>
-        <br/>
-        The BodyMaps challenge particularly focuses on assessing and improving the generalizability and efficiency of AI algorithms in medical segmentation across diverse clinical settings and patient demographics. In light of this, the innovation of our BodyMaps challenge includes the use of (1) large-scale, diverse datasets for training and evaluating AI algorithms, (2) novel evaluation metrics that emphasize the accuracy of hard-to-segment anatomical structures, and (3) penalties for algorithms with extended inference times. Specifically, this challenge involves two unique datasets. First, AbdomenAtlas, the largest annotated dataset [Qu et al., 2023, Li et al., 2023], contains a total of 10,142 three-dimensional computed tomography (CT) volumes. In each CT volume, 25 anatomical structures are annotated by voxel. AbdomenAtlas is a multi-domain dataset of pre, portal, arterial, and delayed phase CT volumes collected from 88 global hospitals in 9 countries, diversified in age, pathological conditions, body parts, and race background. The AbdomenAtlas dataset will be released by stages to the public for AI development, where in each stage we will release 1,000 annotated CT volumes. Second, JHH-1K [Park et al., 2020] is a proprietary collection of 1,150 dual-phase CT volumes from Johns Hopkins Hospital (JHH), where 22 anatomical structures are annotated by voxel. CT volumes and annotations of JHH-1K will not be disclosed to the public and are exclusively reserved for external validation of AI algorithms. The final scoring will not only be limited to the average segmentation performance but also prioritize the performance of hard-to-segment structures and consider the inference speed of the algorithm. We hope our BodyMaps challenge can set the stage for larger-scale clinical trials and offer exceptional opportunities to practitioners in the medical imaging community.
-        </span>
-      </section>
-      <br/>
-      <br/>
-      <section className="home-caption-x2">
-        <h1 className="home-text23" id='timeline'>
-          Timeline
-        </h1>
-        &nbsp;
-        <div style={{fontSize:'1.0rem'}}>
-          All dates 2024.
-        </div>
-      </section>
-      <br/>
-      <section className="home-caption-x2">
-      <Timeline
-      sx={{
-        [`& .${timelineOppositeContentClasses.root}`]: {
-          flex: 0.4,
-        },
-      }}
-    >
-      <TimelineItem>
-          <TimelineOppositeContent className='left-time'>
-          <Typography variant='h5'>Jan 10</Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            Challenge website running and registration open
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent className='left-time'>
-          <Typography variant='h5'>Jan 16</Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            Release of the dataset and starter code
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent className='left-time'>
-          <Typography variant='h5'>April 15</Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            Submission deadline
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent className='left-time'>
-          <Typography variant='h5'>April 20</Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-          Release of final results (decisions)
-          </TimelineContent>
-        </TimelineItem>
-        <TimelineItem>
-          <TimelineOppositeContent className='left-time'>
-            <Typography variant='h5'>May 27 - May 30</Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-          </TimelineSeparator>
-          <TimelineContent>
-            Challenge days (ISBI main conference)
-          </TimelineContent>
-        </TimelineItem>
-      </Timeline>
-      </section>
-      <section className="home-note">
-        <h1 id="capability" className="home-text23">
-          Capability
-        </h1>
-        <h1 className="home-caption1">
-          <span>
-            We’re teaching AI to understand and simulate the physical world in
-            motion, with the goal of training models that help people solve
-            problems that require real-world interaction.
-          </span>
-          <br></br>
-          <br></br>
-          <span>
-            Introducing Sora, our text-to-video model. Sora can generate videos
-            up to a minute long while maintaining visual quality and adherence
-            to the user’s prompt.
-          </span>
-        </h1>
-      </section>
-      <section className="home-slides">
-        <div className="home-slider slider blaze-slider"></div>
-        <h1>Heading</h1>
-        <h1 id="safety" className="home-text29">
-          Safety
-        </h1>
-        <div>
-        </div>
-        <h2 className="home-caption2">
-          <span>
-            We’ll be taking several important safety steps ahead of making Sora
-            available in OpenAI’s products. We are working with red
-            teamers — domain experts in areas like misinformation, hateful
-            content, and bias — who will be adversarially testing the model.
-          </span>
-          <br></br>
-        </h2>
-      </section>
-      <section className="home-objectives"></section>
-      <section className="home-data">
-        <div id="research" className="home-header-container1">
-          <div className="home-header1">
-            <div className="home-row">
-              <h2 className="home-heading1">
-                <span>Research</span>
-                <br></br>
-              </h2>
-            </div>
-          </div>
-          <p className="home-caption3">some research</p>
-          <AwesomeSlider
-            play={true}
-            animation="openAnimation"
-            className='home-slider1'
+      <div style={{ 
+        marginBottom: '20px',
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: 80, 
+        }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
           >
-            <div>
-              <video src="/italian-pup.mp4" loop muted preload="auto" controls autoPlay playsInline className="home-video1"></video>
-            </div>
-            <div>
-              <video src="/otter-on-surfboard.mp4" loop muted preload="auto" controls autoPlay playsInline className="home-video1"></video>
-            </div>
-            <div>
-              <video src="/suv-in-the-dust.mp4" loop muted preload="auto" controls autoPlay playsInline className="home-video1"></video>
-            </div>
-          </AwesomeSlider>
-        </div>
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>1.9 million</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>2D CT images</span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>5,195</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>3D CT volumes</span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>9</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>annotated structures</span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>26</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>hospitals</span>
+          </div>
 
-
-        <br/>
-        <br/>
-
-        <div style={{alignContent: 'center', textAlign: 'center', color:'white',fontSize: '20px', fontWeight: '100',marginBottom: '-60px' }}>
+      </div>
+      <br/>
+      <div style={{alignContent: 'center', textAlign: 'center', color:'black',fontSize: '20px', fontWeight: '100', }}>
         <IconButton aria-label="left" size="large" onClick={e=>{key==2?(setValue(key-2),setKey(key-1)):(setValue(key-2),setKey(key-1))}} disabled={disabled1}>
-          <img alt="image" src={disabled1==true?"/left-arrow-disabled.svg":"/left-arrow.svg"} style={{ width: '40px' }}/>
+          <img alt="image" src={disabled1==false?"/left-arrow-disabled.svg":"/left-arrow.svg"} style={{ width: '40px' }}/>
         </IconButton>
           {key}/3
         <IconButton aria-label="right" size="large" onClick={e=>{key==2?(setValue(key),setKey(key+1)):(setValue(key),setKey(key+1))}} disabled={disabled2}>
-          <img alt="image" src={disabled2==true?"/right-arrow-disabled.svg":"/right-arrow.svg"} style={{ width: '40px' }}/>
+          <img alt="image" src={disabled2==false?"/right-arrow-disabled.svg":"/right-arrow.svg"} style={{ width: '40px' }}/>
         </IconButton>
         </div>
 
@@ -421,7 +693,7 @@ const Home = (props) => {
           value={value}
           onChange={()=>{setValue(key-1),console.log("key:",key),console.log("value:",value)}}
           className='home-carousel'
-          offset={20}
+          offset={10}
           plugins={[
             'clickToChange',
             'centered',
@@ -434,143 +706,469 @@ const Home = (props) => {
            ]}
         >
         <div onClick={e=>{setKey(1)}}>
-          <div className='home-video_back' style={{background: background1, zIndex:zindex1  }}/> 
-          <video ref={videoRef1} id="video1" src="/italian-pup.mp4" loop muted preload="auto" controls autoPlay playsInline className="home-video1x" />
-          <span className="home-text23x">Italian Pup</span>
+          <div className='home-video_back' style={{background: background1, zIndex:zindex1, height:videoHeight1 }}/> 
+          <video 
+            ref={videoRef1} 
+            id="video1" 
+            src="/BDMAP_00000004.mp4" 
+            loop 
+            muted 
+            preload="auto" 
+            controls={contrls1}
+            autoPlay
+            onPlay={() => {
+              if (videoRef1.current) {
+                videoRef1.current.addEventListener('timeupdate', () => {
+                  if (videoRef1.current) {
+                    setTime1(videoRef1.current.currentTime);
+                    setDuration1(videoRef1.current.duration);
+                  }
+                });
+                setVideoHeight1(videoRef1.current.clientHeight)
+                console.log('videoRef1.current.videoHeight:',videoRef1.current.clientHeight)
+              }
+              if (videoRef2.current) {
+                setVideoHeight2(videoRef2.current.clientHeight)
+                console.log('videoRef2.current.videoHeight:',videoRef2.current.clientHeight)
+              }
+              if (videoRef3.current) {
+                setVideoHeight3(videoRef3.current.clientHeight)
+                console.log('videoRef3.current.videoHeight:',videoRef3.current.clientHeight)
+              }
+            }} 
+            playsInline 
+            className="home-video1x" 
+            disablePictureInPicture="true" 
+            disableRemotePlayback="true" 
+            controlsList='nodownload noremoteplayback noplaybackrate' 
+          />
+          <br/><br/>
+          <div style={{
+            marginLeft:'20px',
+            marginRight:'20px',
+            color:'black',
+            fontSize: '20px', 
+            fontWeight: '100',
+            display: 'flex',
+            flexDirection: 'row',
+            alignContent: 'center',
+            alignItems:'flex-start',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            }} >
+            <div style={{
+              width:'60%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              }}
+            >
+            <span
+              className="home-text23x" 
+              style={isCollapsed1 ? { 
+                color:'rgba(11, 11, 11, 1)',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: '1',
+              } : {
+                color:'rgba(11, 11, 11, 1)',
+              }}
+            >
+            Italian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian Pup
+            </span>
+            
+            <IconButton aria-label="more" size="small" onClick={
+              () => {
+                setIsCollapsed1(!isCollapsed1)
+              }
+            }>
+              {!isCollapsed1 ? <ArrowDropUpIcon style={{ color: 'rgba(11, 11, 11, 1)' }} /> : <ArrowDropDownIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />}
+              {isCollapsed1 ? <div style={{fontSize:'0.8rem', color:'rgb(141, 140, 140)'}}>More</div>:<div style={{fontSize:'0.8rem', color:'rgb(141, 140, 140)'}}>Fold</div>}
+            </IconButton>
+            </div>
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>{formatTime(time1,duration1)}</span>
+            <IconButton aria-label="download" size="small" onClick={download1}>
+              <DownloadIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />
+            </IconButton>
+          </div>
         </div>
         <div onClick={e=>{setKey(2)}}>
-          <div className='home-video_back' style={{background: background2, zIndex:zindex2 }}/>
-          <video ref={videoRef2} id="video2" src="/otter-on-surfboard.mp4" loop muted preload="auto" controls playsInline className="home-video1x"/>
-          <span className="home-text23x">Otter on Surfboard</span>
+          <div className='home-video_back' style={{background: background2, zIndex:zindex2,height:videoHeight2 }}/>
+          <video 
+            ref={videoRef2} 
+            id="video2" 
+            src="/BDMAP_00000004.mp4" 
+            loop 
+            muted 
+            preload="auto" 
+            controls = {contrls2}
+            playsInline disablePictureInPicture="true" 
+            disableRemotePlayback="true" 
+            controlsList='nodownload noremoteplayback noplaybackrate' 
+            className="home-video1x"
+          />
+          <br/><br/>
+          <div style={{
+            marginLeft:'20px',
+            marginRight:'20px',
+            color:'black',
+            fontSize: '20px', 
+            fontWeight: '100',
+            display: 'flex',
+            flexDirection: 'row',
+            alignContent: 'center',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            alignItems:'flex-start',
+            }} >
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>Otter on Surfboard</span>
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>{formatTime(time2,duration2)}</span>
+            <IconButton aria-label="download" size="small" onClick={download2}>
+              <DownloadIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />
+            </IconButton>
+          </div>
         </div>
         <div onClick={e=>{setKey(3)}}>
-          <div className='home-video_back' style={{background: background3, zIndex:zindex3 }}/>
-          <video ref={videoRef3} id="video3" src="/suv-in-the-dust.mp4" loop muted preload="auto" controls playsInline className="home-video1x"/>
-          <span className="home-text23x">SUV in the Dust</span>
+          <div className='home-video_back' style={{background: background3, zIndex:zindex3,height:videoHeight3 }}/>
+          <video
+            ref={videoRef3} 
+            id="video3" 
+            src="/BDMAP_00000004.mp4" 
+            loop 
+            muted 
+            preload="auto" 
+            controls = {contrls3}
+            playsInline disablePictureInPicture="true" 
+            disableRemotePlayback="true" 
+            controlsList='nodownload noremoteplayback noplaybackrate' 
+            className="home-video1x"
+          />
+          <br/><br/>
+          <div style={{
+            marginLeft:'20px',
+            marginRight:'20px',
+            color:'black',
+            fontSize: '20px', 
+            fontWeight: '100',
+            display: 'flex',
+            flexDirection: 'row',
+            alignContent: 'center',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            alignItems:'flex-start',
+            }} >
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}} >SUV in the Dust</span>
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>{formatTime(time3,duration3)}</span>
+            <IconButton aria-label="download" size="small" onClick={download3}>
+              <DownloadIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />
+            </IconButton>
+            </div>
         </div>
         </Carousel>
-        
-        <div className="home-content">
-          <div className="home-image1"></div>
-          <div className="home-accordion">
-            <div>
-            </div>
-          </div>
-        </div>
       </section>
-      <div className="home-footer">
-        <div className="home-content1">
-          <div className="home-main">
-            <div className="home-branding1">
-              <img alt="image" src="/icon.png" className="home-image2" style={{ width: '70px' }}/>
-              <span className="home-text34">
-                hello world
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
-              </span>
-            </div>
-            <div className="home-links">
-              <div className="home-column">
-                <span className="home-header2">Company</span>
-                <div className="home-list">
-                  <Link to="/" className="home-navlink">
-                    About
-                  </Link>
-                  <Link to="/" className="home-navlink01">
-                    Services
-                  </Link>
-                  <Link to="/" className="home-navlink02">
-                    How
-                  </Link>
-                  <Link to="/" className="home-navlink03">
-                    <span className="home-text35">Why</span>
-                    <br></br>
-                  </Link>
-                </div>
-              </div>
-              <div className="home-column1">
-                <span className="home-header3">Extern</span>
-                <div className="home-list1">
-                  <Link to="/" className="home-navlink04">
-                    News
-                  </Link>
-                  <Link to="/" className="home-navlink05">
-                    Articles
-                  </Link>
-                  <Link to="/" className="home-navlink06">
-                    Blog
-                  </Link>
-                  <Link to="/" className="home-navlink07">
-                    Privacy
-                  </Link>
-                  <Link to="/" className="home-navlink08">
-                    Terms
-                  </Link>
-                  <Link to="/" className="home-navlink09">
-                    Legal
-                  </Link>
-                  <Link to="/" className="home-navlink10">
-                    Press
-                  </Link>
-                </div>
-              </div>
-              <div className="home-column2">
-                <span className="home-header4">Social</span>
-                <div className="home-list2">
-                  <Link to="/" className="home-navlink11">
-                    LinkedIn
-                  </Link>
-                  <Link to="/" className="home-navlink12">
-                    Twitter
-                  </Link>
-                  <Link to="/" className="home-navlink13">
-                    Instagram
-                  </Link>
-                  <Link to="/" className="home-navlink14">
-                    Facebook
-                  </Link>
-                  <Link to="/" className="home-navlink15">
-                    TikTok
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="home-bottom">
-            <span className="home-text37">
-              © 2022 togthr - All rights reserved
-            </span>
-            <button data-role="scroll-top" className="home-button2 button">
-              <img alt="image" src="/arrow.svg" className="home-image3" />
-            </button>
-          </div>
-        </div>
-      </div>
-      <div>
-        <div className="home-container8">
-          <Script
-            html={`<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // get the element with the "scroll-top" data-role
-  const scrollTopBtn = document.querySelector('[data-role="scroll-top"]');
 
-  // when the element is clicked
-  scrollTopBtn.addEventListener("click", function() {
-    // smoothly scroll to the top of the page
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-});
-</script>
-`}
-          ></Script>
+
+{/* 
+
+
+1.1
+
+*/}
+
+
+
+
+      <section  className="home-data" style={{backgroundColor:'white'}}>
+      <div style={{marginTop:'55px',marginBottom:'25px', display:'flex',flexDirection:'column',alignItems:'center'}}>
+          <h1>
+            <span style={{fontSize:'7vw'}}>AbdonmenAtlas 1.1</span>
+          </h1>
+          <br></br>
+          <p style={{fontWeight:'500',fontSize:'2vw',marginTop:'-15px'}}>
+            Status: In progress
+          </p>
         </div>
+      <div style={{ 
+        marginTop: '20px',
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: 44, 
+        }}
+        >
+        <Button variant="outlined" 
+          onClick={()=>{window.open('https://github.com/', '_blank');}}
+          sx={{ 
+            width: '100px',
+            borderColor: 'black', 
+            color: 'black', 
+            '&:hover': {
+              borderColor: 'black', 
+              backgroundColor: 'rgba(168, 168, 168, 0.51)' 
+            }
+          }}
+        >Paper</Button>
+        <Button variant="outlined" 
+          onClick={()=>{window.open('https://github.com/', '_blank');}}
+          sx={{ 
+            width: '100px',
+            borderColor: 'black', 
+            color: 'black', 
+            '&:hover': {
+              borderColor: 'black', 
+              backgroundColor: 'rgba(168, 168, 168, 0.51)' 
+            }
+          }}
+        >Github</Button>
       </div>
+      <br/>
+      <br/>
+      <div style={{ 
+        marginBottom: '20px',
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        gap: 80, 
+        }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>3.7 million</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>2D CT images</span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>9,262</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>3D CT volumes</span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>25</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>annotated structures</span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: 3,
+            }}
+          >
+            <span style={{fontSize:'3vw',fontWeight:'700'}}>88</span>
+            <span style={{fontSize:'1.8vw',fontWeight:'300'}}>hospitals</span>
+          </div>
+
+      </div>
+      <br/>
+      <div style={{alignContent: 'center', textAlign: 'center', color:'black',fontSize: '20px', fontWeight: '100', }}>
+        <IconButton aria-label="left" size="large" onClick={e=>{key1==2?(setValue1(key1-2),setKey1(key1-1)):(setValue1(key1-2),setKey1(key1-1))}} disabled={disabled11}>
+          <img alt="image" src={disabled11==false?"/left-arrow-disabled.svg":"/left-arrow.svg"} style={{ width: '40px' }}/>
+        </IconButton>
+          {key1}/3
+        <IconButton aria-label="right" size="large" onClick={e=>{key1==2?(setValue1(key1),setKey1(key1+1)):(setValue1(key1),setKey1(key1+1))}} disabled={disabled12}>
+          <img alt="image" src={disabled12==false?"/right-arrow-disabled.svg":"/right-arrow.svg"} style={{ width: '40px' }}/>
+        </IconButton>
+        </div>
+
+        <Carousel
+          value={value1}
+          onChange={()=>{setValue1(key1-1),console.log("key:",key1),console.log("value:",value1)}}
+          className='home-carousel'
+          offset={10}
+          plugins={[
+            'clickToChange',
+            'centered',
+            {
+              resolve: slidesToShowPlugin,
+              options: {
+              numberOfSlides: 2
+              }
+            },
+           ]}
+        >
+        <div onClick={e=>{setKey1(1)}}>
+          <div className='home-video_back' style={{background: background11, zIndex:zindex11, height:videoHeight11 }}/> 
+          <video 
+            ref={videoRef11} 
+            id="video1" 
+            src="/BDMAP_00000004.mp4" 
+            loop 
+            muted 
+            preload="auto" 
+            controls={controls11}
+            autoPlay
+            onPlay={() => {
+              if (videoRef11.current) {
+                videoRef11.current.addEventListener('timeupdate', () => {
+                  if (videoRef11.current) {
+                    setTime11(videoRef11.current.currentTime);
+                    setDuration11(videoRef11.current.duration);
+                  }
+                });
+                setVideoHeight11(videoRef11.current.clientHeight)
+                console.log('videoRef11.current.videoHeight:',videoRef11.current.clientHeight)
+              }
+              if (videoRef12.current) {
+                setVideoHeight12(videoRef12.current.clientHeight)
+                console.log('videoRef12.current.videoHeight:',videoRef12.current.clientHeight)
+              }
+              if (videoRef13.current) {
+                setVideoHeight13(videoRef13.current.clientHeight)
+                console.log('videoRef13.current.videoHeight:',videoRef13.current.clientHeight)
+              }
+            }} 
+            playsInline 
+            className="home-video1x" 
+            disablePictureInPicture="true" 
+            disableRemotePlayback="true" 
+            controlsList='nodownload noremoteplayback noplaybackrate' 
+          />
+          <br/><br/>
+          <div style={{
+            marginLeft:'20px',
+            marginRight:'20px',
+            color:'black',
+            fontSize: '20px', 
+            fontWeight: '100',
+            display: 'flex',
+            flexDirection: 'row',
+            alignContent: 'center',
+            alignItems:'flex-start',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            }} >
+            <div style={{
+              width:'60%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              }}
+            >
+            <span
+              className="home-text23x" 
+              style={isCollapsed11 ? { 
+                color:'rgba(11, 11, 11, 1)',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                display: '-webkit-box',
+                WebkitBoxOrient: 'vertical',
+                WebkitLineClamp: '1',
+              } : {
+                color:'rgba(11, 11, 11, 1)',
+              }}
+            >
+            Italian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian PupItalian Pup
+            </span>
+            
+            <IconButton aria-label="more" size="small" onClick={
+              () => {
+                setIsCollapsed11(!isCollapsed11)
+              }
+            }>
+              {!isCollapsed11 ? <ArrowDropUpIcon style={{ color: 'rgba(11, 11, 11, 1)' }} /> : <ArrowDropDownIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />}
+              {isCollapsed11 ? <div style={{fontSize:'0.8rem', color:'rgb(141, 140, 140)'}}>More</div>:<div style={{fontSize:'0.8rem', color:'rgb(141, 140, 140)'}}>Fold</div>}
+            </IconButton>
+            </div>
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>{formatTime(time11,duration11)}</span>
+            <IconButton aria-label="download" size="small" onClick={download11}>
+              <DownloadIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />
+            </IconButton>
+          </div>
+        </div>
+        <div onClick={e=>{setKey1(2)}}>
+          <div className='home-video_back' style={{background: background12, zIndex:zindex12,height:videoHeight12 }}/>
+          <video 
+            ref={videoRef12} 
+            id="video2" 
+            src="/BDMAP_00000004.mp4" 
+            loop 
+            muted 
+            preload="auto" 
+            controls = {controls12}
+            playsInline disablePictureInPicture="true" 
+            disableRemotePlayback="true" 
+            controlsList='nodownload noremoteplayback noplaybackrate' 
+            className="home-video1x"
+          />
+          <br/><br/>
+          <div style={{
+            marginLeft:'20px',
+            marginRight:'20px',
+            color:'black',
+            fontSize: '20px', 
+            fontWeight: '100',
+            display: 'flex',
+            flexDirection: 'row',
+            alignContent: 'center',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            alignItems:'flex-start',
+            }} >
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>Otter on Surfboard</span>
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>{formatTime(time12,duration12)}</span>
+            <IconButton aria-label="download" size="small" onClick={download12}>
+              <DownloadIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />
+            </IconButton>
+          </div>
+        </div>
+        <div onClick={e=>{setKey1(3)}}>
+          <div className='home-video_back' style={{background: background13, zIndex:zindex13,height:videoHeight13 }}/>
+          <video
+            ref={videoRef13} 
+            id="video3" 
+            src="/BDMAP_00000004.mp4" 
+            loop 
+            muted 
+            preload="auto" 
+            controls = {controls13}
+            playsInline disablePictureInPicture="true" 
+            disableRemotePlayback="true" 
+            controlsList='nodownload noremoteplayback noplaybackrate' 
+            className="home-video1x"
+          />
+          <br/><br/>
+          <div style={{
+            marginLeft:'20px',
+            marginRight:'20px',
+            color:'black',
+            fontSize: '20px', 
+            fontWeight: '100',
+            display: 'flex',
+            flexDirection: 'row',
+            alignContent: 'center',
+            justifyContent: 'space-between',
+            // alignItems: 'center',
+            alignItems:'flex-start',
+            }} >
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}} >SUV in the Dust</span>
+            <span className="home-text23x" style={{color:'rgba(11, 11, 11, 1)'}}>{formatTime(time13,duration13)}</span>
+            <IconButton aria-label="download" size="small" onClick={download13}>
+              <DownloadIcon style={{ color: 'rgba(11, 11, 11, 1)' }} />
+            </IconButton>
+            </div>
+        </div>
+        </Carousel>
+      </section>
+      
     </div>
   )
 }

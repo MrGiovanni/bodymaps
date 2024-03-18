@@ -1,91 +1,437 @@
-import React from 'react'
+import React, { useEffect,useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Helmet } from 'react-helmet'
-
+import { Layout, Menu, theme } from 'antd';
+const { Header, Content, Footer, Sider } = Layout;
 import './dataset.css'
+import { Divider, ConfigProvider } from 'antd';
+import Box from '@mui/material/Box';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import { FixedSizeList } from 'react-window';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 
-const Dataset = (props) => {
+
+function renderRow(props) {
+  const [backgroundColor, setBackgroundColor] = useState('transparent')
+  const [backgroundColor1, setBackgroundColor1] = useState('transparent')
+  const [backgroundColor2, setBackgroundColor2] = useState('transparent')
+  const [backgroundColor3, setBackgroundColor3] = useState('transparent')
+  const [backgroundColor4, setBackgroundColor4] = useState('transparent')
+  const [backgroundColor5, setBackgroundColor5] = useState('transparent')
+  const [backgroundColor6, setBackgroundColor6] = useState('transparent')
+
+
+  const handleMouseOver = () => {
+    setBackgroundColor('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut = () => {
+    setBackgroundColor('transparent')
+  }
+  const handleMouseOver1 = () => {
+    setBackgroundColor1('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut1 = () => {
+    setBackgroundColor1('transparent')
+  }
+  const handleMouseOver2 = () => {
+    setBackgroundColor2('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut2 = () => {
+    setBackgroundColor2('transparent')
+  }
+  const handleMouseOver3 = () => {
+    setBackgroundColor3('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut3 = () => {
+    setBackgroundColor3('transparent')
+  }
+  const handleMouseOver4 = () => {
+    setBackgroundColor4('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut4 = () => {
+    setBackgroundColor4('transparent')
+  }
+  const handleMouseOver5 = () => {
+    setBackgroundColor5('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut5 = () => {
+    setBackgroundColor5('transparent')
+  }
+  const handleMouseOver6 = () => {
+    setBackgroundColor6('rgba(114, 114, 114, 0.7)')
+  }
+  const handleMouseOut6 = () => {
+    setBackgroundColor6('transparent')
+  }
+
+
   return (
-    <div className="dataset-container">
-      <Helmet>
-        <title>Dataset</title>
-        <meta property="og:title" content="dataset - Togthr template" />
-      </Helmet>
-      <header data-thq="thq-navbar" className="dataset-navbar-interactive">
-        <img
-          alt="logo"
-          src="/icon.png"
-          className="dataset-image"
-        />
-        <div style={{fontSize: '24px', fontWeight: 'bold', marginLeft: '10px'}}>ISBI BodyMaps24</div>
-        <div data-thq="thq-navbar-nav" className="dataset-desktop-menu">
-          <nav className="dataset-links">
-            <Link to="/" className="dataset-navlink">
-              Home
-            </Link>
-            <Link to='/dataset' className="dataset-text">Dataset</Link>
-            <Link to='/model' className="dataset-text1">Model</Link>
-            <Link to='/leaderboard' className="dataset-text2">Leaderboard</Link>
-            <Link to='/team' className="dataset-text3">Team</Link>
-          </nav>
-          <div className="dataset-buttons"></div>
-        </div>
-        <div data-thq="thq-burger-menu" className="dataset-burger-menu">
-          <svg viewBox="0 0 1024 1024" className="dataset-icon">
-            <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
-          </svg>
-        </div>
-        <div data-thq="thq-mobile-menu" className="dataset-mobile-menu">
-          <div className="dataset-nav">
-            <div className="dataset-top">
-              <img
-                alt="image"
-                src="https://presentation-website-assets.teleporthq.io/logos/logo.png"
-                className="dataset-logo"
-              />
-              <div data-thq="thq-close-menu" className="dataset-close-menu">
-                <svg viewBox="0 0 1024 1024" className="dataset-icon02">
-                  <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
-                </svg>
-              </div>
-            </div>
-            <nav className="dataset-links1">
-              <span className="dataset-text4">About</span>
-              <span className="dataset-text5">Features</span>
-              <span className="dataset-text6">Pricing</span>
-              <span className="dataset-text7">Team</span>
-              <span className="dataset-text8">Blog</span>
-            </nav>
-            <div className="dataset-buttons1">
-              <button className="dataset-login button">Login</button>
-              <button className="button">Register</button>
-            </div>
+    <div>
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver}
+        onMouseLeave={handleMouseOut}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
           </div>
-          <div>
-            <svg
-              viewBox="0 0 950.8571428571428 1024"
-              className="dataset-icon04"
-            >
-              <path d="M925.714 233.143c-25.143 36.571-56.571 69.143-92.571 95.429 0.571 8 0.571 16 0.571 24 0 244-185.714 525.143-525.143 525.143-104.571 0-201.714-30.286-283.429-82.857 14.857 1.714 29.143 2.286 44.571 2.286 86.286 0 165.714-29.143 229.143-78.857-81.143-1.714-149.143-54.857-172.571-128 11.429 1.714 22.857 2.857 34.857 2.857 16.571 0 33.143-2.286 48.571-6.286-84.571-17.143-148-91.429-148-181.143v-2.286c24.571 13.714 53.143 22.286 83.429 23.429-49.714-33.143-82.286-89.714-82.286-153.714 0-34.286 9.143-65.714 25.143-93.143 90.857 112 227.429 185.143 380.571 193.143-2.857-13.714-4.571-28-4.571-42.286 0-101.714 82.286-184.571 184.571-184.571 53.143 0 101.143 22.286 134.857 58.286 41.714-8 81.714-23.429 117.143-44.571-13.714 42.857-42.857 78.857-81.143 101.714 37.143-4 73.143-14.286 106.286-28.571z"></path>
-            </svg>
-            <svg
-              viewBox="0 0 877.7142857142857 1024"
-              className="dataset-icon06"
-            >
-              <path d="M585.143 512c0-80.571-65.714-146.286-146.286-146.286s-146.286 65.714-146.286 146.286 65.714 146.286 146.286 146.286 146.286-65.714 146.286-146.286zM664 512c0 124.571-100.571 225.143-225.143 225.143s-225.143-100.571-225.143-225.143 100.571-225.143 225.143-225.143 225.143 100.571 225.143 225.143zM725.714 277.714c0 29.143-23.429 52.571-52.571 52.571s-52.571-23.429-52.571-52.571 23.429-52.571 52.571-52.571 52.571 23.429 52.571 52.571zM438.857 152c-64 0-201.143-5.143-258.857 17.714-20 8-34.857 17.714-50.286 33.143s-25.143 30.286-33.143 50.286c-22.857 57.714-17.714 194.857-17.714 258.857s-5.143 201.143 17.714 258.857c8 20 17.714 34.857 33.143 50.286s30.286 25.143 50.286 33.143c57.714 22.857 194.857 17.714 258.857 17.714s201.143 5.143 258.857-17.714c20-8 34.857-17.714 50.286-33.143s25.143-30.286 33.143-50.286c22.857-57.714 17.714-194.857 17.714-258.857s5.143-201.143-17.714-258.857c-8-20-17.714-34.857-33.143-50.286s-30.286-25.143-50.286-33.143c-57.714-22.857-194.857-17.714-258.857-17.714zM877.714 512c0 60.571 0.571 120.571-2.857 181.143-3.429 70.286-19.429 132.571-70.857 184s-113.714 67.429-184 70.857c-60.571 3.429-120.571 2.857-181.143 2.857s-120.571 0.571-181.143-2.857c-70.286-3.429-132.571-19.429-184-70.857s-67.429-113.714-70.857-184c-3.429-60.571-2.857-120.571-2.857-181.143s-0.571-120.571 2.857-181.143c3.429-70.286 19.429-132.571 70.857-184s113.714-67.429 184-70.857c60.571-3.429 120.571-2.857 181.143-2.857s120.571-0.571 181.143 2.857c70.286 3.429 132.571 19.429 184 70.857s67.429 113.714 70.857 184c3.429 60.571 2.857 120.571 2.857 181.143z"></path>
-            </svg>
-            <svg
-              viewBox="0 0 602.2582857142856 1024"
-              className="dataset-icon08"
-            >
-              <path d="M548 6.857v150.857h-89.714c-70.286 0-83.429 33.714-83.429 82.286v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571c0-144.571 88.571-223.429 217.714-223.429 61.714 0 114.857 4.571 130.286 6.857z"></path>
-            </svg>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor1, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver1}
+        onMouseLeave={handleMouseOut1}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
           </div>
-        </div>
-      </header>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor2, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver2}
+        onMouseLeave={handleMouseOut2}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
+          </div>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+    
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor3, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver3}
+        onMouseLeave={handleMouseOut3}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
+          </div>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor4, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver4}
+        onMouseLeave={handleMouseOut4}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
+          </div>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor5, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver5}
+        onMouseLeave={handleMouseOut5}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
+          </div>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+
+    <ListItem component="div" disablePadding>
+    <Card 
+      sx={{ 
+      width: '120%', 
+      marginLeft:'10px', 
+      backgroundColor:backgroundColor6, 
+      border:'1px solid white',
+      '& .MuiTouchRipple-root': {
+        color: 'rgba(255, 255, 255, 0.8)', // 设置波纹为带点透明的白色
+      },
+      }}>
+      <CardActionArea 
+        onClick={()=>{window.open('https://github.com/', '_blank');}}
+        onMouseOver={handleMouseOver6}
+        onMouseLeave={handleMouseOut6}
+      >
+        <CardContent style={{display:'flex', justifyContent:'flex-start', alignItems:'center'}}>
+          <div style={{width:'30%'}}>
+            <Typography style={{color:'white', fontSize:'2vw'}}>
+              Dataset Name
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              image/text
+            </Typography>
+            <Typography style={{color:'white', fontSize:'1.5vw'}}>
+              Status:Released
+            </Typography>
+          </div>
+          <Typography style={{color:'white', marginTop:'4px', fontSize:'1vm', width:'70%'}}>
+            Description:Formerly known as crawling@home (C@H), an openly accessible 400M image-text-pair dataset
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+    </ListItem>
+    <br/>
+
+
     </div>
-  )
+  );
 }
 
-export default Dataset
+export default function Dataset() {
+  const [windowHeight, setWindowHeight] = React.useState(window.innerHeight);
+  const {
+    token: { colorBgContainer, borderRadiusLG},
+  } = theme.useToken();
+
+  useEffect(() => {
+    function handleResize() {
+      console.log('window.innerHeight', window.innerHeight)
+      setWindowHeight(window.innerHeight)
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }
+  )
+
+  return (
+    <div>
+    <Helmet>
+      <title>Dataset</title>
+    </Helmet>
+    <Layout style={{height:windowHeight}}>
+      <Sider
+        breakpoint="lg"
+        collapsedWidth="0"
+        onBreakpoint={(broken) => {
+          console.log(broken);
+        }}
+        onCollapse={(collapsed, type) => {
+          console.log(collapsed, type);
+        }}
+      >
+        <div className="demo-logo-vertical" style={{marginTop:'30px'}}/>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['2']}>
+          <div style={{display:'flex',flexDirection:'row',alignItems:'center',marginBottom:'20px'}}>
+            <img alt="image" src="/icon.png" className="home-branding" style={{ width: '50px',marginLeft:'10px' }} />
+            <div style={{color:'white',marginLeft:'10px',fontWeight:'500',fontSize:'1.6rem'}}>ISBI</div>
+          </div>
+          <Menu.Item key="1">
+            <Link to="/">Home</Link>
+          </Menu.Item>
+          <Menu.Item key="2" style={{backgroundColor:'#8c8c8cb7'}}>
+            <Link to="/dataset">Dataset</Link>
+          </Menu.Item>
+          <Menu.Item key="3">
+            <Link to="/model">Model</Link>
+          </Menu.Item>
+          <Menu.Item key="4">
+            <Link to="/leaderboard">Leaderboard</Link>
+          </Menu.Item>
+          <Menu.Item key="5">
+            <Link to="/team">Team</Link>
+          </Menu.Item>
+        </Menu>
+      </Sider>
+      <Layout style={{height:windowHeight, backgroundColor:'rgb(4,21,39)'}}>
+        <Content
+          style={{
+            margin: '20px 10px 0',
+          }}
+        >
+          <div
+            style={{
+              padding: 24,
+              background: colorBgContainer,
+              borderRadius: borderRadiusLG,
+              backgroundColor:'rgb(35,54,76)',
+            }}
+          >
+              <h1 style={{color:'white',marginLeft:'8px',fontSize:'7vw'}}>PROJECTS</h1>
+              <ConfigProvider
+                theme={{
+                  token: {
+                   lineWidth: '2px',
+                   colorSplit: 'white',
+                  },
+                }}
+              >
+                <div>
+                  <Divider  orientationMargin="10" orientation="left"  style={{color:'white',fontSize:'3vw',marginTop:'-10px',fontWeight:'200'}}>Datasets</Divider>
+                </div>
+              </ConfigProvider>
+              <FixedSizeList
+                height={windowHeight-240}
+                width={'100%'}
+                itemSize={46}
+                itemCount={1}
+                overscanCount={5}
+              >
+                {renderRow}
+              </FixedSizeList>
+          </div>
+        </Content>
+      </Layout>
+    </Layout>
+    </div>
+  );
+}
