@@ -102,10 +102,16 @@ const Home = (props) => {
   const [videoHeight1, setVideoHeight1] = useState('0px')
   const [videoHeight2, setVideoHeight2] = useState('0px')
   const [videoHeight3, setVideoHeight3] = useState('0px')
+  const [videoWidth1, setVideoWidth1] = useState('0px')
+  const [videoWidth2, setVideoWidth2] = useState('0px')
+  const [videoWidth3, setVideoWidth3] = useState('0px')
 
   const [videoHeight11, setVideoHeight11] = useState('0px')
   const [videoHeight12, setVideoHeight12] = useState('0px')
   const [videoHeight13, setVideoHeight13] = useState('0px')
+  const [videoWidth11, setVideoWidth11] = useState('0px')
+  const [videoWidth12, setVideoWidth12] = useState('0px')
+  const [videoWidth13, setVideoWidth13] = useState('0px')
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -122,26 +128,32 @@ const Home = (props) => {
       setWindowSize(window.innerWidth)
       if (videoRef1.current) {
         setVideoHeight1(videoRef1.current.clientHeight)
+        setVideoWidth1(videoRef1.current.clientWidth)
         console.log('videoRef1.current.videoHeight:',videoRef1.current.clientHeight)
       }
       if (videoRef2.current) {
         setVideoHeight2(videoRef2.current.clientHeight)
+        setVideoWidth2(videoRef2.current.clientWidth)
         console.log('videoRef2.current.videoHeight:',videoRef2.current.clientHeight)
       }
       if (videoRef3.current) {
         setVideoHeight3(videoRef3.current.clientHeight)
+        setVideoWidth3(videoRef3.current.clientWidth)
         console.log('videoRef3.current.videoHeight:',videoRef3.current.clientHeight)
       }
       if (videoRef11.current) {
         setVideoHeight11(videoRef11.current.clientHeight)
+        setVideoWidth11(videoRef11.current.clientWidth)
         console.log('videoRef11.current.videoHeight:',videoRef11.current.clientHeight)
       }
       if (videoRef12.current) {
         setVideoHeight12(videoRef12.current.clientHeight)
+        setVideoWidth12(videoRef12.current.clientWidth)
         console.log('videoRef12.current.videoHeight:',videoRef12.current.clientHeight)
       }
       if (videoRef13.current) {
         setVideoHeight13(videoRef13.current.clientHeight)
+        setVideoWidth13(videoRef13.current.clientWidth)
         console.log('videoRef13.current.videoHeight:',videoRef13.current.clientHeight)
       }
     }
@@ -706,7 +718,7 @@ const Home = (props) => {
            ]}
         >
         <div onClick={e=>{setKey(1)}}>
-          <div className='home-video_back' style={{background: background1, zIndex:zindex1, height:videoHeight1 }}/> 
+          <div className='home-video_back' style={{background: background1, zIndex:zindex1, height:videoHeight1, width:videoWidth1 }}/> 
           <video 
             ref={videoRef1} 
             id="video1" 
@@ -725,14 +737,17 @@ const Home = (props) => {
                   }
                 });
                 setVideoHeight1(videoRef1.current.clientHeight)
+                setVideoWidth1(videoRef1.current.clientWidth)
                 console.log('videoRef1.current.videoHeight:',videoRef1.current.clientHeight)
               }
               if (videoRef2.current) {
                 setVideoHeight2(videoRef2.current.clientHeight)
+                setVideoWidth2(videoRef2.current.clientWidth)
                 console.log('videoRef2.current.videoHeight:',videoRef2.current.clientHeight)
               }
               if (videoRef3.current) {
                 setVideoHeight3(videoRef3.current.clientHeight)
+                setVideoWidth3(videoRef3.current.clientWidth)
                 console.log('videoRef3.current.videoHeight:',videoRef3.current.clientHeight)
               }
             }} 
@@ -795,7 +810,7 @@ const Home = (props) => {
           </div>
         </div>
         <div onClick={e=>{setKey(2)}}>
-          <div className='home-video_back' style={{background: background2, zIndex:zindex2,height:videoHeight2 }}/>
+          <div className='home-video_back' style={{background: background2, zIndex:zindex2,height:videoHeight2, width:videoWidth2 }}/>
           <video 
             ref={videoRef2} 
             id="video2" 
@@ -831,7 +846,7 @@ const Home = (props) => {
           </div>
         </div>
         <div onClick={e=>{setKey(3)}}>
-          <div className='home-video_back' style={{background: background3, zIndex:zindex3,height:videoHeight3 }}/>
+          <div className='home-video_back' style={{background: background3, zIndex:zindex3,height:videoHeight3, width:videoWidth3 }}/>
           <video
             ref={videoRef3} 
             id="video3" 
@@ -1006,7 +1021,7 @@ const Home = (props) => {
            ]}
         >
         <div onClick={e=>{setKey1(1)}}>
-          <div className='home-video_back' style={{background: background11, zIndex:zindex11, height:videoHeight11 }}/> 
+          <div className='home-video_back' style={{background: background11, zIndex:zindex11, height:videoHeight11, width:videoWidth11}}/> 
           <video 
             ref={videoRef11} 
             id="video1" 
@@ -1025,14 +1040,17 @@ const Home = (props) => {
                   }
                 });
                 setVideoHeight11(videoRef11.current.clientHeight)
+                setVideoWidth11(videoRef11.current.clientWidth)
                 console.log('videoRef11.current.videoHeight:',videoRef11.current.clientHeight)
               }
               if (videoRef12.current) {
                 setVideoHeight12(videoRef12.current.clientHeight)
+                setVideoWidth12(videoRef12.current.clientWidth)
                 console.log('videoRef12.current.videoHeight:',videoRef12.current.clientHeight)
               }
               if (videoRef13.current) {
                 setVideoHeight13(videoRef13.current.clientHeight)
+                setVideoWidth13(videoRef13.current.clientWidth)
                 console.log('videoRef13.current.videoHeight:',videoRef13.current.clientHeight)
               }
             }} 
@@ -1095,7 +1113,7 @@ const Home = (props) => {
           </div>
         </div>
         <div onClick={e=>{setKey1(2)}}>
-          <div className='home-video_back' style={{background: background12, zIndex:zindex12,height:videoHeight12 }}/>
+          <div className='home-video_back' style={{background: background12, zIndex:zindex12,height:videoHeight12, width:videoWidth12 }}/>
           <video 
             ref={videoRef12} 
             id="video2" 
@@ -1131,7 +1149,7 @@ const Home = (props) => {
           </div>
         </div>
         <div onClick={e=>{setKey1(3)}}>
-          <div className='home-video_back' style={{background: background13, zIndex:zindex13,height:videoHeight13 }}/>
+          <div className='home-video_back' style={{background: background13, zIndex:zindex13,height:videoHeight13,width:videoWidth13 }}/>
           <video
             ref={videoRef13} 
             id="video3" 
