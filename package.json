@@ -1,0 +1,50 @@
+{
+  "name": "togthr-template",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@brainhubeu/react-carousel": "^2.0.4",
+    "@craco/craco": "^7.0.0-alpha.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.12",
+    "@mui/lab": "^5.0.0-alpha.167",
+    "@mui/material": "^5.15.12",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.17",
+    "antd": "^5.15.3",
+    "dangerous-html": "0.1.13",
+    "prop-types": "15.7.2",
+    "react": "^17.0.2",
+    "react-awesome-slider": "^4.1.0",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-window": "^1.8.10",
+    "styled-components": "^6.1.8",
+    "swiper": "^11.0.7"
+  },
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --env=jsdom",
+    "eject": "craco eject"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
