@@ -1,0 +1,20 @@
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 3.5em auto;
+    padding: 0 60px;
+}
+
+.statsText {
+    text-align: center;
+}
+
+.statsP {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.stats h2 {
+    width: 5em;
+    font-weight: 1000;
+}

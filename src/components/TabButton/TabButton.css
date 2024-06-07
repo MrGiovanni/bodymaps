@@ -1,0 +1,46 @@
+/* TabButton.css */
+
+.tab-button {
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+    margin: 0 5px;
+    background: none;
+    border: none;
+    color: inherit;
+    width: 10em;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* hover tab-button */
+.tab-button:hover {
+    color: inherit; /* Hover text color */
+}
+
+.tab-button.active {
+color: #000000; /* Active text color */
+}
+
+/* This is a placeholder for when the button is stuck to the top */
+/* .sticky-tab {
+position: fixed;
+top: 0; */
+/* background-color: #fff; Color when it sticks to the top */
+/* color: #000; Active text color */
+/* } */
+
+.tab-button b {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+/* .sticky .tab-button b {
+    color
+} */
+
+.sticky .tab-button b:hover {
+    color:rgb(0, 0, 0);
+}
+
+.tab-button b:hover {
+    color:#2864c4;
+}

@@ -1,0 +1,223 @@
+.hero{
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 6em;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.video-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)
+    );
+    z-index: 0; /* Between the video and the text content */
+}
+
+
+.hero-text{
+    position: absolute;
+    top: 22.5%;
+    text-align: center;
+    width: 75%;
+    z-index: 1;
+}
+
+.report-button-div {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    /* position: absolute; */
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.6px);
+    -webkit-backdrop-filter: blur(9.6px);
+    z-index: 100;
+    /* height: 60px; */
+    border-radius: 50px;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    width: fit-content;
+    padding: 0 1em;
+}
+
+.reportButton {
+    margin: auto;
+    background: none;
+    border: none;
+    color: inherit;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 1em 1em;
+    font-size: 1rem;
+}
+
+.reportButton:hover {
+    color: #2864c4;
+}
+
+.play-button-div {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    position: absolute;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.6px);
+    -webkit-backdrop-filter: blur(9.6px);
+    top: 90%;
+    right: 5%;
+    z-index: 100;
+    height: 45px;
+    border-radius: 50px;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.play-button {
+    position: relative;
+    transition: color 0.3s, background-color 0.3s;
+    margin: 0 5px;
+    background: none;
+    border: none;
+    color: inherit;
+    width: 7.5em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    color: #2864c4;
+}
+
+.backgroundVideoP {
+    font-size: 1.7rem;
+    color: white;
+    margin: 1.5rem auto;
+    width: 50%;
+}
+
+.tab-buttons {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    position: absolute;
+    background: rgba(30, 30, 30, 0.7);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.6px);
+    -webkit-backdrop-filter: blur(9.6px);
+    top: 90%;
+    z-index: 100;
+    height: 45px;
+    border-radius: 50px;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 10px;
+}
+
+.sticky {
+    position: fixed;
+    top: 1vw;
+    color: #7d7d7d;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.icon-text-space {
+    margin-left: 5px; /* Adjust this value as needed */
+}
+
+.h1Title {
+    font-size: 4rem;
+    margin: 15px;
+    text-align: center;
+}
+
+.backgroundVideoBelowText {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    position: absolute;
+    top: 80%;
+    font-size: 1.25rem;
+    width: 25em;
+    text-align: center;
+}
+
+.backgroundVideoBelowText p {
+    margin: 5px;
+}
+
+.reportButton a {
+    text-decoration: none;
+}
+
+.reportButton a:hover {
+    color: inherit;
+}
+
+.short-play-button-text {
+    display: none;
+}
+
+.long-play-button-text {
+    display: block;
+}
+
+@media (max-width: 1000px) {
+    .h1Title {
+        font-size: 2.5rem;
+        transition: all 0.5s;
+    }
+
+    .backgroundVideoP {
+        font-size: 1.2rem;
+        transition: all 0.5s;
+    }
+
+    .backgroundVideoBelowText {
+        font-size: 1rem;
+        transition: all 0.5s;
+    }
+
+    .reportButton {
+        transition: all 0.5s;
+        padding: 0.75 0.75em;
+        font-size: 0.8rem;
+    }
+
+    .long-play-button-text {
+        display: none;
+    }
+
+    .short-play-button-text {
+        display: block;
+    }
+
+    .play-button.short-play-button-text {
+        width: 15em;
+    }
+    
+}

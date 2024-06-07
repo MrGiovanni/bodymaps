@@ -1,0 +1,134 @@
+.horizontal-slider {
+    margin: 15px auto; /* Center the slider */
+    /* padding: 0 80px; Add some space around the slider */
+    position: relative;
+    /* background-color: rgb(87, 87, 87); */
+}
+
+.slider-btn {
+    background: none; /* Remove default background */
+    border: none; /* Remove default border */
+    /* transform: translateY(50%); Center the button vertically (relative to the parent container) */
+    padding: 0; /* Remove default padding */
+    margin: 10px 20px; /* Add some space around the button */
+    border-radius: 50%; /* Make it a circle */
+    width: 45px; /* Width of the SVG */
+    height: 45px; /* Height of the SVG */
+    display: flex; /* Use flex to center the SVG inside the button */
+    cursor: pointer; /* Cursor changes to a pointer to indicate a button */
+    transition: background-color 0.3s, opacity 0.3s; /* Smooth transition for hover effects */
+    opacity: 1;
+}
+
+.slider-btn:not(.disabled-btn):hover {
+    opacity: 0.7; /* Change the opacity when hovered */
+}
+
+.btns {
+    display: flex; /* Enable flexbox for this container */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    height: 100%; /* Take the full height of the parent container */
+}
+
+.slider{
+    display: block; /* Make the slider a block element */
+    overflow: hidden; /* Hide the overflowing content */
+    transition: scroll-left 0.05s ease-in-out;
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    width: 100%; /* Take the full width of the parent container */
+}
+
+/* .slider ul {
+    display: flex;
+    flex-direction: nowrap;
+    width: 200%;
+    overflow-x: auto;
+    padding: 0 10px;
+    transition: 0.5s;
+    transform: translateX(42px);
+} */
+
+.slider ul {
+    display: flex;
+    flex-direction: nowrap;
+    overflow-x: auto; /* enable horizontal scrolling */
+    padding: 0 10px;
+    transition: scroll-left 0.05s ease-in-out; /* add CSS transition for smooth scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+    overflow-x: hidden;
+}
+
+.slider ul::-webkit-scrollbar {
+    display: none; 
+}
+
+.slider ul li {
+    list-style: none; /* Remove the default list style */
+    /* width: 50%; Make the list items take half the width of the container */
+    /* padding: 30px; Add some space around the list items */
+}
+
+.slide{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05); /* Add a shadow to the slides */
+    /* padding: 40px; Add some space inside the slides */
+    border-radius: 10px; /* Add some border radius to the slides */
+    color: #000000;
+    line-height: 1.4;
+    background-color: rgb(121, 121, 121);
+    transition: background-color 0.3s, opacity 0.3s;
+    object-fit: cover;
+    /* width: 300px; adjust this value to your desired width */
+    width: 95vw;
+    height: 80vh; /* adjust this value to your desired height */
+    flex: 0 0 auto; /* add this to prevent flexbox from resizing the slides */
+    margin: 0 10px;
+    /* margin: 10px; add some margin between slides */
+}
+
+/* .slide img {
+    width: 100px; 
+    margin-right: 10px; 
+    border: 4px solid #852727;
+} */
+
+/* .user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+} */
+
+/* .user-info h3 {
+    color: #852727;
+} */
+
+.disabled-btn {
+    opacity: 0.5; /* Change the opacity of the button */
+    cursor: default; /* Disable the cursor for the button */
+}
+
+.emptySlide{
+    /* background-color: tomato; */
+    width: 4000px;
+}
+
+.slide.disabledSlide {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.slide.disabledSlide:hover {
+    opacity: 0.8;
+}
+
+@media (min-width: 1600px) {
+    .slide {
+        width: 1520px;
+    }
+}
+
+@media (min-height: 1000px) {
+    .slide {
+        height: 800px;
+    }
+}

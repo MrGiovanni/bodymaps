@@ -1,0 +1,699 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;900&display=swap');
+
+#root {
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    font-weight: 300;
+}
+
+/* *::-webkit-scrollbar {
+    display: none; 
+} */
+
+.appDiv {
+    width: 300%;
+    height: 300%;
+}
+
+.text{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #992447;
+    margin-top: 2rem;
+}
+
+header{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #115ca7;
+    margin-top: 2rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*::selection {
+    color: white;
+    background: rgb(0, 0, 0);
+  }
+
+body{
+    background: #F5F5F5;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+.container{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.red{
+    color: red;
+}
+
+.darkBlue{
+    color: #0044b1;
+}
+
+
+.title{
+    font-size: 4rem;
+    margin: 15px;
+    /* center */
+    text-align: center;
+}
+
+.textCentered{
+    text-align: center;
+}
+
+.newsText{
+    margin: 15px;
+}
+
+.content{
+    width: 950px;
+    margin: 0 auto;
+}
+
+canvas{
+    max-width:900px;
+    display: block;
+    margin: 6em auto;
+    margin-bottom: 1em;
+    border: 2px solid rgb(132, 132, 132);
+}
+
+.title3{
+    display: inline-block;
+    /* margin: 15px auto; */
+}
+
+.bodymaps-logo{
+    width: 6%;
+    transform: rotate(-15deg);
+}
+
+#slider3 h1{
+    display: inline-block;
+}
+
+.longText{
+    margin: 30px 0;
+    text-align: left;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+
+.btn {
+    padding: 10px 20px;
+    margin: 15px 10px;
+    border: 1px solid #000;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 50px;
+}
+
+.btn:hover {
+background-color: #002b73;
+color: white;
+}
+
+.section{
+margin: 12.5rem 0;
+}
+
+a {
+    text-decoration: underline;
+    
+}
+
+a:hover {
+    color: #0044b1;
+}
+
+/* Google Fonts import for Poppins, if used */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+/* Reset some basic elements to avoid default browser styling interference */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Use Poppins font if preferred, or default to sans-serif */
+body, html {
+    font-family: lato-light, lato, sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #fff; /* Light grey background */
+}
+
+#abdomen-atlas {
+    max-width: 1200px; /* or whatever maximum width you find appropriate */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10vw; /* Adjust the padding to ensure the text does not touch the sides of the window */
+    padding-right: 10vw;
+    text-align: center; /* Center text */
+    padding: 50px 0; /* Add padding above and below the section */
+    background-color: #fff; /* Black background */
+    color: #000; /* White text */
+}
+
+.abdomen-atlas-section {
+    /* Your existing styles for each section */
+    text-align: center;
+    /* Additional styles for centering and layout */
+}
+
+.title-container h1 {
+    margin-top:200px;
+    font-size: 75px; /* Large font size for the main title */
+    color: #000000; /* Color for the title text */
+    letter-spacing: 4px;
+    font-family: impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;;
+}
+
+
+.main-container {
+    overflow: visible;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Align children horizontally in the center */
+    width: 100%;
+}
+
+
+.title-container p {
+    font-weight: bold;
+    margin-top:10px;
+    white-space: nowrap;
+    font-family: lato-light, lato, sans-serif;
+    margin-bottom: 25px;
+    font-size: 13px; /* Smaller font size for the subtitle/status */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.stats-container {
+    display: flex; /* Use flexbox for the stats */
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+    flex-wrap: wrap; /* Allow the stats to wrap on smaller screens */
+    justify-content: space-between;
+}
+
+.stat-item {
+    width:250px;
+    height: 54px;
+    margin-left: 10px;
+    padding: 10px; /* Provide padding for the content */
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+    flex: 1 0 2%; /* Flex-grow, Flex-shrink, Flex-basis */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin-top: 30px;
+}
+
+
+.stat-item h2 {
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    width: 128.68px;
+    height:30px;
+    font-family: impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;
+    font-size: 30px; /* Large font size for stats numbers */
+    margin-bottom: 10px; /* Space below the stat number */
+}
+
+.red-letter {
+    color: #DD1A1A; /* This is the hex code for red */
+}
+
+
+.stat-item p {
+    height: 15.33px;
+    width: 150px;
+    font-size: 13px; /* Font size for stats description */
+    color: black;
+    font-family: lato-light, lato, sans-serif;
+}
+
+#video-gallery-new {
+    position: relative;
+    margin-top: 50px; /* Adjust this value as needed to create space for the buttons */
+}
+
+/* Style the video gallery container */
+#video-gallery {
+    z-index: 1;
+    width: 100%;
+    max-width: 800px; /* Max-width to control the gallery size, change as needed */
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+    justify-content: flex-start; /* Start alignment to allow JS to center the first video */
+}
+
+.video-wrapper {
+    border-radius:15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns the description text to the left */
+}
+
+/* Styling for the video description text */
+.video-description {
+    color: black; /* Change the color as needed for visibility */
+    font-size: 14px; /* Adjust font size as needed */
+    text-align: left; /* Align text to the left */
+    padding: 5px 0; /* Add some padding at the top and bottom if needed */
+}
+.video-carousel {
+    display: flex;
+    justify-content: center;
+    transition: transform 1s ease;
+    will-change: transform;
+}
+
+
+.video {
+    max-width: 2000px;
+    border-radius: 15px;
+    flex: 0 1 auto; /* Change to auto for the flex-basis */
+    width: 90vw;
+    margin-right: 20px; /* Space between videos */
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+}
+
+.video:last-child {
+    margin-right: 0; /* Avoid margin on the last video */
+}
+
+.video video {
+    width: 100%; /* Make the video fill its container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Active video styling */
+.video.active {
+    border-radius: 15px;
+    opacity: 1; /* Active video is fully opaque */
+}
+
+/* Navigation buttons (previous and next) */
+.video-nav {
+    margin-top: -30px;
+    position: absolute;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+
+
+.video-nav-new {
+    position: absolute;
+    z-index: 9999;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    padding: 10px;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+#prev-video-new {
+    left: 280px;
+    top: 12.3%;
+    transform: translateY(-50%);
+}
+
+#next-video-new {
+    right: 280px;
+    top:12.3%;
+    transform: translateY(-50%);
+}
+
+.video-nav svg {
+    fill: #666666; /* Set your desired SVG color */
+    width: 30px; /* This will take the size of the button */
+    height: 30px;
+}
+
+/* Positioning of the previous button */
+#prev-video {
+    transform: translateY(100%);
+}
+
+
+
+
+
+/* Adjust the positioning of the second video gallery to make space for the buttons */
+#video-gallery {
+    z-index: 1;
+    width: 100%;
+    max-width: 800px; /* Max-width to control the gallery size, change as needed */
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    justify-content: flex-start; /* Start alignment to allow JS to center the first video */
+}
+
+/* Positioning of the next button */
+#next-video {
+    transform: translateY(-1454%);
+}
+
+/* Button hover effect for better user interaction feedback */
+.video-nav:hover {
+    background-color: white;
+}
+
+/* Optional content indicator after the navigation buttons */
+.video-nav::after {
+    content: attr(data-content); /* Use the data attribute for content */
+    position: absolute;
+    white-space: nowrap; /* Prevent the content from wrapping */
+    font-size: 14px; /* Size of the indicator text */
+    /* Adjust the position as necessary based on the specific layout */
+}
+
+.text-section {
+    max-width: 1600px; /* same max-width as your video gallery for consistency */
+    margin: 24px auto; /* this sets a margin of 24px on top and bottom, auto on left and right */
+    padding: 20px; /* you can adjust this padding to create more space inside the text sections */
+    background: #fff; /* adjust the background color if needed */
+    color: #000; /* adjust text color if needed */
+    font-size: 18px; /* adjust font size if needed */
+    line-height: 1.6; /* adjust line height for better readability if needed */
+}
+
+.video-counter-wrapper {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Align children horizontally in the center */
+    width: 100%;
+
+}
+
+
+.counter-text {
+    margin-top: -30px;
+    background: transparent;
+    position: relative;
+    top: 0%;
+    z-index: 999999;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.counter-text-new {
+    background: transparent;
+    position: relative;
+    top: 210%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: #000000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+#counter-new{
+    margin-top: 50px;
+    width:10000px
+}
+
+#bodymaps-section {
+    background-color: #fff; /* or any color you prefer */
+    padding: 50px; /* adjust as needed */
+    text-align: center; /* if you want to center the text */
+}
+
+.internal-use {
+    font-family: lato-light, lato, sans-serif;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.stats-container {
+    margin-top:50px;
+    display: flex;
+    justify-content: space-around;
+    width: 1040px;
+    height:84px;
+    /* other styling as needed */
+}
+
+.description {
+    margin-top: 20px;
+    color: rgb(86, 91, 102); /* adjust as needed */
+    font-family: lato-light, lato, sans-serif;
+    font-size: 13px; /* adjust as needed */
+}
+
+#bodymaps-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+}
+
+#bodymaps-section h1 {
+    margin-top: 100px;
+    color: #0044B1; /* Title color */
+    font-size: 75px; /* Title size */
+    font-family: impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;;
+}
+
+.internal-use {
+    font-style: italic;
+    color: #888; /* just an example color */
+}
+
+.stats-container {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    /* other styling as needed */
+}
+
+
+
+.description {
+
+    margin-top: 20px;
+    color: #666; /* adjust as needed */
+    font-size: 1rem; /* adjust as needed */
+}
+
+.bodymaps-image {
+    max-width: 20%; /* Ensures the image is responsive and fits the container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Prevents inline default behavior */
+    margin: 0 auto 20px; /* Centers the image and adds some margin below */
+}
+
+.bodymaps-wrapper {
+    display: flex; /* This enables Flexbox */
+    align-items: center; /* This vertically centers the items in the container */
+    justify-content: flex-start; /* This aligns items to the left */
+}
+
+.bodymaps-image {
+    position: relative;
+    float: left;
+    max-width: 86px; /* Adjust the size of the image as needed */
+    height:73px;
+    object-position: 50% 50%;
+}
+
+.bodymaps-content {
+    max-width: calc(100% - 120px); /* Adjust the width of the content, subtracting the image width and margin */
+}
+
+.bodymaps-flex-container {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: flex-start; /* Align content to the left */
+}
+
+.header {
+    display: flex;
+    align-items: center; /* Align itaems vertically */
+    justify-content: flex-start; /* Align items to the left */
+}
+
+.header-image {
+    margin-top: 100px;
+    float: left;
+    width: 86px; /* Adjust width as needed */
+    height: 75px; /* Maintain aspect ratio */
+    margin-right: -50px; /* Adjust spacing between image and title */
+}
+
+
+
+#bodymaps-section .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Adjust based on your design */
+    gap: 100px;
+}
+
+/* Adjust the sizes accordingly */
+.header-image {
+    width: 80px; /* Keep the image's aspect ratio */
+    height: 73px; /* Set a fixed height */
+    rotate: -20deg;
+}
+
+.description {
+    align-content: center;
+    margin-top: 20px;
+    color: #565B66;
+    font-size: 16px;
+    max-width: 73%;
+    text-align: left;
+    letter-spacing: 0em;
+
+}
+
+
+
+.buttons-container {
+    margin-top:25px;
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Aligns buttons vertically if necessary */
+}
+
+
+.button:hover {
+    background-color: #931111;
+    color: white;
+
+}
+
+.status-link {
+    color: inherit; /* This makes the link color the same as the parent element */
+    text-decoration: underline; /* Removes underline from links */
+    opacity: 0.5;
+    font-weight: initial;
+}
+
+
+.status-link2{
+    color: inherit; /* This makes the link color the same as the parent element */
+    text-decoration: underline; /* Removes underline from links */
+    opacity: 1;
+}
+
+.status-link:hover {
+    text-decoration: underline; /* Adds underline on hover if desired */
+}
+
+.status-line {
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align content to the start */
+    font-size: 13px; /* Adjust to match your design */
+    color: black; /* Text color */
+    margin-bottom: 50px; /* Adjust based on your design */
+}
+
+.description b {
+    color: black;
+    font-weight: bold;
+    font-family: impact, impact-w01-2010, impact-w02-2010, impact-w10-2010, sans-serif;
+}
+
+.buttons-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center; /* Centers buttons horizontally */
+    align-items: center; /* Aligns buttons vertically if necessary */
+}
+
+.button {
+    display: inline-flex;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    margin: 0 10px;
+    padding: 5px;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-decoration: none;
+    justify-content: center;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    width: 132px;
+    height: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #931111;
+    color: white;
+}
+

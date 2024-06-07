@@ -1,0 +1,84 @@
+/* @font-face {
+    src: url('fonts/MutatorSans.ttf');
+    font-family:'MutatorSans';
+    font-style: normal;
+    font-weight: 1 1000;
+} */
+
+.footer-names {
+    width: 1700px;
+    height: 1700px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-image: url('https://chuntungzhuangleo.github.io/BodyMapWebsite/videos/jhu-shield-hero.jpg');
+    background-size: cover;
+    /* padding: 50px 100px 50px 150px; */
+    color: white;
+    height: 35em;
+}
+
+.group {
+    flex: 0 0 auto;
+    width: fit-content; /* Adjust the width of each group */
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.group p {
+    margin-bottom: 10px;
+    font-weight: 600;
+    
+}
+
+.group ul {
+    padding: 0;
+}
+
+/* .group li {
+    font: 1rem 'MutatorSans', sans-serif;
+    font-weight: 500;
+} */
+
+.group li {
+    list-style: none;
+    width: fit-content;
+    text-overflow: ellipsis;
+    /* font-size: 12px; */
+    height: fit-content;
+    max-width: 25em;
+    font-weight: 100;
+
+}
+
+.footer-bottom {
+    font-family: 'Roboto', sans-serif;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 15px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+li a:hover {
+    color: #f1f1f1;
+}
+
+.footer-container{
+    margin: 7.5em 0;
+}
+
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 0;
+    color: white;
+    height: 35em;
+    width: 950px;
+    margin: 0 auto;
+}

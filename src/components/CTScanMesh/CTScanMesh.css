@@ -1,0 +1,29 @@
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.niivue-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+
+.niivue-control h3 {
+    margin: 0 10px 0 0;
+    padding: 0;
+    width: fit-content;
+    text-align: center;
+    text-wrap: nowrap;
+}
