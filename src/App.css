@@ -88,11 +88,15 @@ a{
 }
 
 canvas{
-    max-width:900px;
+    max-width: 1000px; /* Adjust to fit the parent container */
+    max-height: 100%; /* Adjust to fit the parent container */
+    object-fit: contain; 
+    aspect-ratio: 1 / 0.8;
     display: block;
     margin: 6em auto;
     margin-bottom: 1em;
     border: 2px solid rgb(132, 132, 132);
+    background-color: #E5E5E5;
 }
 
 .title3{
@@ -293,7 +297,7 @@ body, html {
 
 /* Styling for the video description text */
 .video-description {
-    color: black; /* Change the color as needed for visibility */
+    color: white !important; /* Change the color as needed for visibility */
     font-size: 14px; /* Adjust font size as needed */
     text-align: left; /* Align text to the left */
     padding: 5px 0; /* Add some padding at the top and bottom if needed */
@@ -373,14 +377,12 @@ body, html {
 
 #prev-video-new {
     left: 280px;
-    top: 12.3%;
-    transform: translateY(-50%);
+    transform: translateY(20%);
 }
 
 #next-video-new {
     right: 280px;
-    top:12.3%;
-    transform: translateY(-50%);
+    transform: translateY(20%);
 }
 
 .video-nav svg {
@@ -391,7 +393,8 @@ body, html {
 
 /* Positioning of the previous button */
 #prev-video {
-    transform: translateY(100%);
+    transform: translateY(-60%);
+    left: 280px;
 }
 
 
@@ -411,7 +414,8 @@ body, html {
 
 /* Positioning of the next button */
 #next-video {
-    transform: translateY(-1454%);
+    transform: translateY(-60%);
+    right: 280px;
 }
 
 /* Button hover effect for better user interaction feedback */

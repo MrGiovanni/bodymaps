@@ -3,7 +3,6 @@ import './videoGallery.css';
 
 const VideoCarousel = ({ videos, counterId, prevBtnId, nextBtnId }) => {
     const carouselRef = useRef(null);
-    const counterRef = useRef(null);
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
     const calculateOffsetPercentage = (index, videos, gallery) => {
@@ -34,7 +33,7 @@ const VideoCarousel = ({ videos, counterId, prevBtnId, nextBtnId }) => {
 
     const updateCarousel = () => {
         const carousel = carouselRef.current;
-        const counterElement = counterRef.current;
+        const counterElement = document.getElementById(counterId);
         const videos = carousel.querySelectorAll('.video');
         centerVideo(videos, currentVideoIndex, carousel);
         updateCounter(currentVideoIndex, videos.length, counterElement);
@@ -56,21 +55,36 @@ const VideoCarousel = ({ videos, counterId, prevBtnId, nextBtnId }) => {
 
     return (
         <div className="video-carousel-container">
-            <button
-                className="video-nav"
-                id={prevBtnId}
-                onClick={() => {
-                    if (currentVideoIndex > 0) {
-                        setCurrentVideoIndex(currentVideoIndex - 1);
-                    }
-                }}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M14 18l-6-6 6-6" fill="none" stroke="#666666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-            </button>
+            <div className="nav-and-counter-container">
+                <button
+                    className="video-nav"
+                    id={prevBtnId}
+                    onClick={() => {
+                        if (currentVideoIndex > 0) {
+                            setCurrentVideoIndex(currentVideoIndex - 1);
+                        }
+                    }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M14 18l-6-6 6-6" fill="none" stroke="#666666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+                <div id={counterId} className="counter-text">1 of {videos.length}</div>
+                <button
+                    className="video-nav"
+                    id={nextBtnId}
+                    onClick={() => {
+                        if (currentVideoIndex < videos.length - 1) {
+                            setCurrentVideoIndex(currentVideoIndex + 1);
+                        }
+                    }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M10 6l6 6-6 6" fill="none" stroke="#666666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+            </div>
             <div className="video-counter-wrapper">
-                <div id={counterId} ref={counterRef} className="counter-text">1 of {videos.length}</div>
                 <div id="video-carousel" ref={carouselRef} className="video-carousel">
                     {videos.map((videoSrc, index) => (
                         <div className="video-wrapper" key={index}>
@@ -82,19 +96,6 @@ const VideoCarousel = ({ videos, counterId, prevBtnId, nextBtnId }) => {
                     ))}
                 </div>
             </div>
-            <button
-                className="video-nav"
-                id={nextBtnId}
-                onClick={() => {
-                    if (currentVideoIndex < videos.length - 1) {
-                        setCurrentVideoIndex(currentVideoIndex + 1);
-                    }
-                }}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M10 6l6 6-6 6" fill="none" stroke="#666666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-            </button>
         </div>
     );
 };

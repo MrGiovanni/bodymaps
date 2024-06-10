@@ -5,15 +5,15 @@ import CTScanMesh from './components/CTScanMesh/CTScanMesh.jsx';
 import Footer from './components/Footer/Footer.jsx';
 const App = () => {
     const videos1 = [
-        'https://chuntungzhuangleo.github.io/BodyMapWebsite/utils/AbdomenAtlas%201.0/BDMAP_00000020.mp4',
-        'https://chuntungzhuangleo.github.io/BodyMapWebsite/utils/AbdomenAtlas%201.0/BDMAP_00000031.mp4',
-        'https://chuntungzhuangleo.github.io/BodyMapWebsite/utils/AbdomenAtlas%201.0/BDMAP_00000205.mp4'
-    ];
-
-    const videos2 = [
-        'https://chuntungzhuangleo.github.io/BodyMapWebsite/videos/BDMAP_00000020.mp4',
-        'https://chuntungzhuangleo.github.io/BodyMapWebsite/utils/AbdomenAtlas%201.1/BDMAP_00000031.mp4',
-    ];
+        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.0/BDMAP_00000020.mp4',
+        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.0/BDMAP_00000031.mp4',
+        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.0/BDMAP_00000205.mp4'
+      ];
+      
+      const videos2 = [
+        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.1/BDMAP_00000006.mp4',
+        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.1/BDMAP_00000031.mp4',
+      ];
 
     return (
         <div className="main-container">

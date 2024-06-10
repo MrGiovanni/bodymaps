@@ -42,7 +42,6 @@ body, html {
 }
 
 /* Stats Container */
-
 .stat-item {
     width: 250px;
     height: 54px;
@@ -75,6 +74,7 @@ body, html {
     max-width: 800px;
     margin: 50px auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -127,7 +127,6 @@ body, html {
 
 /* Navigation Buttons */
 .video-nav {
-    position: absolute;
     z-index: 9999;
     width: 45px;
     height: 45px;
@@ -142,21 +141,9 @@ body, html {
 }
 
 .video-nav svg {
-    fill: #ffffff;
+    fill: #666666;
     width: 30px;
     height: 30px;
-}
-
-#prev-video {
-    left: 280px;
-    top: 2.5%;
-    transform: translateY(-50%);
-}
-
-#next-video {
-    right: 280px;
-    top: 2.5%;
-    transform: translateY(-50%);
 }
 
 .video-nav:hover {
@@ -168,6 +155,18 @@ body, html {
     font-size: 14px;
     color: black;
     text-align: center;
+}
+
+/* New Container for Buttons and Counter */
+.nav-and-counter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Adjust this to set space between nav and carousel */
+}
+
+.nav-and-counter-container .video-nav {
+    margin: 0 10px; /* Adjust this to control space between button and counter */
 }
 
 /* Additional Styles (as needed) */
