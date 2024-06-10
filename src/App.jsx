@@ -12,7 +12,7 @@ const App = () => {
       
       const videos2 = [
         'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.1/BDMAP_00000006.mp4',
-        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.1/BDMAP_00000031.mp4',
+        'https://mrgiovanni.github.io/bodymaps/utils/AbdomenAtlas%201.1/BDMAP_00000031.mp4'
       ];
 
     return (

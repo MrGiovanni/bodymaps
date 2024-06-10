@@ -93,19 +93,6 @@ function CTScanMesh() {
             <main style={{ backgroundColor: 'black' }}>
                 <canvas ref={canvasRef} width="550" height="550"/>
             </main>
-            <div className="niivue-control">
-                <h3>Body Part Selector</h3>
-                <select ref={inputRef}> 
-                    {Object.keys(organ_indices).map((organ, index) => (
-                        <option key={index} value={organ}>{organ}</option>
-                    ))}
-                    <option value="all_ribs">All Ribs</option>
-                    <option value="all_vertebrae">All Vertebrae</option>
-                </select>
-                <button className="btn add-organ-btn" onClick={showOrgan}>Show Part</button>
-                <button className="btn remove-organ-btn" onClick={hideOrgan}>Hide Part</button>
-                <button className="btn show-all-btn" onClick={showAll}>Show All</button>
-            </div>
         </div>
     );
 }
