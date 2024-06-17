@@ -7,14 +7,14 @@ const App = () => {
     const videos1 = [
         'https://raw.githubusercontent.com/MrGiovanni/bodymaps/gh-pages/videos/AbdomenAtlas1.0/BDMAP_00000020.mp4',
         'https://raw.githubusercontent.com/MrGiovanni/bodymaps/gh-pages/videos/AbdomenAtlas1.0/BDMAP_00000031.mp4',
-        'https://raw.githubusercontent.com/MrGiovanni/bodymaps/gh-pages/videos/AbdomenAtlas1.0/BDMAP_00000205.mp4'
+        'https://raw.githubusercontent.com/MrGiovanni/bodymaps/gh-pages/videos/AbdomenAtlas1.0/BDMAP_00000205.mp4',
     ];
 
     const videos2 = [
         'https://raw.githubusercontent.com/MrGiovanni/bodymaps/gh-pages/videos/AbdomenAtlas1.1/BDMAP_00000006.mp4',
         'https://raw.githubusercontent.com/MrGiovanni/bodymaps/gh-pages/videos/AbdomenAtlas1.1/BDMAP_00000031.mp4'
     ];
-    
+
     return (
         <div className="main-container">
             {/* Abdomen Atlas Section */}

@@ -91,7 +91,6 @@ const VideoCarousel = ({ videos, counterId, prevBtnId, nextBtnId }) => {
                             <video className="video" controls autoPlay muted loop>
                                 <source src={videoSrc} type="video/mp4" />
                             </video>
-                            <p className="video-description">Description for Video {index + 1}</p>
                         </div>
                     ))}
                 </div>

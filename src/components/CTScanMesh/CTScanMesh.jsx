@@ -13,7 +13,6 @@ function CTScanMesh() {
     useEffect(() => {
         const initNiivue = async () => {
         nv1.current = new Niivue({
-            backColor: [0.9, 0.9, 0.9, 1],
             // isOrientCube: true,
             // show3Dcrosshair: true,
         });

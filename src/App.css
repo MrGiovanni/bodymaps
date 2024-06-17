@@ -88,15 +88,52 @@ a{
 }
 
 canvas{
-    max-width: 1000px; /* Adjust to fit the parent container */
-    max-height: 100%; /* Adjust to fit the parent container */
-    object-fit: contain; 
+    z-index: 9999;
+    max-width: 100%; /* Adjust to fit the parent container */
+    max-height: 50%; /* Adjust to fit the parent container */
     aspect-ratio: 1 / 0.8;
     display: block;
     margin: 6em auto;
-    margin-bottom: 1em;
+    margin-bottom: -100px;
     border: 2px solid rgb(132, 132, 132);
-    background-color: #E5E5E5;
+    background-color: white;
+}
+
+/* Media Queries */
+@media (min-width: 3840px) {
+    /* Large Screens (3840px and up) */
+    canvas {
+        margin-bottom: 270px;
+        max-width: 3500px;
+        max-height: 1000px;
+    }
+}
+
+@media (min-width: 1920px) and (max-width: 3839px) {
+    /* Medium-Large Screens (1920px to 3839px) */
+    canvas {
+        margin-bottom: 270px;
+        max-width: 2000px;
+        max-height: 800px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1919px) {
+    /* Medium Screens (1024px to 1919px) */
+    canvas {
+        margin-bottom: 270px;
+        max-width: 1000px;
+        max-height: 800px;
+    }
+}
+
+@media (max-width: 1023px) {
+    /* Small Screens (below 1024px) */
+    canvas {
+        margin-bottom: 270px;
+        max-width: 600px;
+        max-height: 300px;
+    }
 }
 
 .title3{
@@ -172,7 +209,7 @@ body, html {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background: #fff; /* Light grey background */
+    background: white; /* Light grey background */
 }
 
 #abdomen-atlas {
@@ -337,7 +374,7 @@ body, html {
 
 /* Navigation buttons (previous and next) */
 .video-nav {
-    margin-top: -30px;
+    margin-top: -70px;
     position: absolute;
     z-index: 9999;
     width: 45px;
@@ -377,12 +414,13 @@ body, html {
 
 #prev-video-new {
     left: 280px;
-    transform: translateY(20%);
+    transform: translateY(55%);
 }
 
 #next-video-new {
     right: 280px;
-    transform: translateY(20%);
+    transform: translateY(55%);
+    z-index: 10;
 }
 
 .video-nav svg {
@@ -458,7 +496,7 @@ body, html {
     background: transparent;
     position: relative;
     top: 0%;
-    z-index: 999999;
+    z-index: 9;
     color: #000000;
     padding: 5px 10px;
     border-radius: 5px;
@@ -480,7 +518,7 @@ body, html {
     margin-bottom: 25px;
 }
 #counter-new{
-    margin-top: 50px;
+    margin-top: 10px;
     width:10000px
 }
 
@@ -617,7 +655,7 @@ body, html {
     margin-top: 20px;
     color: #565B66;
     font-size: 16px;
-    max-width: 73%;
+    max-width: 950px;
     text-align: left;
     letter-spacing: 0em;
 

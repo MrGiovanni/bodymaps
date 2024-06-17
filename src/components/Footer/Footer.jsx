@@ -76,9 +76,6 @@ const Footer = () => {
                     ))}
                 </div>
             </div>
-            <div className="footer-bottom">
-                <p>© 2024 AbdomenAtlas Project</p>
-            </div>
         </div>
     );
 };

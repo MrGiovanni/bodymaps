@@ -6,7 +6,8 @@
 } */
 
 .footer-names {
-    width: 2000px;
+    overflow-x: auto;
+    width: 3000px;
     height: 1700px;
     display: flex;
     flex-direction: column;
@@ -68,7 +69,7 @@ li a:hover {
 }
 
 .footer-container{
-    margin: 7.5em 0;
+    margin-top: -20em;
 }
 
 .footer-text {
@@ -81,4 +82,115 @@ li a:hover {
     height: 35em;
     width: 950px;
     margin: 0 auto;
+}
+/* Adjustments for large screens (3840px and larger) */
+@media (min-width: 5000px) {
+    .footer-names {
+        width: 100%;
+    }
+}
+
+/* Adjustments for medium-large screens (2500px to 3839px) */
+@media (min-width: 2500px) and (max-width: 3839px) {
+    .footer-names {
+        width: 100%;
+    }
+}
+
+/* Adjustments for medium screens (1920px to 2499px) */
+@media (min-width: 1920px) and (max-width: 2499px) {
+    .footer-names {
+        width: 100%;
+    }
+}
+
+/* Adjustments for small screens (less than 1920px) */
+@media (max-width: 1919px) {
+    .footer-names {
+        width: 100%;
+    }
+}
+
+/* Adjustments for extra small screens (less than 1024px) */
+@media (max-width: 1023px) {
+    .footer-names {
+        width: 100%;
+    }
+}
+
+/* Adjustments for screens between 0px and 500px */
+@media (min-width: 0px) and (max-width: 500px) {
+    .footer-names {
+        width: 500px;
+    }
+}
+
+/* Adjustments for screens between 500px and 1000px */
+@media (min-width: 500px) and (max-width: 1000px) {
+    .footer-names {
+        width: 1000px;
+    }
+}
+
+/* Adjustments for screens between 1000px and 1500px */
+@media (min-width: 1000px) and (max-width: 1500px) {
+    .footer-names {
+        width: 1500px;
+    }
+}
+
+/* Adjustments for screens between 1500px and 2000px */
+@media (min-width: 1500px) and (max-width: 2000px) {
+    .footer-names {
+        width: 2000px;
+    }
+}
+
+/* Adjustments for screens between 2000px and 2500px */
+@media (min-width: 2000px) and (max-width: 2500px) {
+    .footer-names {
+        width: 2500px;
+    }
+}
+
+/* Adjustments for screens between 2500px and 3000px */
+@media (min-width: 2500px) and (max-width: 3000px) {
+    .footer-names {
+        width: 3000px;
+    }
+}
+
+/* Adjustments for screens between 3000px and 3500px */
+@media (min-width: 3000px) and (max-width: 3500px) {
+    .footer-names {
+        width: 3500px;
+    }
+}
+
+/* Adjustments for screens between 3500px and 4000px */
+@media (min-width: 3500px) and (max-width: 4000px) {
+    .footer-names {
+        width: 4000px;
+    }
+}
+
+/* Adjustments for screens between 4000px and 4500px */
+@media (min-width: 4000px) and (max-width: 4500px) {
+    .footer-names {
+        width: 4500px;
+    }
+}
+
+/* Adjustments for screens between 4500px and 5000px */
+@media (min-width: 4500px) and (max-width: 5000px) {
+    .footer-names {
+        width: 5000px;
+    }
+}
+
+/* Adjustments for screens between 5000px and 5500px */
+@media (min-width: 5000px) and (max-width: 5500px) {
+    .footer-names {
+        width: 5500px;
+    }
 }
